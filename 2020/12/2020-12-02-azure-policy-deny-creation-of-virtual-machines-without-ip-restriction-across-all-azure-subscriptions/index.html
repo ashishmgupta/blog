@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Azure Policy &ndash; Deny creation of virtual machines without IP restriction across all Azure subscriptions - My Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../.." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../about/" class="nav-link">Valens mori urbem ignibus virtus qui mediis</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../index%20copy/" class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2006 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">09</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2006 09 26 simple way to speed up the query</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2006/09/2006-09-26-simple-way-to-speed-up-the-query/" class="dropdown-item">Simple way to speed up the query</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">10</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2006 10 01 good blog</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2006/10/2006-10-01-good-blog/" class="dropdown-item">Good blog</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2006 10 17 searching object across the databases</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2006/10/2006-10-17-searching-object-across-the-databases/" class="dropdown-item">searching object across the databases.</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">11</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2006 11 27 knowing how much time your query is taking</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2006/11/2006-11-27-knowing-how-much-time-your-query-is-taking/" class="dropdown-item">Knowing how much time your query is taking!!</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2006 11 27 sql server table variables to eliminate the need for cursors</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2006/11/2006-11-27-sql-server-table-variables-to-eliminate-the-need-for-cursors/" class="dropdown-item">SQL Server Table Variables To Eliminate The Need For Cursors</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2006 11 29 searching with different criteria in sql server 2000</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2006/11/2006-11-29-searching-with-different-criteria-in-sql-server-2000/" class="dropdown-item">Searching with different criteria in SQL server 2000</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">12</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2006 12 16 can not drop user from database</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2006/12/2006-12-16-can-not-drop-user-from-database/" class="dropdown-item">can not drop user from database</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2007 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">03</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2007 03 05 checking for the existence of a temporary table</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2007/03/2007-03-05-checking-for-the-existence-of-a-temporary-table/" class="dropdown-item">Checking for the existence of a temporary table</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2007 03 05 returning value from sp executesql</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2007/03/2007-03-05-returning-value-from-sp_executesql/" class="dropdown-item">Returning value from sp_executesql</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2008 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">05</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2008 05 26 convert string to byte array and viceversa</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2008/05/2008-05-26-convert-string-to-byte-array-and-viceversa/" class="dropdown-item">Convert  string to byte array and viceversa</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2008 05 26 process start open the file from the application after writing on the file</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2008/05/2008-05-26-process-start-open-the-file-from-the-application-after-writing-on-the-file/" class="dropdown-item">Process.Start() - Open the file from the application after writing on the file</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2008 05 26 removing comments using xpathnavigator selectdescendantssystem xml xpath xpathnodetype commentfalse</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2008/05/2008-05-26-removing-comments-using-xpathnavigator-selectdescendantssystem-xml-xpath-xpathnodetype-commentfalse/" class="dropdown-item">Removing comments using XPathNavigator.SelectDescendants(System.Xml.XPath.XPathNodeType.Comment,false);</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">06</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2008 06 02 visual studio 2005 build error the volume for a file has been externally altered so that the opened file is no longer valid</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2008/06/2008-06-02-visual-studio-2005-build-error-the-volume-for-a-file-has-been-externally-altered-so-that-the-opened-file-is-no-longer-valid/" class="dropdown-item">Visual studio 2005 Build error :- The volume for a file has been externally altered so that the opened file is no longer valid</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">07</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2008 07 23 gios pdf net library</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2008/07/2008-07-23-gios-pdf-net-library/" class="dropdown-item">Gios PDF .NET library</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2008 07 23 use sections in the config file and access them</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2008/07/2008-07-23-use-sections-in-the-config-file-and-access-them/" class="dropdown-item">Use sections in the config file and access them...</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">08</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2008 08 08 nice add ins for reflector</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2008/08/2008-08-08-nice-add-ins-for-reflector/" class="dropdown-item">Nice add-ins for Reflector</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">11</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2008 11 28 gazal by jagjit singh hai lau zindagi</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2008/11/2008-11-28-gazal-by-jagjit-singh-hai-lau-zindagi/" class="dropdown-item">Gazal by Jagjit Singh - Hai Lau Zindagi</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2009 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">01</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 01 26 asp net performace tricks</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/01/2009-01-26-asp-net-performace-tricks/" class="dropdown-item">ASP.NET performace tricks</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 01 28 quickly open a file in vs2005vs2008</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/01/2009-01-28-quickly-open-a-file-in-vs2005vs2008/" class="dropdown-item">Quickly open a file in VS2005/VS2008</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">06</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 06 06 roadmap to learn rest representational state transfer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/06/2009-06-06-roadmap-to-learn-rest-representational-state-transfer/" class="dropdown-item">Roadmap to learn REST (Representational State Transfer)</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 06 30 the soap vs rest</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/06/2009-06-30-the-soap-vs-rest/" class="dropdown-item">The SOAP vs REST</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">08</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 08 15 accessing user controls control from the aspx page‏</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/08/2009-08-15-accessing-user-controls-control-from-the-aspx-page%E2%80%8F/" class="dropdown-item">Accessing user control's control from the ASPX page‏</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">09</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 09 06 programmatically showing only the custom styles in the style pane of a word 2007 file</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/09/2009-09-06-programmatically-showing-only-the-custom-styles-in-the-style-pane-of-a-word-2007-file/" class="dropdown-item">Programmatically showing only the custom styles in the style pane of a Word 2007 file</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 09 19 procrastination</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/09/2009-09-19-procrastination/" class="dropdown-item">Procrastination</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 09 20 sql server –error the for xml clause is not allowed in a insert statement returning the result of a for xml elements in a dynamic query to a variable</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/09/2009-09-20-sql-server-%E2%80%93error-the-for-xml-clause-is-not-allowed-in-a-insert-statement-returning-the-result-of-a-for-xml-elements-in-a-dynamic-query-to-a-variable/" class="dropdown-item">SQL Server –Error - The FOR XML clause is not allowed in a INSERT statement. - Returning the result of a FOR XML, ELEMENTS in a dynamic query to a variable</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">10</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 10 02 difference between rpc and document centricmessage oriented application</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/10/2009-10-02-difference-between-rpc-and-document-centricmessage-oriented-application/" class="dropdown-item">Difference between RPC and Document-Centric/Message Oriented application</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">11</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2009 11 22 software engineer and the social service</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2009/11/2009-11-22-software-engineer-and-the-social-service/" class="dropdown-item">Software engineer and the social service</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2010 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">03</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 03 20 tablediff exe in sql server 2005</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/03/2010-03-20-tablediff-exe-in-sql-server-2005/" class="dropdown-item">TableDiff.exe in Sql Server 2005</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">06</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 06 13 faultexception exception thrown by the service is not caught by the client catchfaultexception</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/06/2010-06-13-faultexception-exception-thrown-by-the-service-is-not-caught-by-the-client-catchfaultexception/" class="dropdown-item">FaultException() exception thrown by the service is not caught by the client catch(FaultException)</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">08</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 08 22 entity framework 4 0 lazy loading eager loading and explicit loading</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/08/2010-08-22-entity-framework-4-0-lazy-loading-eager-loading-and-explicit-loading/" class="dropdown-item">Entity Framework 4.0 : Lazy loading, Eager loading and Explicit loading</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 08 25 entity framework 4 poco support 1 via objectcontext</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/08/2010-08-25-entity-framework-4-poco-support-1-via-objectcontext/" class="dropdown-item">Entity Framework 4 : POCO support 1 (via ObjectContext)</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 08 25 how awesome is system threading tasks parallel class</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/08/2010-08-25-how-awesome-is-system-threading-tasks-parallel-class/" class="dropdown-item">How awesome is System.Threading.Tasks.Parallel class?</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">09</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 09 04 entity framework using select stored procedures for entities having same column names</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/09/2010-09-04-entity-framework-using-select-stored-procedures-for-entities-having-same-column-names/" class="dropdown-item">Entity Framework - Using Select stored procedures for entities having same column names</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 09 07 entity framework ctp4 – code first – map your poco entities to different table</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/09/2010-09-07-entity-framework-ctp4-%E2%80%93-code-first-%E2%80%93-map-your-poco-entities-to-different-table/" class="dropdown-item">Entity Framework CTP4 – Code First – Map your POCO entities to different table</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 09 07 entity framework – ctp4 code first does not support stored procedures yet</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/09/2010-09-07-entity-framework-%E2%80%93-ctp4-code-first-does-not-support-stored-procedures-yet/" class="dropdown-item">Entity Framework – CTP4 - Code-first does not support stored procedures YET.</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 09 10 sql server coding guidelines and best practices</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/09/2010-09-10-sql-server-coding-guidelines-and-best-practices/" class="dropdown-item">Sql Server - Coding Guidelines and best practices</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 09 10 table variables do get created in the tempdb</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/09/2010-09-10-table-variables-do-get-created-in-the-tempdb/" class="dropdown-item">Table variables do get created in the TempDB</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 09 19 debuggerdisplay attribute</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/09/2010-09-19-debuggerdisplay-attribute/" class="dropdown-item">[DebuggerDisplay] Attribute</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 09 23 bulk insert using openxml</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/09/2010-09-23-bulk-insert-using-openxml/" class="dropdown-item">Bulk insert using OpenXML</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">10</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 10 17 using unity application block 2 0 the given assembly name or codebase was invalid exception from hresult 0x80131047</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/10/2010-10-17-using-unity-application-block-2-0-the-given-assembly-name-or-codebase-was-invalid-exception-from-hresult-0x80131047/" class="dropdown-item">Using Unity Application Block 2.0 - The given assembly name or codebase was invalid. (Exception from HRESULT: 0x80131047)</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">11</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 11 01 sql server 2008 generate the data script insert script from tables</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/11/2010-11-01-sql-server-2008-generate-the-data-script-insert-script-from-tables/" class="dropdown-item">SQL Server - Generate the data script (insert script)  for existing data in tables</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2010 11 26 new apis in system io</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2010/11/2010-11-26-new-apis-in-system-io/" class="dropdown-item">New APIs in System.IO</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2011 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">01</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2011 01 11 customizing ribbon in office 2007 using open office xml and vba</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2011/01/2011-01-11-customizing-ribbon-in-office-2007-using-open-office-xml-and-vba/" class="dropdown-item">Customizing Ribbon in Office 2007 using Open Office XML and VBA</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2011 01 12 adding custom pane to the ribbon in microsoft word 2007 using openxml sdk 2 0 and vba</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2011/01/2011-01-12-adding-custom-pane-to-the-ribbon-in-microsoft-word-2007-using-openxml-sdk-2-0-and-vba/" class="dropdown-item">Adding custom pane to the ribbon in Microsoft Word 2007 using OpenXML SDK 2.0 and VBA</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">08</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2011 08 01 a beautiful poem</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2011/08/2011-08-01-a-beautiful-poem/" class="dropdown-item">A beautiful poem</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">11</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2011 11 19 entity framework code first disable pluralization of your tables</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2011/11/2011-11-19-entity-framework-code-first-disable-pluralization-of-your-tables/" class="dropdown-item">Entity framework - Code first - Disable pluralization of your tables</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2012 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">02</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 02 03 error install package conflict occurred jquery 1 5 1 referenced but requested jquery 1 6 4 jquery vsdoc 1 5 1 jquery validation 1 8 0 jquery ui combined 1 8 11 depend on jquery 1</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/02/2012-02-03-error-install-package-conflict-occurred-jquery-1-5-1-referenced-but-requested-jquery-1-6-4-jquery-vsdoc-1-5-1-jquery-validation-1-8-0-jquery-ui-combined-1-8-11-depend-on-jquery-1/" class="dropdown-item">Error Install-Package : Conflict occurred. 'jQuery 1.5.1' referenced but requested 'jQuery 1.6.4'. 'jQuery.vsdoc 1.5.1, jQuery.Validation 1.8. 0, jQuery.UI.Combined 1.8.11' depend on 'jQuery 1.5.1'</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">04</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 04 11 productivity notes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/04/2012-04-11-productivity-notes/" class="dropdown-item">Productivity notes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">05</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 05 03 a simple way to generate random password</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/05/2012-05-03-a-simple-way-to-generate-random-password/" class="dropdown-item">A simple way to generate random password</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">08</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 08 29 understanding and detecting deadlocks in sql server</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/08/2012-08-29-understanding-and-detecting-deadlocks-in-sql-server/" class="dropdown-item">Understanding and detecting deadlocks in Sql Server</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">09</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 09 07 using tracepoints in visual studio</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/09/2012-09-07-using-tracepoints-in-visual-studio/" class="dropdown-item">Using Tracepoints in Visual Studio</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 09 09 inversion of control ioc</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/09/2012-09-09-inversion-of-control-ioc/" class="dropdown-item">Inversion of Control (IoC)</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 09 10 dependency injection</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/09/2012-09-10-dependency-injection/" class="dropdown-item">Dependency Injection</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 09 17 generate random password</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/09/2012-09-17-generate-random-password/" class="dropdown-item">Generate random password</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">10</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 10 16 unit testing a static method which calls another static method</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/10/2012-10-16-unit-testing-a-static-method-which-calls-another-static-method/" class="dropdown-item">Unit testing a static method which calls another static method using Moq</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">12</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2012 12 31 2012 in review</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2012/12/2012-12-31-2012-in-review/" class="dropdown-item">2012 in review</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2013 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">04</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2013 04 01 connecting to mysql database and fetching records using jdbc connection in tibco businessworks</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2013/04/2013-04-01-connecting-to-mysql-database-and-fetching-records-using-jdbc-connection-in-tibco-businessworks/" class="dropdown-item">Connecting to MySql database and fetching records using JDBC connection in TIBCO BusinessWorks</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">05</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2013 05 01 from yessql to nosql with raven db</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2013/05/2013-05-01-from-yessql-to-nosql-with-raven-db/" class="dropdown-item">From &ldquo;Yes&rdquo;SQL to NoSQL with Raven Db</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">09</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2013 09 16 sqldbtype structured another gem in ado net</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2013/09/2013-09-16-sqldbtype-structured-another-gem-in-ado-net/" class="dropdown-item">SqlDbType.Structured [another gem in ADO.NET] and Bulk insert using Table Valued Parameters</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">10</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2013 10 23 sql serverchange data capture cdc for watching database tables for dml operations</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2013/10/2013-10-23-sql-serverchange-data-capture-cdc-for-watching-database-tables-for-dml-operations/" class="dropdown-item">SQL Server&ndash;Change Data Capture [CDC] for &ldquo;Watching&rdquo; database tables for DML operations</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">12</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2013 12 31 2013 in review</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2013/12/2013-12-31-2013-in-review/" class="dropdown-item">2013 in review</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2014 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">01</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 01 23 maximum connection exceeded how to know who are logged on to a server and not letting you in</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/01/2014-01-23-maximum-connection-exceeded-how-to-know-who-are-logged-on-to-a-server-and-not-letting-you-in/" class="dropdown-item">Maximum connections exceeded!!!! - How to know who are logged on to a server and not letting you in?</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 01 30 sql server job cannot insert the value null into column owner sid table msdb dbo sysjobs</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/01/2014-01-30-sql-server-job-cannot-insert-the-value-null-into-column-owner_sid-table-msdb-dbo-sysjobs/" class="dropdown-item">Sql Server job - Cannot insert the value NULL into column &lsquo;owner_sid&rsquo;, table &lsquo;msdb.dbo.sysjobs&rsquo;</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">02</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 02 03 tibco businessworks bw jdbc 100034 configuration test failed exception com microsoft sqlserver jdbc sqlserverexception occurred com microsoft sqlserver jdbc sqlserverexception connection</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/02/2014-02-03-tibco-businessworks-bw-jdbc-100034-configuration-test-failed-exception-com-microsoft-sqlserver-jdbc-sqlserverexception-occurred-com-microsoft-sqlserver-jdbc-sqlserverexception-connection/" class="dropdown-item">Tibco BusinessWorks - BW-JDBC-100034 &quot;Configuration Test Failed. Exception [com.microsoft.sqlserver.jdbc.SQLServerException] occurred. com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 02 25 unable to deploy tibco bw application after configuring tibco bw process monitor error tra 000000 streamgobblererror data java lang noclassdeffounderror comtibcoprocessmonitorclient</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/02/2014-02-25-unable-to-deploy-tibco-bw-application-after-configuring-tibco-bw-process-monitor-error-tra-000000-streamgobblererror-data-java-lang-noclassdeffounderror-comtibcoprocessmonitorclient/" class="dropdown-item">Unable to deploy Tibco BW application after configuring  Tibco BW Process Monitor  - ERROR -  [TRA-000000] StreamGobbler(ERROR) : data = java.lang.NoClassDefFoundError: com/tibco/processmonitor/client/run Caused by: java.lang.ClassNotFoundException: com.tibco.processmonitor.client.run</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 02 28 tibco cloud bus a sneak peek</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/02/2014-02-28-tibco-cloud-bus-a-sneak-peek/" class="dropdown-item">TIBCO Cloud Bus &ndash; At a glance and more&hellip;.</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">03</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 03 12 tibco businessworks bw jdbc 100034 configuration test failed exception com microsoft sqlserver jdbc sqlserverexception occurred com microsoft sqlserver jdbc sqlserverexception connection 2</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/03/2014-03-12-tibco-businessworks-bw-jdbc-100034-configuration-test-failed-exception-com-microsoft-sqlserver-jdbc-sqlserverexception-occurred-com-microsoft-sqlserver-jdbc-sqlserverexception-connection-2/" class="dropdown-item">Tibco BusinessWorks - BW-JDBC-100034 &quot;Configuration Test Failed. Exception [com.microsoft.sqlserver.jdbc.SQLServerException] occurred. com.microsoft.sqlserver.jdbc.SQLServerException: Connection reset</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">04</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 04 08 tibco businessevents 5 1 studio jms test connection failed</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/04/2014-04-08-tibco-businessevents-5-1-studio-jms-test-connection-failed/" class="dropdown-item">TIBCO BusinessEvents 5.1 Studio&ndash; JMS Test connection failed</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 04 11 tibco businessworks 6 0 release announcement</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/04/2014-04-11-tibco-businessworks-6-0-release-announcement/" class="dropdown-item">TIBCO BusinessWorks 6.0 release announcement</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">05</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2014 05 05 sql injection dynamic sql with in clause and quotename</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2014/05/2014-05-05-sql-injection-dynamic-sql-with-in-clause-and-quotename/" class="dropdown-item">Minimizing SQL Injection - Dynamic SQL with IN Clause and QUOTENAME()</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2015 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">09</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2015 09 07 developing and configuring a custom password credential validator pcv for pingfederate</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2015/09/2015-09-07-developing-and-configuring-a-custom-password-credential-validator-pcv-for-pingfederate/" class="dropdown-item">Developing and configuring a custom password credential validator [PCV] for PingFederate</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2016 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">04</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2016 04 22 pingfederate include complex payload in a saml assertion</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2016/04/2016-04-22-pingfederate-include-complex-payload-in-a-saml-assertion/" class="dropdown-item">PingFederate : Include a complex payload in the SAML assertion</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">07</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2016 07 15 changing from tls v1 0 to tls v1 2 from a tomcat java 7 app</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2016/07/2016-07-15-changing-from-tls-v1-0-to-tls-v1-2-from-a-tomcat-java-7-app/" class="dropdown-item">Changing from TLS v1.0 to TLS v1.2 from a Tomcat Java 7 app</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">08</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2016 08 15 sp initiated single sign on using saml 2 0architecture and a simple implementation 2</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2016/08/2016-08-15-sp-initiated-single-sign-on-using-saml-2-0architecture-and-a-simple-implementation-2/" class="dropdown-item">SP-Initiated Single Sign On using SAML 2.0&ndash;Architecture and a simple implementation</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">09</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2016 09 29 powershell transcription and script bulk logging</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2016/09/2016-09-29-powershell-transcription-and-script-bulk-logging/" class="dropdown-item">PowerShell Transcription and script bulk logging</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">10</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2016 10 25 f5 irules setting the httponly flag on a http cookie</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2016/10/2016-10-25-f5-irules-setting-the-httponly-flag-on-a-http-cookie/" class="dropdown-item">F5 iRules : Setting the HttpOnly flag on a HTTP cookie</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2017 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">06</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2017 06 10 gcih certification</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2017/06/2017-06-10-gcih-certification/" class="dropdown-item">GCIH Certification</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2018 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">02</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2018 02 05 won the challenge coin sans for500 windows forensics analysis</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2018/02/2018-02-05-won-the-challenge-coin-sans-for500-windows-forensics-analysis/" class="dropdown-item">Won the challenge coin! SANS FOR500 &ndash; Windows Forensics Analysis</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">07</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2018 07 04 compromising a azure windows 2008 r2 sp1 vm</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2018/07/2018-07-04-compromising-a-azure-windows-2008-r2-sp1-vm/" class="dropdown-item">Compromising an Azure Windows 2008 R2 SP1 VM</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2019 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">02</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2019 02 17 identify critical assets in your environment using f5 load balancer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2019/02/2019-02-17-identify-critical-assets-in-your-environment-using-f5-load-balancer/" class="dropdown-item">Identify Critical Assets in your environment using F5 Load balancer</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">06</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2019 06 05 azure sentinel preview detecting brute force rdp attempts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2019/06/2019-06-05-azure-sentinel-preview-detecting-brute-force-rdp-attempts/" class="dropdown-item">Azure Sentinel &ndash; Detecting brute force RDP attempts</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2020 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">01</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2020 01 22 detection of identity based risks using azure ad identity protection and graph api</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../01/2020-01-22-detection-of-identity-based-risks-using-azure-ad-identity-protection-and-graph-api/" class="dropdown-item">Detection of identity-based risks using Azure AD Identity Protection and Graph API</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">12</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2020 12 02 azure policy deny creation of virtual machines without ip restriction across all azure subscriptions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active">Azure Policy &ndash; Deny creation of virtual machines without IP restriction across all Azure subscriptions</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">2021 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">01</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">2021 01 17 sans holiday hack challenge 2020 kringlecon 3 write up</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../2021/01/2021-01-17-sans-holiday-hack-challenge-2020-kringlecon-3-write-up/" class="dropdown-item">SANS Holiday Hack Challenge 2020 (KringleCon 3) Write-up</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../01/2020-01-22-detection-of-identity-based-risks-using-azure-ad-identity-protection-and-graph-api/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../../2021/01/2021-01-17-sans-holiday-hack-challenge-2020-kringlecon-3-write-up/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#tldr" class="nav-link">TLDR;</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#what-is-azure-policy" class="nav-link">What is Azure policy:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#process" class="nav-link">Process:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#create-the-policy-definition" class="nav-link">Create the policy definition</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_2" class="nav-link"></a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#policy-details" class="nav-link">Policy Details:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#policy-assignment" class="nav-link">Policy Assignment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#test-1-audit-mode" class="nav-link">Test 1 - Audit mode :</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#test-2-deny-mode" class="nav-link">Test 2 - Deny mode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#summary" class="nav-link">Summary :</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="tldr">TLDR;</h1>
+<p>Public Azure virtual machines without any IP restriction is always an attack vector which may result in compromise of the VM and further lateral movement in Azure infrastructure.<br />
+Azure policy may be used to <strong>deny any attempt to even create the virtual machines without IP restriction</strong>.<br />
+This blog post has step-by-step process on how to implement an Azure policy on ALL your subscriptions covering IP restriction for ALL your future virtual machines.  </p>
+<h1 id="what-is-azure-policy">What is Azure policy:</h1>
+<p>Azure policy is a service inside Azure that allows configuration management.It executes every time a new resource is added or an existing resource is changed. It has a set of rules, and set of actions. The Azure policy could report the event as non-compliant or even deny the action altogether if the rules are not matched.  </p>
+<p>Azure policy is an excellent way to enforce and bake-in security and compliance in the Azure infrastructure.<br />
+As you see in the below picture, Azure policy is an integral part of Azure Governance – mainly consisting of Policy Definitions and Policy Engine which works directly with Azure Resource Manager (ARM).</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/12/image.png"><img alt="image" src="images/image_thumb.png" title="image" /></a> <br />
+Image source : https://www.microsoft.com/en-us/us-partner-blog/2019/07/24/azure-governance/</p>
+<h1 id="_1"></h1>
+<p>Summary:</p>
+<p>If the Azure virtual machines need to be accessible over internet, Its important to restrict access its access ONLY from your corporate public IP addresses.<br />
+This will help in couple of situations :<br />
+a) Limit external access from an attacker.<br />
+b) Limit Insider threat or misuse from an employee.<br />
+The IP address restriction could be created while creating the virtual machine using network security groups.<br />
+However, enforcing this on the policy level by the administrator would ensure we are not dependent on individual team’s best judgment.  </p>
+<h1 id="process">Process:</h1>
+<p>As a best practice, always test the policy in audit mode before switching to deny mode. In this walkthrough, we will follow below steps :  </p>
+<p>1) Create the policy definition.<br />
+2) Apply the policy (Policy Assignment) in audit mode<br />
+3) Test with Audit mode<br />
+3) Apply the policy (Policy Assignment) in deny mode<br />
+4) Test with Deny mode</p>
+<h1 id="create-the-policy-definition">Create the policy definition</h1>
+<p>On the search bar, search for “policy” and click on it.</p>
+<h1 id="_2"><strong><a href="http://guptaashish.com/wp-content/uploads/2020/11/image.png"><img alt="image" src="images/image_thumb.png" title="image" /></a></strong></h1>
+<p>Click Definitions and then click Policy Definition<a href="http://guptaashish.com/wp-content/uploads/2020/11/image-1.png"><img alt="image" src="images/image_thumb-1.png" title="image" /></a></p>
+<p>Click the … button under “Definition Location” to select the management group. If you want to apply this policy to all subscriptions, don’t select any subscription.<br />
+To apply this policy to a specific subscription, select the desired subscription under the subscription dropdown.</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-2.png"><img alt="image" src="images/image_thumb-2.png" title="image" /></a></p>
+<h2 id="policy-details">Policy Details:</h2>
+<p><strong>Name:</strong><br />
+Deny creation of virtual machine without access restricted only from company's public IP addresses<br />
+(on-prem/VPN)  </p>
+<p><strong>Description (<em>Change the IP address list below</em>):<br />
+</strong>Deny creation of virtual machine which does not have external company IP addresses restriction in the network security group.<br />
+One or more of the below corporate IP addresses must be specified in the network security group when creating the virtual machine. Otherwise, the validation will fail and the virtual machine will not be created.<br />
+Below is the valid public corporate IP addresses list :<br />
+<em>208.114.51.253<br />
+104.104.51.253<br />
+108.104.51.253</em></p>
+<p><strong>Category</strong> : Network<br />
+<a href="http://guptaashish.com/wp-content/uploads/2020/11/image-3.png"><img alt="image" src="images/image_thumb-3.png" title="image" /></a> <br />
+<strong>Policy Rule:<br />
+</strong></p>
+<p>[sourcecode language='python' ]
+{
+  "mode": "All",
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Network/networkSecurityGroups"
+        },
+        {
+          "count": {
+            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]",
+            "where": {
+              "allOf": [
+                {
+                  "anyof": [
+                    {
+                      "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].sourceAddressPrefix",
+                      "notIn": [
+                        "208.114.51.253",
+                        "104.104.51.253",
+                        "108.104.51.253"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "greater": 0
+        }
+      ]
+    },
+    "then": {
+      "effect": "[parameters('effect')]"
+    }
+  },
+  "parameters": {
+    "effect": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Effect",
+        "description": "The effect determines what happens when the policy rule is evaluated to match"
+      },
+      "allowedValues": [
+        "audit",
+        "deny"
+      ],
+      "defaultValue": "audit"
+    }
+  }
+}
+[/sourcecode]</p>
+<h1 id="policy-assignment">Policy Assignment</h1>
+<p>Under policy &gt; definition, go to the newly created policy definition.<br />
+<a href="http://guptaashish.com/wp-content/uploads/2020/11/image-4.png"><img alt="image" src="images/image_thumb-4.png" title="image" /></a></p>
+<p>Click Assign.</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-5.png"><img alt="image" src="images/image_thumb-5.png" title="image" /></a></p>
+<p>Provide an assignment name and description<br />
+Name:<br />
+Deny creation of virtual machine without access restricted only from company's public IP addresses<br />
+(on-prem/VPN)  </p>
+<p>Description (<em>Change the IP address list below</em>):<br />
+Deny creation of virtual machine which does not have external company IP addresses restriction in the network<br />
+security group.<br />
+One or more of the below corporate IP addresses must be specified in the network security group when creating the virtual machine. Otherwise, the validation will fail and the virtual machine will not be created.<br />
+Below is the valid public corporate IP addresses list :<br />
+<em>208.114.51.253<br />
+104.104.51.253<br />
+108.104.51.253</em></p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-6.png"><img alt="image" src="images/image_thumb-6.png" title="image" /></a></p>
+<p>Under “Parameters” tab, select “audit” in the Effect dropdown and click “Review+Create”</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-7.png"><img alt="image" src="images/image_thumb-7.png" title="image" /></a></p>
+<p>On the review page, click “Create” .</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-8.png"><img alt="image" src="images/image_thumb-8.png" title="image" /></a></p>
+<p>The policy assignment is created. Please note It takes about 30 minutes to take effect.</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-9.png"><img alt="image" src="images/image_thumb-9.png" title="image" /></a></p>
+<h1 id="test-1-audit-mode">Test 1 - Audit mode :</h1>
+<p>Create virtual machine with RDP allowed from any external IP Address</p>
+<p>With the policy in Audit mode, let us create a new virtual machine with RDP open to any external IP address.</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-10.png"><img alt="image" src="images/image_thumb-10.png" title="image" /></a></p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-11.png"><img alt="image" src="images/image_thumb-11.png" title="image" /></a></p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-12.png"><img alt="image" src="images/image_thumb-12.png" title="image" /></a><br />
+When the policy is in the audit mode, the virtual machine creation is successful but Azure policy adds a <code>Microsoft.Authorization/policies/audit/action</code> operation to the activity log and marks the resource as non-compliant.  </p>
+<p><strong>Activity Logs</strong><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-13.png"><img alt="image" src="images/image_thumb-13.png" title="image" /></a></p>
+<p><strong>Compliance State:<br />
+</strong>Policy &gt; Compliance<br />
+<a href="http://guptaashish.com/wp-content/uploads/2020/11/image-14.png"><img alt="image" src="images/image_thumb-14.png" title="image" /></a></p>
+<h1 id="test-2-deny-mode">Test 2 - Deny mode</h1>
+<p>Create virtual machine with RDP allowed from any external IP Address</p>
+<p>We need to change the effect mode to “deny” in our policy assignment.<br />
+Head over to Policy &gt; Assignments &gt; Click on the policy we created</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-15.png"><img alt="image" src="images/image_thumb-15.png" title="image" /></a><br />
+Click “Parameters” tab. Select “deny” from the dropdown and continue to save the policy assignment.</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-16.png"><img alt="image" src="images/image_thumb-16.png" title="image" /></a></p>
+<p>Attempt to create a virtual machine with the same settings as we did before.<br />
+<a href="http://guptaashish.com/wp-content/uploads/2020/11/image-17.png"><img alt="image" src="images/image_thumb-17.png" title="image" /></a></p>
+<p>When you proceed to create the virtual machine, the final validation will fail with an error message (left side) which when clicked will show which policy disallowed this action.</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-18.png"><img alt="image" src="images/image_thumb-18.png" title="image" /></a></p>
+<p>Clicking on the policy would show the policy assignment with details showing why the policy disallowed this action.</p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-19.png"><img alt="image" src="images/image_thumb-19.png" title="image" /></a></p>
+<p>When the policy is in the <strong>deny</strong> mode, the virtual machine creation is successful but Azure policy adds a <code>Microsoft.Authorization/policies/**deny**/action</code> operation to the activity log and marks the resource as non-compliant.  </p>
+<p>Under activity logs, you can see the deny action.:<br />
+<a href="http://guptaashish.com/wp-content/uploads/2020/11/image-20.png"><img alt="image" src="images/image_thumb-20.png" title="image" /></a></p>
+<p><a href="http://guptaashish.com/wp-content/uploads/2020/11/image-21.png"><img alt="image" src="images/image_thumb-21.png" title="image" /></a></p>
+<h1 id="summary">Summary :</h1>
+<p>Azure policy is an excellent way of enforcing compliance in Azure infrastructure. In this blog post we saw how we can apply Azure policy to deny creation of virtual machines without any IP restriction.<br />
+For further readings :<br />
+Azure policy docs : <a href="https://docs.microsoft.com/en-us/azure/governance/policy/overview" title="https://docs.microsoft.com/en-us/azure/governance/policy/overview">https://docs.microsoft.com/en-us/azure/governance/policy/overview</a><br />
+Azure policy Github : <a href="https://github.com/Azure/azure-policy" title="https://github.com/Azure/azure-policy">https://github.com/Azure/azure-policy</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
