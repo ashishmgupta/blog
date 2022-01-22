@@ -1,3 +1,5 @@
-site_name: My Docs
+site_name: Ashish Gupta
 theme:
   name: material
+extra_css:
+  - stylesheets/extra.css
