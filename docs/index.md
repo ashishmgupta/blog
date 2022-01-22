@@ -10,6 +10,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 * `mkdocs -h` - Print help message and exit.
 
 ## Project layout
+## Another menu
 
     mkdocs.yml    # The configuration file.
     docs/
