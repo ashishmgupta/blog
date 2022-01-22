@@ -11,6 +11,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Project layout
 ## Another menu
+## Another menu 2
 
     mkdocs.yml    # The configuration file.
     docs/
