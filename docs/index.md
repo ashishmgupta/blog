@@ -635,6 +635,188 @@ We submit it as the answer to this objective and Its now Its completed.
 
 
 ## 7. Printer Exploitation
+
+<table border=1px>
+<tr>
+    <td colspan=3>
+    <b>Challenge : </b> <br>
+    Investigate the stolen Kringle Castle printer. Get shell access to read the contents of /var/spool/printer.log. What is the name of the last file printed (with a .xlsx extension)? <br> 
+    Find Ruby Cyster in Jack's office for help with this objective. 
+    </td>
+</tr>
+<tr>
+    <td>
+    <b>Difficulty Level : </b> <br>
+    <img src="images/hhc2021/difficulty_4.png" alt="drawing" width="100px"/><br>
+    </td>
+    <td>
+     <b>Location : </b> <br>
+        Jack’s Office                                                                                     
+    </td>
+    <td>
+    <b>Elf/Troll : </b> <br>
+   <img src="images/hhc2021/image027.png" alt="drawing" width="30px"/> Ruby Cyster <br>
+    </td>
+</tr>
+</table>
+
+
+<table>
+<tr>
+    <td>
+    <img src="images/hhc2021/image069.png" alt="drawing" width="200px"/>
+    </td>
+    <td>
+    <b> Hints from Ruby Cyster (Because we solved the objective “Shellcode primer”) : </b> <br>
+    <ol>
+    <li>You should definitely look at the firmware
+	<li>Pick the firmware apart and see what's there.
+	<li>If you append multiple files of that type, the last one is processed.
+	<li>Look at hash Extension Attacks.
+    <a href="https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks" target="_blank"> Link 1</a> |
+    <a href="https://github.com/iagox86/hash_extender"  target="_blank">Link 2 </a>
+    <li>Files placed in /app/lib/public/incoming will be accessible under
+    <a href="https://printer.kringlecastle.com/incoming/"  target="_blank">https://printer.kringlecastle.com/incoming/</a> </li>
+    </ol>
+
+    <b> Website :</b> <br>
+    <a href="https://printer.kringlecastle.com/"  target="_blank">https://printer.kringlecastle.com/</a>
+    </td>
+<tr>
+</table>
+
+### Examination of firmware
+Following the grinch's first hint, we go to https://printer.kringlecon.com > Firmware update > Download current firmware and download it. It’s basically a JSON file. <br>
+The element <b>firmware</b> has the firmware data in it. 
+<img src="images/hhc2021/image070.png" alt="drawing" width="800px"/>
+
+Decode it and save the output to a file named firmware_hhc2021
+
+<img src="images/hhc2021/image071.png" alt="drawing" width="800px"/>
+
+We determine the file type and we see It’s a zip file so we rename the file to firmware_hhc2021.zip
+
+<img src="images/hhc2021/image072.png" alt="drawing" width="800px"/>
+
+### Building our own payload
+We build a bin file with above and name it firmware_ashish.bin. <br>
+This will copy the last entry of the xlsx file from /var/spool/printer.log and save in a new file named /app/lib/public/incoming/ashish.<br>
+
+```bash
+#!/bin/bash
+grep xlsx /var/spool/printer.log | tail -n1 > /app/lib/public/incoming/ashish
+```
+
+Provide execute permission on the firmware_ashish.bin
+<img src="images/hhc2021/image073.png" alt="drawing" width="800px"/>
+
+Zip firmware_ashish.bin to firmware_ashish.zip.
+<img src="images/hhc2021/image074.png" alt="drawing" width="800px"/>
+
+### Extend the original firmware payload with our custom payload
+We make use of <a href="https://github.com/iagox86/hash_extender" target="_blank">hash extender</a>. <br>
+Download the source and build it.
+```bash
+git clone https://github.com/iagox86/hash_extender
+cd hash_extender
+make
+```
+
+<img src="images/hhc2021/image075.png" alt="drawing" width="800px"/>
+
+
+Now we havd the original firmware firmware_hhc2021.zip and custom firmware_ashish.zip.
+<img src="images/hhc2021/image076.png" alt="drawing" width="600px"/>
+
+Now will need to append our payload firmware_ashish.zip to the original firmware_hhc2021.zip. <br>
+
+Following the readme on <a href="https://github.com/iagox86/hash_extender" target="_blank">https://github.com/iagox86/hash_extender</a>. <br> Below would be our inputs to the hash_extender.
+
+<table>
+<tr>
+    <th>Hash Extender Switch</th>
+    <th>Spplied values and explaination</th>
+</tr>
+<tr>
+    <td>--file</td>
+    <td><b>firmware_hhc2021.zip</b> <br>
+    The original payload from printer portal in zipped format
+    </td>
+</tr>
+<tr>
+    <td>--append</td>
+    <td>
+    <b>$(cat firmware.zip | xxd -p -c 99999)</b><br>
+    HEX representation of our payload in the zip file (firmware_ashish.zip) 
+    </td>
+</tr>
+<tr>
+    <td>--append-format</td>
+    <td>
+    <b>hex</b> <br>
+    (because we are appending a HEX value)
+    </td>
+</tr>
+<tr>
+    <td>--secret</td>
+    <td>
+    <b>16</b> <br>
+    (Present in the original JSON file we downloaded from the printer portal)
+    </td>
+</tr>
+<tr>
+    <td>--format</td>
+    <td>
+    <b>sha256</b> <br>
+    (Present in the original JSON file we downloaded from the printer portal)
+    </td>
+</tr>
+<tr>
+    <td>--signature</td>
+    <td>
+    <b>2bab052bf894ea1a255886fde202f451476faba7b941439df629fdeb1ff0dc97</b> <br>
+    (Present in the original JSON file we downloaded from the printer portal)
+    </td>
+</tr>
+<tr>
+    <td>--out-data-format</td>
+    <td>
+    <b>hex</b> <br>
+    </td>
+</tr>
+</table>
+
+We fire up hash_extender with the above switch values : <br>
+```bash
+./hash_extender --file=firmware_hhc2021.zip --secret=16 
+--signature ="2bab052bf894ea1a255886fde202f451476faba7b941439df629fdeb1ff0dc97" 
+--append=$(cat firmware_ashish.zip | xxd -p -c 99999) --format sha256 --out-data-format=hex
+```
+
+This produced a new string and new signature. 
+
+<img src="images/hhc2021/image077.png" alt="drawing" width="1000px"/>
+
+The new string produced is in hex format (as we specified in the --out-data-format). <br>
+So, we need to use Cyberchef to convert the hex to base64.
+
+<img src="images/hhc2021/image078.png" alt="drawing" width="1000px"/>
+
+This output from CyberChef has our appended paylod to get the file name. <br>
+Now we update the original firmware_export.json with the new payload and the new signature we got above.
+<img src="images/hhc2021/image079.png" alt="drawing" width="1200px"/>
+
+Now we upload the new firmware-export.json back to the portal. <br>
+We browse the file https://printer.kringlecastle.com/incoming/ashish<br>
+File "ashish" is downloaded and we can see the xlsx file name in it. <br>
+
+<img src="images/hhc2021/image080.png" alt="drawing" width="1200px"/>
+
+We submit “Troll_Pay_Chart.xlsx” as the answer to this objective and it is accepted.
+
+<img src="images/hhc2021/image081.png" alt="drawing" width="400px"/>
+
+
 ## 8. Kerberoasting on an Open Fire
 ## 9. Splunk
 ## 10. Now Hiring 
