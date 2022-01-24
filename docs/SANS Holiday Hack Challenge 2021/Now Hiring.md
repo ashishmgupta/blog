@@ -30,11 +30,11 @@
     <td>
         <b>Hints from Noxious O. D’or </b> <br>
         <ol>
-        <li>Did you know it's possible to harvest cloud keys through SSRF and IMDS attacks?</li>
-        <li>Dr. Petabyte told us, "anytime you see URL as an input, test for SSRF."</li>
-        <li>With an SSRF attack, we can make the server request a URL. This can reveal valuable data!</li>
-        <li> The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html" target="_blank">AWS documentation for IMDS</a> is interesting reading.</li>
-
+            <li>Did you know it's possible to harvest cloud keys through SSRF and IMDS attacks?</li>
+            <li>Dr. Petabyte told us, "anytime you see URL as an input, test for SSRF."</li>
+            <li>With an SSRF attack, we can make the server request a URL. This can reveal valuable data!</li>
+            <li> The <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html" target="_blank">AWS documentation for IMDS</a> is interesting reading.</li>
+        </ol>
         <b>Website:</b><br>
         <a href="https://apply.jackfrosttower.com/" target=_blank>https://apply.jackfrosttower.com/</a>
     </td>
