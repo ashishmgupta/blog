@@ -15,6 +15,8 @@
 | <img src="images/hhc2021/difficulty_1.png" alt="drawing" width="100px"/>      | <img src="images/hhc2021/image009.png" alt="drawing" width="30px"/>Entry                          | <img src="images/hhc2021/image010.png" alt="drawing" width="50px"/>Tangle Coalbox|
 | ----------- | ------------------------------------ |----------------------------------------------|
 -->
+
+testing <br>
 Upon login on [https://2021.kringlecon.com](https://2021.kringlecon.com), we see Jingle Ringford guarding the entry asking below  <br>
 >First things first, here's your badge! It's that wrapped present in the middle of your avatar.<br>
 >Click on the badge on your avatar 🎁. <br>
