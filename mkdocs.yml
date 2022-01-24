@@ -6,7 +6,6 @@ extra_css:
 markdown_extensions:
   - tables
 nav:
-- Index: 'index.md'
 - Overview: 'SANS Holiday Hack Challenge 2021/index.md'
 - Kringlecon Orientation: 'SANS Holiday Hack Challenge 2021/KringleconOrientation.md'
 - Where in the world is Carmel Santaigo: 'SANS Holiday Hack Challenge 2021/Where in the world is Carmel Santaigo.md'
