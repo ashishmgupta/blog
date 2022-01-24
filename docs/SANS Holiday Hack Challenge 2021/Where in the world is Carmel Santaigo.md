@@ -1,6 +1,6 @@
 <table>
         <tr>
-        <td><img src="../../../../images/hhc2021/image011.png" alt="drawing" width="200px"/></td>
+        <td><img src="../../images/hhc2021/image011.png" alt="drawing" width="200px"/></td>
         <td>
             <b>Hints from Tangle Coalbox</b><br>
             Turns out some elves have gone on some misdirected journeys around the globe. <br>

@@ -1,5 +1,3 @@
-## 6. Shell Code Primer
-
 <table border=1px>
 <tr>
     <td colspan=3>
