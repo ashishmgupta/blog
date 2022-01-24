@@ -1,12 +1,3 @@
- {%- block htmltitle -%} 
-   {%- if page and page.meta and page.meta.title -%} 
-     <title>{{ page.meta.title }}</title> 
-   {%- elif page and page.title and not page.is_homepage -%} 
-     <title>{{ page.title }} - {{ config.site_name }}</title> 
-   {%- else -%} 
-     <title>{{ config.site_name }}</title> 
-   {%- endif -%} 
- {%- endblock -%} 
 <table border=1px>
 <tr>
     <td colspan=3>
