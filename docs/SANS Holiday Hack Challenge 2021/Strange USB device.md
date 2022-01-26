@@ -47,7 +47,7 @@ We see there is an inject.bin under /mnt/USBDEVICE <br>
 <img src="../../images/hhc2021/image058.png" alt="drawing" width="600px"/>
 
 We do the file listing and we see a python file named “mallard.py”. <br>
-If we look at the contents of the file, we see the python script takes an "inject.bin" file as an input
+If we look at the contents of the file, we see the python script takes an "inject.bin" file as an input<br>
 <img src="../../images/hhc2021/image059.png" alt="drawing" width="600px"/>
 <img src="../../images/hhc2021/image060.png" alt="drawing" width="800px"/>
 
@@ -56,7 +56,8 @@ We run the mallard.py with the inject.bin as input.
 python ./mallard.py --file /mnt/USBDEVICE/inject.bin
 ```
 The rubber ducky binary inject.bin is decoded.
-We see a few interesting things being done in the original file. Numbered in the screenshot below :
+We see a few interesting things being done in the original file. <br>
+Numbered in the screenshot below :
 
 <ol>
 <li>There is a hardcoded base 64 string which looks like reversed ("==" in the front)</li>
@@ -74,7 +75,7 @@ The base64 is reversed and decoded to reveal the user’s name.
 In the above an authorized_key file is getting created with the public cert for the user <b>ickymcgoop</b>.
  The answer is <b>ickymcgoop</b> <br>
 
-We submit that username as the answer. 
+We submit that username as the answer. <br>
 <img src="../../images/hhc2021/image063.png" alt="drawing" width="1000px"/>
 
 The answer gets accepted and we complete this objective.
