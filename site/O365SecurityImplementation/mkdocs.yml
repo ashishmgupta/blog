@@ -7,7 +7,7 @@ markdown_extensions:
   - tables
 nav:
 - Overview: '/site/index.md'
-- Setup AzureAD App For Splunk: '/site/SetupAzureADAppForSplunk/index.html'
+- Setup AzureAD App For Splunk: '/blog/site/O365SecurityImplementation/site/SetupAzureADAppForSplunk/index.html'
 - Crete Emergency User: '/site/CreateEmergencyUser/index.html'
 - Implement MFA: '/site/ImplementMFA/index.html'
 - Block OFAC Countries: '/site/BlockOFACCountries/index.html'
