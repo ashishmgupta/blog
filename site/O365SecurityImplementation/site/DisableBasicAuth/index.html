@@ -319,16 +319,16 @@ And the set the default authentication policy for the whole organization the new
 Set-OrganizationConfig -DefaultAuthenticationPolicy &quot;Disable all BasicAuth&quot;
 </code></pre>
 <p>Check the newly created authentication policy : <br>
-<img src="../../images/o365security/disable-basic-auth-1.png"></img></p>
+<img src="../../../images/o365security/disable-basic-auth-1.png"></img></p>
 <p>The default authentication policy is set to the newly created authentication policy. <br></p>
 <pre><code class="language-powershell">Get-OrganizationConfig | select DefaultAuthenticationPolicy
 </code></pre>
-<p><img src="../../images/o365security/disable-basic-auth-2.png"></img></p>
+<p><img src="../../../images/o365security/disable-basic-auth-2.png"></img></p>
 <p>We can also check the Microsoft Admin Center.<br>
 Go to <a href="https://admin.microsoft.com/">Microsoft 365 Admin Center</a> <br>
 Settings &gt; Org Settings &gt; Modern Authentication <br>
 All the settings except the "Turn on modern authentication for Outlook 2013 for Windows and later (recommended)" should be unchecked. <br>
-<img src="../../images/o365security/disable-basic-auth-3.png"></img></p>
+<img src="../../../images/o365security/disable-basic-auth-3.png"></img></p>
 
               
             </article>
