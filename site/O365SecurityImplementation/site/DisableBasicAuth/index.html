@@ -13,7 +13,7 @@
     
     
       
-        <title>Create Emergency User - Microsoft O365 Security Implementation</title>
+        <title>Disable basic authentication - Microsoft O365 Security Implementation</title>
       
     
     
@@ -88,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Create Emergency User
+              Disable basic authentication
             
           </span>
         </div>
@@ -202,19 +202,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../CreateEmergencyUser/" class="md-nav__link">
         Create Emergency User
       </a>
-      
     </li>
   
 
@@ -255,11 +247,19 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../DisableBasicAuth/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Disable basic authentication
       </a>
+      
     </li>
   
 
@@ -307,30 +307,19 @@
               
                 
 
-  <h1>Create Emergency User</h1>
+  <h1>Disable basic authentication</h1>
 
-<pre><code class="language-powershell">    # Create an emergency user
-    # Create an emergency user
-    $EmergencyUserUPNPrefix = &quot;EmUser4&quot;
-    $UserDisplayName = &quot;EmergencyUser&quot;
-    $Connection = Connect-AzureAD
-    $TenantDomain = $Connection.TenantDomain
-    $CurrentlyLoggedInUser = $connection.Account | select -ExpandProperty Id
-    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
-    $CurrentlyLoggedInUser = $connection.Account | select -ExpandProperty Id
-    $OnMicrosoftDomain = $CurrentlyLoggedInUser.substring($CurrentlyLoggedInUser.IndexOf('@'))
-    $UserPrincipalName = $EmergencyUserUPNPrefix+$OnMicrosoftDomain
-    Add-Type -AssemblyName System.Web
-    $UserPassword = [System.Web.Security.Membership]::GeneratePassword(32,2)
-    $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
-    $PasswordProfile.Password = $UserPassword
-    $UserPassword
-    $NewUser = New-AzureADUser -DisplayName $UserDisplayName -PasswordProfile $PasswordProfile -AccountEnabled $true -UserPrincipalName $UserPrincipalName -MailNickName &quot;EmUser&quot;
-
-    # Adding the new user to Global Admin role
-    $GlobalAdminRole = Get-AzureADDirectoryRole | Where-Object { $_.displayName -eq  &quot;Global Administrator&quot;} 
-    Add-AzureADDirectoryRoleMember -ObjectId $GlobalAdminRole.ObjectId -RefObjectId $NewUser.ObjectId 
+<p><b>
+Disable Basic Authentication
+</b>
+<br>
+We create an authentication policy which has by default basic auth disabled for all protocols. <br>
+And the set the default authentication policy for the whole organization the newly created authentication policy</p>
+<pre><code class="language-powershell">New-AuthenticationPolicy &quot;Disable all BasicAuth&quot;
+Set-OrganizationConfig -DefaultAuthenticationPolicy &quot;Disable all BasicAuth&quot;
 </code></pre>
+<p>Check the newly created authentication policy : <br>
+<img src="images/disable-basic-auth-1.png"></img></p>
 
               
             </article>
@@ -344,7 +333,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../SetupAzureADAppForSplunk/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup AzureAD App For Splunk" rel="prev">
+        <a href="../BlockOFACCountries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Block OFAC Countries" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -353,20 +342,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Setup AzureAD App For Splunk
+              Block OFAC Countries
             </div>
           </div>
         </a>
       
       
         
-        <a href="../ImplementMFA/" class="md-footer__link md-footer__link--next" aria-label="Next: Implement MFA" rel="next">
+        <a href="../RestrictExtarnelCollaboration/" class="md-footer__link md-footer__link--next" aria-label="Next: Restrict Extarnel Collaboration" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Implement MFA
+              Restrict Extarnel Collaboration
             </div>
           </div>
           <div class="md-footer__button md-icon">
