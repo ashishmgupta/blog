@@ -174,7 +174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/index.md" class="md-nav__link">
+      <a href="/site/index.md" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -189,7 +189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/SetupAzureADAppForSplunk.md" class="md-nav__link">
+      <a href="/site/SetupAzureADAppForSplunk/index.html" class="md-nav__link">
         Setup AzureAD App For Splunk
       </a>
     </li>
@@ -204,7 +204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/CreateEmergencyUser.md" class="md-nav__link">
+      <a href="/site/CreateEmergencyUser/index.html" class="md-nav__link">
         Crete Emergency User
       </a>
     </li>
@@ -219,7 +219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/ImplementMFA.md" class="md-nav__link">
+      <a href="/site/ImplementMFA/index.html" class="md-nav__link">
         Implement MFA
       </a>
     </li>
@@ -234,7 +234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/BlockOFACCountries.md" class="md-nav__link">
+      <a href="/site/BlockOFACCountries/index.html" class="md-nav__link">
         Block OFAC Countries
       </a>
     </li>
@@ -249,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/RestrictExtarnelCollaboration.md" class="md-nav__link">
+      <a href="/site/RestrictExtarnelCollaboration/index.html" class="md-nav__link">
         Restrict Extarnel Collaboration
       </a>
     </li>
@@ -264,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/EnableSelfServicePasswordReset.md" class="md-nav__link">
+      <a href="/site/EnableSelfServicePasswordReset/index.html" class="md-nav__link">
         Enable Self Service Password Reset
       </a>
     </li>
@@ -286,7 +286,71 @@
 
   <h1>SetupAzureADAppForSplunk</h1>
 
+<pre><code class="language-powershell"># Author - Ashish Gupta
+# This script creates a new Azure AD application and sets the Application and Delegated permissions for specific API (O365)
 
+$CurrentDateTime = Get-Date -UFormat &quot;%Y-%m-%d_%H-%m-%S&quot;
+$ApplicationDisplayName = &quot;Splunk Office 365 App_&quot; +$CurrentDateTime
+#  Get the service principal for O365 and Microsoft Graph
+$ServicePrincipalO365API        = Get-AzureADServicePrincipal -All $true | ? { $_.DisplayName -eq &quot;Office 365 Management APIs&quot; }
+$ServicePrincipalMicrosoftGraph = Get-AzureADServicePrincipal -All $true | ? { $_.DisplayName -eq &quot;Microsoft Graph&quot; }
+
+# Get all application permissions for Microsoft Graph
+$ServicePrincipalMicrosoftGraphAppRoles = $ServicePrincipalMicrosoftGraph.AppRoles | Where-Object {$_.Value -match &quot;\bDirectory.Read.All\b|\bAuditLog.Read.All\b|\bPolicy.Read.All\b|\bReports.Read.All\b&quot;}
+
+# Get all delegated permissions for Microsoft Graph
+$ServicePrincipalMicrosoftGraphDelegatedRoles = $ServicePrincipalMicrosoftGraph.Oauth2Permissions | Where-Object {$_.Value -match &quot;\bDirectory.Read.All\b|\bAuditLog.Read.All\b|\bPolicy.Read.All\b|\bReports.Read.All\b&quot;}
+
+
+# Get all application permissions for O365 API
+$ServicePrincipalO365APIAppRoles = $ServicePrincipalO365API.AppRoles | Where-Object {$_.Value -match &quot;\bActivityReports.Read\b|\bActivityFeed.ReadDlp\b|\bServiceHealth.Read\b&quot;}
+
+# Get all delegated permissions for O365 API
+$ServicePrincipalO365APIDelegatedRoles = $ServicePrincipalO365API.Oauth2Permissions | Where-Object {$_.Value -match &quot;\bActivityReports.Read\b|\bActivityFeed.ReadDlp\b|\bServiceHealth.Read\b&quot;}
+
+# Create a Required Resource Access object for Office 365
+$RequiredResourceAccessO365API = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.RequiredResourceAccess&quot;
+$RequiredResourceAccessO365API.ResourceAppId = $ServicePrincipalO365API.AppId
+
+$ServicePrincipalO365APIAppRolesSelectedPermissions = @()
+
+# Get all the Resource Access objects for the Application permissions
+foreach ($ServicePrincipalO365APIAppRole in $ServicePrincipalO365APIAppRoles)
+{
+    $Permission = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.ResourceAccess&quot; -ArgumentList $ServicePrincipalO365APIAppRole.Id,&quot;Role&quot;
+    $ServicePrincipalO365APIAppRolesSelectedPermissions += $Permission
+}
+# Get all the Resource Access objects for the Delegated permissions
+foreach ($ServicePrincipalO365APIDelegatedRole in $ServicePrincipalO365APIDelegatedRoles)
+{
+    $Permission = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.ResourceAccess&quot; -ArgumentList $ServicePrincipalO365APIDelegatedRole.Id,&quot;Scope&quot;
+    $ServicePrincipalO365APIAppRolesSelectedPermissions += $Permission
+
+}
+
+# Assign all the permissions to the required Resource access for the O365 API 
+$RequiredResourceAccessO365API.ResourceAccess  = $ServicePrincipalO365APIAppRolesSelectedPermissions
+
+# Create the Password credential for the new app
+Add-Type -AssemblyName System.Web
+$ApplicationPassword =[System.Web.Security.Membership]::GeneratePassword(32,2)
+$ApplicationPassword = $ApplicationPassword.Replace(&quot;+&quot;,&quot;_&quot;)
+$ApplicationPassword = $ApplicationPassword.Replace(&quot;-&quot;,&quot;_&quot;)
+$keyId = (New-Guid).ToString();
+$fromDate = [System.DateTime]::Now
+$durationInYears = 5
+$endDate = $fromDate.AddYears($durationInYears) 
+$Applicationkey = New-Object Microsoft.Open.AzureAD.Model.PasswordCredential($null, $endDate, $keyId, $fromDate, $ApplicationPassword)
+
+# Create the new app with the password cred
+$aadApplication = New-AzureADApplication -DisplayName $ApplicationDisplayName -PasswordCredentials $Applicationkey
+
+write-output(&quot;Application created&quot;)
+
+# Set the permissions
+Set-AzureADApplication -ObjectId $aadApplication.ObjectId -RequiredResourceAccess $RequiredResourceAccessO365API
+write-output(&quot;Application permissions set&quot;)
+</code></pre>
 
               
             </article>
