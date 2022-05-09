@@ -11,5 +11,6 @@ nav:
 - Create Emergency User: 'CreateEmergencyUser.md'
 - Implement MFA: 'ImplementMFA.md'
 - Block OFAC Countries: 'BlockOFACCountries.md'
+- Disable basic authentication: 'DisableBasicAuth.md'
 - Restrict Extarnel Collaboration: 'RestrictExtarnelCollaboration.md'
 - Enable Self Service Password Reset: 'EnableSelfServicePasswordReset.md'
