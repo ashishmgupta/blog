@@ -1,0 +1,15 @@
+site_name: Microsoft O365 Security Implementation
+theme:
+  name: material
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - tables
+nav:
+- Overview: 'docs/index.md'
+- Setup AzureAD App For Splunk: 'docs/SetupAzureADAppForSplunk.md'
+- Crete Emergency User: 'docs/CreateEmergencyUser.md'
+- Implement MFA: 'docs/ImplementMFA.md'
+- Block OFAC Countries: 'docs/BlockOFACCountries.md'
+- Restrict Extarnel Collaboration: 'docs/RestrictExtarnelCollaboration.md'
+- Enable Self Service Password Reset: 'docs/EnableSelfServicePasswordReset.md'
