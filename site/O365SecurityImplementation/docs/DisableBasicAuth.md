@@ -11,4 +11,4 @@ Set-OrganizationConfig -DefaultAuthenticationPolicy "Disable all BasicAuth"
 ```
 
 Check the newly created authentication policy : <br>
-<img src="../images/disable-basic-auth-1.png"></img>
+<img src="../docs/images/disable-basic-auth-1.png"></img>
