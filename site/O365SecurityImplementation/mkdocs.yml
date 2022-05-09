@@ -8,7 +8,7 @@ markdown_extensions:
 nav:
 - Overview: 'index.md'
 - Setup AzureAD App For Splunk: 'SetupAzureADAppForSplunk.md'
-- Crete Emergency User: 'CreateEmergencyUser.md'
+- Create Emergency User: 'CreateEmergencyUser.md'
 - Implement MFA: 'ImplementMFA.md'
 - Block OFAC Countries: 'BlockOFACCountries.md'
 - Restrict Extarnel Collaboration: 'RestrictExtarnelCollaboration.md'
