@@ -6,10 +6,10 @@ extra_css:
 markdown_extensions:
   - tables
 nav:
-- Overview: '/site/index.md'
-- Setup AzureAD App For Splunk: '/blog/site/O365SecurityImplementation/site/SetupAzureADAppForSplunk/index.html'
-- Crete Emergency User: '/site/CreateEmergencyUser/index.html'
-- Implement MFA: '/site/ImplementMFA/index.html'
-- Block OFAC Countries: '/site/BlockOFACCountries/index.html'
-- Restrict Extarnel Collaboration: '/site/RestrictExtarnelCollaboration/index.html'
-- Enable Self Service Password Reset: '/site/EnableSelfServicePasswordReset/index.html'
+- Overview: 'index.md'
+- Setup AzureAD App For Splunk: 'SetupAzureADAppForSplunk.md'
+- Crete Emergency User: 'CreateEmergencyUser.md'
+- Implement MFA: 'ImplementMFA.md'
+- Block OFAC Countries: 'BlockOFACCountries.md'
+- Restrict Extarnel Collaboration: 'RestrictExtarnelCollaboration.md'
+- Enable Self Service Password Reset: 'EnableSelfServicePasswordReset.md'
