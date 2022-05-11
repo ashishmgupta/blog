@@ -307,16 +307,45 @@
               
                 
 
-<h1>Conditional access policy to block access from OFAC countries to all apps for all users except the current logged in user</h1>
+<h1>Block OFAC Countries</h1>
+<p>We create a conditional access policy to block access from OFAC countries to all apps.</p>
+<p>ALL users would be blocked from OFAC countries except the currently logged in user.</p>
 
 <pre><code class="language-powershell">    # Connect to AzureAD and get current logged in user
-    $Connection = Connect-AzureAD
-    $CurrentlyLoggedInUser = $connection.Account | select -ExpandProperty Id
+    $TenantDetails = $NULL
+    $CurrentlyLoggedInUser = $NULL
+    $OnMicrosoftDomain = $NULL
+    $connection = $NULL
+    try { 
+        $AzureADSession = Get-AzureADCurrentSessionInfo
+        $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+        Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+        $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+    } 
+    catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
+    Write-Host &quot;You're not connected to AzureAD. Connect now...&quot;; 
+    Write-Host &quot;You're not connected to AzureAD&quot;; 
+    $connection = Connect-AzureAD
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
     $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+    }
 
-    # Create a named location policy
-    $NamedLocationPolicy = New-AzureADMSNamedLocationPolicy -OdataType &quot;#microsoft.graph.countryNamedLocation&quot; -DisplayName &quot;OFAC Countries&quot; -CountriesAndRegions &quot;BY&quot;,&quot;BI&quot;,&quot;BA&quot;,&quot;CD&quot;,&quot;CF&quot;,&quot;CI&quot;,&quot;CN&quot;,&quot;CU&quot;,&quot;IQ&quot;,&quot;IR&quot;,&quot;KP&quot;,&quot;LR&quot;,&quot;MD&quot;,&quot;ME&quot;,&quot;MK&quot;,&quot;NI&quot;,&quot;RU&quot;,&quot;RS&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;SY&quot;,&quot;UA&quot;,&quot;VE&quot;,&quot;YE&quot;,&quot;ZW&quot;,&quot;AU&quot; -IncludeUnknownCountriesAndRegions $false
 
+    $NamedLocationPolicyName = &quot;OFAC Countries&quot;
+
+    $NamedLocationPolicy = Get-AzureADMSNamedLocationPolicy | Where-Object {$_.DisplayName -eq $NamedLocationPolicy}
+    if ($NamedLocationPolicy -eq $null)
+    {
+        # Create a named location policy which includes all the OFAC Countries.
+        $NamedLocationPolicy = New-AzureADMSNamedLocationPolicy -OdataType &quot;#microsoft.graph.countryNamedLocation&quot; -DisplayName $NamedLocationPolicyName -CountriesAndRegions &quot;BY&quot;,&quot;BI&quot;,&quot;BA&quot;,&quot;CD&quot;,&quot;CF&quot;,&quot;CI&quot;,&quot;CN&quot;,&quot;CU&quot;,&quot;IQ&quot;,&quot;IR&quot;,&quot;KP&quot;,&quot;LR&quot;,&quot;MD&quot;,&quot;ME&quot;,&quot;MK&quot;,&quot;NI&quot;,&quot;RU&quot;,&quot;RS&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;SY&quot;,&quot;UA&quot;,&quot;VE&quot;,&quot;YE&quot;,&quot;ZW&quot;,&quot;AU&quot; -IncludeUnknownCountriesAndRegions $false
+        Write-Host &quot;Named location policy : &quot; + $NamedLocationPolicyName + &quot; has been created.&quot;
+        Write-Host &quot;Countries included : &quot; + $NamedLocationPolicyName.CountriesAndRegions
+    }else{
+        Write-Host &quot;Named location policy : &quot; + $NamedLocationPolicyName + &quot; already exists.&quot;
+        Write-Host &quot;Countries included : &quot; + $NamedLocationPolicyName.CountriesAndRegions
+    }
 
     # Create the conditional access policy to block access from all OFAC countries to all apps for all users except the currently logged in user
 
@@ -332,9 +361,6 @@
     $controls._Operator = &quot;OR&quot;
     $controls.BuiltInControls = &quot;block&quot;
     New-AzureADMSConditionalAccessPolicy -DisplayName &quot;Block OFAC countries&quot; -State &quot;Enabled&quot; -Conditions $conditions -GrantControls $controls
-
-
-
 </code></pre>
 
               
