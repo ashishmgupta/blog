@@ -1,3 +1,5 @@
+### The script
+
 ```powershell
 # Author - Ashish Gupta
 # This script creates a new Azure AD application and sets the Application and Delegated permissions for specific API (O365)
@@ -22,7 +24,7 @@ try {
 	}
 	
 $CurrentTimestamp = [DateTime]::Now.ToString("yyyyMMdd-HHmmss")
-$ApplicationDisplayName = "Splunk App for Office 365_3"
+$ApplicationDisplayName = "Splunk App for Office 365"
 
 $AzureADAppForSplunk = Get-AzureADApplication -Filter "DisplayName eq '$ApplicationDisplayName'"
 
