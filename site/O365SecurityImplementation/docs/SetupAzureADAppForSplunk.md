@@ -13,8 +13,7 @@ try {
 		$CurrentUserId = Get-AzureADUser -Filter "UserPrincipalName eq '$CurrentlyLoggedInUser'" | select -ExpandProperty ObjectId
 	} 
 	catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
-	Write-Host "You're not connected to AzureAD. Connect now..."; 
-	Write-Host "You're not connected to AzureAD"; 
+	Write-Host "You're not connected to AzureAD. Connecting now..."; 
 	$connection = Connect-AzureAD
 	$AzureADSession = Get-AzureADCurrentSessionInfo
 	$CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
@@ -22,9 +21,8 @@ try {
 	$CurrentUserId = Get-AzureADUser -Filter "UserPrincipalName eq '$CurrentlyLoggedInUser'" | select -ExpandProperty ObjectId
 	}
 	
-
-$CurrentDateTime = Get-Date -UFormat "%Y-%m-%d_%H-%m-%S"
-$ApplicationDisplayName = "aaa_" +$CurrentDateTime
+$CurrentTimestamp = [DateTime]::Now.ToString("yyyyMMdd-HHmmss")
+$ApplicationDisplayName = "bbb_" +$CurrentTimestamp
 #  Get the service principal for O365 and Microsoft Graph
 $ServicePrincipalO365API 		= Get-AzureADServicePrincipal -All $true | ? { $_.DisplayName -eq "Office 365 Management APIs" }
 $ServicePrincipalMicrosoftGraph = Get-AzureADServicePrincipal -All $true | ? { $_.DisplayName -eq "Microsoft Graph" }
@@ -48,39 +46,54 @@ $ServicePrincipalO365APIDelegatedRoles = $ServicePrincipalO365API.Oauth2Permissi
 $RequiredResourceAccessO365API = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
 $RequiredResourceAccessO365API.ResourceAppId = $ServicePrincipalO365API.AppId
 
+
+# Create a Required Resource Access object for Microsoft Graph
+$RequiredResourceAccessMicrosoftGraph = New-Object -TypeName "Microsoft.Open.AzureAD.Model.RequiredResourceAccess"
+$RequiredResourceAccessMicrosoftGraph.ResourceAppId = $ServicePrincipalMicrosoftGraph.AppId
+
+
+
 $ServicePrincipalO365APIAppRolesSelectedPermissions = @()
+$ServicePrincipalSelectedPermissionsMicrosoftGraph = @()
 
 
-# Get all the Resource Access objects for the Application permissions
-
+# Get all the Resource Access objects for the Application permissions for Office 365 API
+Write-output "Get all the Resource Access objects for the Application permissions for Office 365 API"
 foreach ($ServicePrincipalO365APIAppRole in $ServicePrincipalO365APIAppRoles)
 {
 	$Permission = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $ServicePrincipalO365APIAppRole.Id,"Role"
 	$ServicePrincipalO365APIAppRolesSelectedPermissions += $Permission
 }
 
-<#
-$ActivityReportsReadAppPermission = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList 
-"594c1fb6-4f81-4475-ae41-0c394909246c","Role"
-$ServicePrincipalO365APIAppRolesSelectedPermissions += $ActivityReportsReadAppPermission
-$ActivityFeedReadDlpAppPermission = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList "4807a72c-ad38-4250-94c9-4eabfe26cd55","Role"
-$ServicePrincipalO365APIAppRolesSelectedPermissions += $ActivityFeedReadDlpAppPermission
-$ServiceHealthReadAppPermission = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList "e2cea78f-e743-4d8f-a16a-75b629a038ae","Role"
-$ServicePrincipalO365APIAppRolesSelectedPermissions += $ServiceHealthReadAppPermission
-#>
-# Get all the Resource Access objects for the Delegated permissions
-foreach ($ServicePrincipalO365APIDelegatedRole in $ServicePrincipalO365APIDelegatedRoles)
+# Get all the Resource Access objects for the Delegated permissions for Office 365 API
+Write-output "Get all the Resource Access objects for the Delegated permissions for Office 365 API"
+foreach ($ServicePrincipalO365APIDelegatedRole in $ServicePrincipalO365APIDelegatedRoles) 
 {
 	$Permission = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $ServicePrincipalO365APIDelegatedRole.Id,"Scope"
 	$ServicePrincipalO365APIAppRolesSelectedPermissions += $Permission
 
 }
 
+# Get all the Resource Access objects for the Application permissions for Microsoft Graph API
+Write-Output "Get all the Resource Access objects for the Application permissions for Microsoft Graph API"
+foreach ($ServicePrincipalMicrosoftGraphAppRole in $ServicePrincipalMicrosoftGraphAppRoles)
+{
+	$Permission = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $ServicePrincipalMicrosoftGraphAppRole.Id,"Role"
+	$ServicePrincipalSelectedPermissionsMicrosoftGraph += $Permission
+}
 
-#$ServicePrincipalO365APIAppRolesSelectedPermissions = 'e2cea78f-e743-4d8f-a16a-75b629a038ae','594c1fb6-4f81-4475-ae41-0c394909246c','4807a72c-ad38-4250-94c9-4eabfe26cd55','17f1c501-83cd-414c-9064-cd10f7aef836','b3b78c39-cb1d-4d17-820a-25d9196a800e','69784729-33e3-471d-b130-744ce05343e5','825c9d21-ba03-4e97-8007-83f020ff8c0f'
+# Get all the Resource Access objects for the Delegated permissions for Microsoft Graph API
+Write-Output "Get all the Resource Access objects for the Delegated permissions for Microsoft Graph API"
+foreach ($ServicePrincipalMicrosoftGraphDelegatedRole in $ServicePrincipalMicrosoftGraphDelegatedRoles) 
+{
+	$Permission = New-Object -TypeName "Microsoft.Open.AzureAD.Model.ResourceAccess" -ArgumentList $ServicePrincipalMicrosoftGraphDelegatedRole.Id,"Scope"
+	$ServicePrincipalSelectedPermissionsMicrosoftGraph += $Permission
+}
 
 # Assign all the permissions to the required Resource access for the O365 API 
 $RequiredResourceAccessO365API.ResourceAccess  = $ServicePrincipalO365APIAppRolesSelectedPermissions
+# Assign all the permissions to the required Resource access for the Microsoft Graph 
+$RequiredResourceAccessMicrosoftGraph.ResourceAccess = $ServicePrincipalSelectedPermissionsMicrosoftGraph
 
 # Create the Password credential for the new app
 Add-Type -AssemblyName System.Web
@@ -99,6 +112,17 @@ $aadApplication = New-AzureADApplication -DisplayName $ApplicationDisplayName -P
 write-output("Application created")
 
 # Set the permissions
-Set-AzureADApplication -ObjectId $aadApplication.ObjectId -RequiredResourceAccess $RequiredResourceAccessO365API
+Set-AzureADApplication -ObjectId $aadApplication.ObjectId -RequiredResourceAccess $RequiredResourceAccessO365API,$RequiredResourceAccessMicrosoftGraph
 write-output("Application permissions set")
+
+# Saving the details for the app
+$temp_location = (get-location).Drive.Root+"office365_temp\"
+$temp_file = $temp_location + $CurrentTimestamp+".txt"
+New-Item $temp_location -ItemType Directory -Force | Out-Null
+New-Item $temp_file -ItemType File -Force | Out-Null
+Add-Content $temp_file ("TenantId: " + $TenantId)
+Add-Content $temp_file ("App ClientId: " + $aadApplication.AppId)
+Add-Content $temp_file ("App Password: " + $ApplicationPassword)
+.\notepad.exe $temp_file
+write-output("Application details written to the file")
 ```
