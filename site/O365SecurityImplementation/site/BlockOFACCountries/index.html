@@ -317,18 +317,18 @@ ALL users would be blocked from OFAC countries except the currently logged in us
 <br>
 <br>
 The PowerShell script to create the named location and conditional access policy for the block: </p>
-<pre><code class="language-powershell">    # Connect to AzureAD and get current logged in user
-    $TenantDetails = $NULL
-    $CurrentlyLoggedInUser = $NULL
-    $OnMicrosoftDomain = $NULL
-    $connection = $NULL
-    try { 
-        $AzureADSession = Get-AzureADCurrentSessionInfo
-        $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
-        Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
-        $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
-    } 
-    catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
+<pre><code class="language-powershell"># Connect to AzureAD and get current logged in user
+$TenantDetails = $NULL
+$CurrentlyLoggedInUser = $NULL
+$OnMicrosoftDomain = $NULL
+$connection = $NULL
+try { 
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+} 
+catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
     Write-Host &quot;You're not connected to AzureAD. Connect now...&quot;; 
     Write-Host &quot;You're not connected to AzureAD&quot;; 
     $connection = Connect-AzureAD
@@ -336,37 +336,37 @@ The PowerShell script to create the named location and conditional access policy
     $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
     Write-Host &quot;Connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
     $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
-    }
+}
 
 
-    $NamedLocationPolicyName = &quot;OFAC Countries&quot;
+$NamedLocationPolicyName = &quot;OFAC Countries&quot;
 
-    $NamedLocationPolicy = Get-AzureADMSNamedLocationPolicy | Where-Object {$_.DisplayName -eq $NamedLocationPolicy}
-    if ($NamedLocationPolicy -eq $null)
-    {
-        # Create a named location policy which includes all the OFAC Countries.
-        $NamedLocationPolicy = New-AzureADMSNamedLocationPolicy -OdataType &quot;#microsoft.graph.countryNamedLocation&quot; -DisplayName $NamedLocationPolicyName -CountriesAndRegions &quot;BY&quot;,&quot;BI&quot;,&quot;BA&quot;,&quot;CD&quot;,&quot;CF&quot;,&quot;CI&quot;,&quot;CN&quot;,&quot;CU&quot;,&quot;IQ&quot;,&quot;IR&quot;,&quot;KP&quot;,&quot;LR&quot;,&quot;MD&quot;,&quot;ME&quot;,&quot;MK&quot;,&quot;NI&quot;,&quot;RU&quot;,&quot;RS&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;SY&quot;,&quot;UA&quot;,&quot;VE&quot;,&quot;YE&quot;,&quot;ZW&quot;,&quot;AU&quot; -IncludeUnknownCountriesAndRegions $false
-        Write-Host &quot;Named location policy : &quot; + $NamedLocationPolicyName + &quot; has been created.&quot;
-        Write-Host &quot;Countries included : &quot; + $NamedLocationPolicyName.CountriesAndRegions
-    }else{
-        Write-Host &quot;Named location policy : &quot; + $NamedLocationPolicyName + &quot; already exists.&quot;
-        Write-Host &quot;Countries included : &quot; + $NamedLocationPolicyName.CountriesAndRegions
-    }
+$NamedLocationPolicy = Get-AzureADMSNamedLocationPolicy | Where-Object {$_.DisplayName -eq $NamedLocationPolicy}
+if ($NamedLocationPolicy -eq $null)
+{
+    # Create a named location policy which includes all the OFAC Countries.
+    $NamedLocationPolicy = New-AzureADMSNamedLocationPolicy -OdataType &quot;#microsoft.graph.countryNamedLocation&quot; -DisplayName $NamedLocationPolicyName -CountriesAndRegions &quot;BY&quot;,&quot;BI&quot;,&quot;BA&quot;,&quot;CD&quot;,&quot;CF&quot;,&quot;CI&quot;,&quot;CN&quot;,&quot;CU&quot;,&quot;IQ&quot;,&quot;IR&quot;,&quot;KP&quot;,&quot;LR&quot;,&quot;MD&quot;,&quot;ME&quot;,&quot;MK&quot;,&quot;NI&quot;,&quot;RU&quot;,&quot;RS&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;SY&quot;,&quot;UA&quot;,&quot;VE&quot;,&quot;YE&quot;,&quot;ZW&quot;,&quot;AU&quot; -IncludeUnknownCountriesAndRegions $false
+    Write-Host &quot;Named location policy : &quot; + $NamedLocationPolicyName + &quot; has been created.&quot;
+    Write-Host &quot;Countries included : &quot; + $NamedLocationPolicyName.CountriesAndRegions
+}else{
+    Write-Host &quot;Named location policy : &quot; + $NamedLocationPolicyName + &quot; already exists.&quot;
+    Write-Host &quot;Countries included : &quot; + $NamedLocationPolicyName.CountriesAndRegions
+}
 
-    # Create the conditional access policy to block access from all OFAC countries to all apps for all users except the currently logged in user
+# Create the conditional access policy to block access from all OFAC countries to all apps for all users except the currently logged in user
 
-    $conditions = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessConditionSet
-    $conditions.Applications = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessApplicationCondition
-    $conditions.Applications.IncludeApplications = &quot;all&quot;
-    $conditions.Users = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessUserCondition
-    $conditions.Users.IncludeUsers = &quot;all&quot;
-    $conditions.Users.ExcludeUsers = $CurrentUserId
-    $conditions.Locations = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessLocationCondition
-    $conditions.Locations.IncludeLocations = $NamedLocationPolicy.Id
-    $controls = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessGrantControls
-    $controls._Operator = &quot;OR&quot;
-    $controls.BuiltInControls = &quot;block&quot;
-    New-AzureADMSConditionalAccessPolicy -DisplayName &quot;Block OFAC countries&quot; -State &quot;Enabled&quot; -Conditions $conditions -GrantControls $controls
+$conditions = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessConditionSet
+$conditions.Applications = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessApplicationCondition
+$conditions.Applications.IncludeApplications = &quot;all&quot;
+$conditions.Users = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessUserCondition
+$conditions.Users.IncludeUsers = &quot;all&quot;
+$conditions.Users.ExcludeUsers = $CurrentUserId
+$conditions.Locations = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessLocationCondition
+$conditions.Locations.IncludeLocations = $NamedLocationPolicy.Id
+$controls = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessGrantControls
+$controls._Operator = &quot;OR&quot;
+$controls.BuiltInControls = &quot;block&quot;
+New-AzureADMSConditionalAccessPolicy -DisplayName &quot;Block OFAC countries&quot; -State &quot;Enabled&quot; -Conditions $conditions -GrantControls $controls
 </code></pre>
 <p><br>
 <br>
