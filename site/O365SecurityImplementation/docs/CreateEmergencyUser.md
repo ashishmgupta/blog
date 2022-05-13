@@ -1,11 +1,11 @@
-We protect our users by enforcing MFA. <br>
+We protect our users by enforcing Azure MFA. <br>
 However, Azure MFA has gone down before and we dont want administrators to be locked out of tennat to troubleshoot if this happens again. <br>
-So, this account wont have the MFA enforced on it. <br>
-Any attempt of usage this emergency login should generate a high alert for Security Opertion Center to validate the legit use. <br>
+So, this account will be assigned a Global Admin role and wont have the MFA enforced on it. <br>
+Given high privileges on this account, any attempt of usage this emergency login should generate a high alert for Security Opertion Center to validate the legit use. <br>
 
 <img src="../../../images/o365security/emergency_user_0.png"></img>
 <br>
-The PowerShell script : <br>
+The PowerShell script to create the user and : <br>
 
 ```powershell
 $TenantDetails = $NULL
@@ -50,7 +50,7 @@ try{
 	$NewUser = New-AzureADUser -DisplayName $UserDisplayName -PasswordProfile $PasswordProfile -AccountEnabled $true -UserPrincipalName $UserPrincipalName -MailNickName "EmUser"
 
 	# Adding the new user to Global Admin role
-	Write-output "Adding the new user to Global Admin role"
+	Write-output "Adding the new user to Global Admin r+ole"
 	$GlobalAdminRole = Get-AzureADDirectoryRole | Where-Object { $_.displayName -eq  "Global Administrator"} 
 	Add-AzureADDirectoryRoleMember -ObjectId $GlobalAdminRole.ObjectId -RefObjectId $NewUser.ObjectId 
 
