@@ -1,7 +1,10 @@
-<h1>Block OFAC Countries</h1>
-<p>We create a conditional access policy to block access from OFAC countries to all apps.</p>
-<p>ALL users would be blocked from OFAC countries except the currently logged in user.</p>
+We create named location which has the list of countries we need to block all requests from. <br>
+Then we create a conditional access policy to use that list to implement the block.<br>
+ALL users would be blocked from OFAC countries except the currently logged in user.<br>
 
+A user website to look for ISO codes (among others) for countries is <a href="https://countrycode.org/usa"> https://countrycode.org</a>
+<br>
+The PowerShell script: 
 
 ```powershell
 	# Connect to AzureAD and get current logged in user
@@ -55,3 +58,11 @@
 	$controls.BuiltInControls = "block"
 	New-AzureADMSConditionalAccessPolicy -DisplayName "Block OFAC countries" -State "Enabled" -Conditions $conditions -GrantControls $controls
 ```
+<br>
+The conditional access policy is created. <br>
+<img src="../../../images/o365security/block-ofac-01.png"></img>
+<br>
+
+The conditional access policy showing block condition for the location noted in the named location "OFAC Countries".
+<img src="../../../images/o365security/block-ofac-02.png"></img>
+<br>

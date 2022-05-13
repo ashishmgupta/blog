@@ -72,12 +72,15 @@ try{
 	New-AzureADMSConditionalAccessPolicy -DisplayName "Enforce MFA on all users" -State "Enabled" -Conditions $conditions -GrantControls $controls
 	Write-Output "Conditional Access policy created"
 ```
+<br>
 Conditional Access policy is created.<br>
 <img src="../../../images/o365security/implement-mfa-01.png"></img><br>
 
+<br>
 MFA is enforced for all apps.<br>
 <img src="../../../images/o365security/implement-mfa-03.png"></img><br>
 
+<br>
 MFA is enforced for all users except the emergency global admin user.<br>
 <img src="../../../images/o365security/implement-mfa-02.png"></img><br>
 
