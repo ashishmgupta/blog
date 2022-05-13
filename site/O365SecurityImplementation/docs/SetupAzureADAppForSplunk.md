@@ -180,7 +180,7 @@ Log in to the Azure portal as Global Administrator.<br>
 Navigate to Azure Active Directory > App Registrations > Click on "All Applications" > Go to "Splunk app for Office 365".<br>
 In the app, click on "API Permissions". <br>
 Notice all the permissions have already been assigned via the script.<br>
-Click on "Grant admin consent for <tenant>" <br>
+Click on "Grant admin consent for tenant" <br>
 <img src="../../../images/o365security/splunk-app-for-o365_4.png"></img>
 After the admin consent grant, It should look like below :<br>
 <img src="../../../images/o365security/splunk-app-for-o365_5.png"></img>

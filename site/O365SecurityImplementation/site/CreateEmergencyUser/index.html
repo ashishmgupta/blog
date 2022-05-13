@@ -309,17 +309,47 @@
 
   <h1>Create Emergency User</h1>
 
-<pre><code class="language-powershell">    # Create an emergency user
-    # Create an emergency user
-    $EmergencyUserUPNPrefix = &quot;EmUser4&quot;
-    $UserDisplayName = &quot;EmergencyUser&quot;
-    $Connection = Connect-AzureAD
-    $TenantDomain = $Connection.TenantDomain
-    $CurrentlyLoggedInUser = $connection.Account | select -ExpandProperty Id
-    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
-    $CurrentlyLoggedInUser = $connection.Account | select -ExpandProperty Id
-    $OnMicrosoftDomain = $CurrentlyLoggedInUser.substring($CurrentlyLoggedInUser.IndexOf('@'))
-    $UserPrincipalName = $EmergencyUserUPNPrefix+$OnMicrosoftDomain
+<p>We protect our users by enforcing MFA. <br>
+However, Azure MFA has gone down before and we dont want administrators to be locked out of tennat to troubleshoot if this happens again. <br>
+So, this account wont have the MFA enforced on it. <br>
+Any attempt of usage this emergency login should generate a high alert for Security Opertion Center to validate the legit use. <br></p>
+<p><img src="../../../images/o365security/emergency_user_0.png"></img>
+<br>
+The PowerShell script : <br></p>
+<pre><code class="language-powershell">$TenantDetails = $NULL
+$CurrentlyLoggedInUser = $NULL
+$OnMicrosoftDomain = $NULL
+$connection = $NULL
+try { 
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+
+} 
+catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
+    Write-Host &quot;You're not connected to AzureAD. Connecting now...&quot;; 
+    $connection = Connect-AzureAD
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+}
+$CurrentlyLoggedInUser
+$CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+$EmergencyUserUPNPrefix = &quot;EmUser&quot;
+$UserDisplayName = &quot;EmergencyUser&quot;
+$TenantDomain = $Connection.TenantDomain
+$OnMicrosoftDomain = $CurrentlyLoggedInUser.substring($CurrentlyLoggedInUser.IndexOf('@'))
+$OnMicrosoftDomain
+$UserPrincipalName = $EmergencyUserUPNPrefix+$OnMicrosoftDomain
+
+
+$EmUser = $NULL
+
+try{
+    $EmUser = Get-AzureADUser -ObjectId $UserPrincipalName -ErrorAction silentlycontinue
+    write-output(&quot;Emergency user &quot; + $UserPrincipalName + ' already exists.')
+}catch{
+    write-output(&quot;Emergency user &quot; + $UserPrincipalName + ' does not exist. Creating now..')
     Add-Type -AssemblyName System.Web
     $UserPassword = [System.Web.Security.Membership]::GeneratePassword(32,2)
     $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
@@ -328,9 +358,29 @@
     $NewUser = New-AzureADUser -DisplayName $UserDisplayName -PasswordProfile $PasswordProfile -AccountEnabled $true -UserPrincipalName $UserPrincipalName -MailNickName &quot;EmUser&quot;
 
     # Adding the new user to Global Admin role
+    Write-output &quot;Adding the new user to Global Admin role&quot;
     $GlobalAdminRole = Get-AzureADDirectoryRole | Where-Object { $_.displayName -eq  &quot;Global Administrator&quot;} 
     Add-AzureADDirectoryRoleMember -ObjectId $GlobalAdminRole.ObjectId -RefObjectId $NewUser.ObjectId 
+
+    # Saving the details for the app
+    $temp_location = (get-location).Drive.Root+&quot;office365_temp\&quot;
+    $temp_file = $temp_location + $CurrentTimestamp+&quot;.txt&quot;
+    New-Item $temp_location -ItemType Directory -Force | Out-Null
+    New-Item $temp_file -ItemType File -Force | Out-Null
+    Add-Content $temp_file (&quot;Tenant Domain: &quot; + $AzureADSession.TenantDomain)
+    Add-Content $temp_file (&quot;Tenant Id: &quot; + $AzureADSession.TenantId)
+    Add-Content $temp_file (&quot;Username: &quot; + $UserPrincipalName)
+    Add-Content $temp_file (&quot;Password: &quot; + $UserPassword)
+    .\notepad.exe $temp_file
+    write-output(&quot;User details written to the file\r\n&quot;)
+}
 </code></pre>
+<p>The emergency user is created.
+<img src="../../../images/o365security/emergency_user_1.png"></img>
+<br></p>
+<p>The emergency user is assigned the Global Administrator role on permanent basis.
+<img src="../../../images/o365security/emergency_user_2.png"></img>
+<br></p>
 
               
             </article>
