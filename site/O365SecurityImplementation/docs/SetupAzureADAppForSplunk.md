@@ -146,14 +146,15 @@ if($AzureADAppForSplunk -eq $NULL) {
 }
 ```
 <br>
-The powershell script got executed : <br>
-<img src="../../../images/o365security/splunk-app-for-o365_1.png"></img>
+The powershell script got executed and we can see the newly created app in the Azure portal: <br>
+<img src="../../../images/o365security/splunk-app-for-o365_1.png"></img><br>
+<img src="../../../images/o365security/splunk-app-for-o365_2.png"></img>
 <br>
 
 ### Step 2 - Provide app details to Splunk Admin
 The details for the newly created app is opened in the  Notepad.<br>
 This should be sent to the Splunk Administrator so they could set up the Splunk Add-on for O365 for this tenant.
-<img src="../../../images/o365security/splunk-app-for-o365_2.png"></img>
+<img src="../../../images/o365security/splunk-app-for-o365_3.png"></img>
 <br>
 
 
