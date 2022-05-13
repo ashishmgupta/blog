@@ -3,7 +3,20 @@ Below script would create the app so It does not need to be created manually.<br
 The admin consent needs to be granted via the Azure portal (instructions below).<br>
 The  details for the newly created app needs to be provided to the Splunk Administrator so they could set up the Azure tenant for the log ingestion. <br>
 
+### Step 0 - Install Azure AD Powershell
+Please execute the below in PowerShell to install the Azure AD module for Powershell
+```
+Install-Module AzureAD
+```
+Please ensure you are executing the above in Powershell v5.1 and not 7.x.
+Execute the below to ensure :
+```
+$PSVersionTable
+```
+<img src="../../../images/o365security/splunk-app-for-o365_0.png"></img><br>
+
 ### Step 1 - PowerShell script to Create the app 
+Please ensure you are in the Global Administrator role in the tenant. The script may prompt you to login.
 
 ```powershell
 # Author - Ashish Gupta
