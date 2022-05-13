@@ -130,7 +130,7 @@ if($AzureADAppForSplunk -eq $NULL) {
 	New-Item $temp_file -ItemType File -Force | Out-Null
 	Add-Content $temp_file ("Azure AD App display name: " + $aadApplication.DisplayName)
 	Add-Content $temp_file ("Tenant Domain: " + $AzureADSession.TenantDomain)
-	Add-Content $temp_file ("Tenant Id: " + $TenantId)
+	Add-Content $temp_file ("Tenant Id: " + $AzureADSession.TenantId)
 	Add-Content $temp_file ("App ClientId: " + $aadApplication.AppId)
 	Add-Content $temp_file ("App Password: " + $ApplicationPassword)
 	.\notepad.exe $temp_file
@@ -141,6 +141,18 @@ if($AzureADAppForSplunk -eq $NULL) {
 }
 ```
 ####
-
+The powershell script got executed : <br>
 <img src="../../../images/o365security/splunk-app-for-o365_1.png"></img>
+
+The details for the app is opened in the  Notepad.<br>
+This should be sent to the Splunk Administrator so they could set up the Splunk Add-on for O365 for this tenant.
+<img src="../../../images/o365security/splunk-app-for-o365_2.png"></img>
+
+
 ### Step 2 - Grant Admin Consent in Azure Portal
+Log in to the Azure portal as Global Administrator.<br>
+Navigate to Azure Active Directory > App Registrations > Click on "All Applications" > Go to "Splunk app for Office 365".<br>
+In the app, click on "API Permissions". <br>
+Notice all the permissions have already been assigned via the script.<br>
+Click on "Grant admin consent for <tenant>" <br>
+<img src="../../../images/o365security/splunk-app-for-o365_4.png"></img>
