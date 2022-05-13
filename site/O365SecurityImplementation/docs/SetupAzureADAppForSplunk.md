@@ -17,6 +17,10 @@ $PSVersionTable
 
 ### Step 1 - PowerShell script to Create the app 
 Please ensure you are in the Global Administrator role in the tenant. The script may prompt you to login.
+Open Powershell as administrator.
+Copy the script by clicking on the copy icon in script below.
+Paste the script on the Powershell window and hit enter.
+<img src="../../../images/o365security/splunk-app-for-o365_0_1.png"></img><br>
 
 ```powershell
 # Author - Ashish Gupta
