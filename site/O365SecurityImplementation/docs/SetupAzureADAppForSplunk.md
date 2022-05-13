@@ -145,16 +145,19 @@ if($AzureADAppForSplunk -eq $NULL) {
 	write-output("AzureAD application '" + $AzureADAppForSplunk.DisplayName + "' already exists.")
 }
 ```
-####
+<br>
 The powershell script got executed : <br>
 <img src="../../../images/o365security/splunk-app-for-o365_1.png"></img>
+<br>
 
-The details for the app is opened in the  Notepad.<br>
+### Step 2 - Provide app details to Splunk Admin
+The details for the newly created app is opened in the  Notepad.<br>
 This should be sent to the Splunk Administrator so they could set up the Splunk Add-on for O365 for this tenant.
 <img src="../../../images/o365security/splunk-app-for-o365_2.png"></img>
+<br>
 
 
-### Step 2 - Grant Admin Consent in Azure Portal
+### Step 3 - Grant Admin Consent in Azure Portal
 Log in to the Azure portal as Global Administrator.<br>
 Navigate to Azure Active Directory > App Registrations > Click on "All Applications" > Go to "Splunk app for Office 365".<br>
 In the app, click on "API Permissions". <br>
