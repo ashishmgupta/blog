@@ -156,3 +156,5 @@ In the app, click on "API Permissions". <br>
 Notice all the permissions have already been assigned via the script.<br>
 Click on "Grant admin consent for <tenant>" <br>
 <img src="../../../images/o365security/splunk-app-for-o365_4.png"></img>
+After the admin consent grant, It should look like below :<br>
+<img src="../../../images/o365security/splunk-app-for-o365_5.png"></img>
