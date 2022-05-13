@@ -1,4 +1,4 @@
-### The script
+### Step 1 - PowerShell script to Create the app 
 
 ```powershell
 # Author - Ashish Gupta
@@ -140,3 +140,7 @@ if($AzureADAppForSplunk -eq $NULL) {
 	write-output("AzureAD application '" + $AzureADAppForSplunk.DisplayName + "' already exists.")
 }
 ```
+####
+
+<img src="../../../images/o365security/splunk-app-for-o365_1.png"></img>
+### Step 2 - Grant Admin Consent in Azure Portal
