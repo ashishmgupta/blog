@@ -3,7 +3,7 @@ As a first step, we create a "named location" which has the list of countries we
 Then we create a conditional access policy to use that country list to implement the block.<br>
 ALL users would be blocked from OFAC countries except the currently logged in user.<br>
 
-A user website to look for ISO codes (among others) for countries is <a href="https://countrycode.org/usa" target="_blank"> https://countrycode.org</a>.
+A useful website to look for ISO codes (among others) for countries is <a href="https://countrycode.org/usa" target="_blank"> https://countrycode.org</a>.
 <br>
 <br>
 The PowerShell script to create the named location and conditional access policy for the block: 

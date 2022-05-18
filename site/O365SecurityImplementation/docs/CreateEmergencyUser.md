@@ -1,11 +1,12 @@
 We protect our users by enforcing Azure MFA. <br>
 However, Azure MFA has gone down before and we dont want administrators to be locked out of tennat to troubleshoot if this happens again. <br>
-So, this account will be assigned a Global Admin role and wont have the MFA enforced on it. <br>
-Given high privileges on this account, any attempt of usage this emergency login should generate a high alert for Security Opertion Center to validate the legit use. <br>
-
 <img src="../../../images/o365security/emergency_user_0.png"></img>
 <br>
-The PowerShell script to create the user and : <br>
+Therefore, we create a cloud-only "emergency" account. This account will be assigned a Global Admin role and wont have the MFA enforced on it. This account should be used ONLY when Azure MFA service is down.<br>
+Given high privileges on this account, any attempt of usage this emergency login should generate a high alert for Security Opertion Center to validate the legit use. <br>
+
+
+The PowerShell script  : <br>
 
 ```powershell
 $TenantDetails = $NULL
