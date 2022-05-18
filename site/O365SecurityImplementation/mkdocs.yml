@@ -13,5 +13,6 @@ nav:
 - Block OFAC Countries: 'BlockOFACCountries.md'
 - Disable basic authentication: 'DisableBasicAuth.md'
 - Restrict External Collaboration: 'RestrictExtarnelCollaboration.md'
+- Restrict User Settings: 'RestrictUserSettings.md'
 - Enable Self Service Password Reset: 'EnableSelfServicePasswordReset.md'
 - Disable SMTP Auth: 'DisableSMTPAuth.md'
