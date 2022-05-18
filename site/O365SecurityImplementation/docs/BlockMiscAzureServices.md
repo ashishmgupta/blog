@@ -1,6 +1,9 @@
 
-We would want to restrict access to various Azure services to non-admin users becuase they dont need that access.
-One of those applications is "Microsoft Azure management" which includes below services :
+We would want to restrict access to various Azure services to non-admin users becuase they dont need that access. <br>
+Some of those services fall under the umbrella of an in built Azure App named "Microsoft Azure management".<br>
+So, if we block access to this app for non-admin users, the services under them will be unavailable to the non-admin users.<br>
+<br>
+Below are the services under "Microsoft Azure management". <br>
 
 <ul>
     <li>Azure portal</li>
@@ -19,7 +22,7 @@ One of those applications is "Microsoft Azure management" which includes below s
 </ul>
 Source : <a href="https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps">https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps</a> <br>
 
-Below is the conditional access policy which would restrict access to above services to all users except admins.
+Below is the PowerShell script to create the conditional access policy which would restrict access to above services to all users except admins.
 
 ```PowerShell
 # Connect to AzureAD and get current logged in user
