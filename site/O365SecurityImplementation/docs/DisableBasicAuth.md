@@ -1,5 +1,3 @@
-<br>
-
 ###<h2>What is Basic Authentication?</h2>
 User supplied user name and password are joined separated by a colon and base64 encoded. <br>
 The base64 encoded value is sent as an HTTP header named "Authorization".<br>

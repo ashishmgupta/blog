@@ -14,3 +14,4 @@ nav:
 - Disable basic authentication: 'DisableBasicAuth.md'
 - Restrict Extarnel Collaboration: 'RestrictExtarnelCollaboration.md'
 - Enable Self Service Password Reset: 'EnableSelfServicePasswordReset.md'
+- Disable SMTP Auth: 'DisableSMTPAuth.md'

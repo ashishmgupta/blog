@@ -294,6 +294,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DisableSMTPAuth/" class="md-nav__link">
+        Disable SMTP Auth
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -313,7 +328,7 @@
 As a first step, we create a "named location" which has the list of countries we need to block all requests from. <br>
 Then we create a conditional access policy to use that country list to implement the block.<br>
 ALL users would be blocked from OFAC countries except the currently logged in user.<br></p>
-<p>A user website to look for ISO codes (among others) for countries is <a href="https://countrycode.org/usa" target="_blank"> https://countrycode.org</a>.
+<p>A useful website to look for ISO codes (among others) for countries is <a href="https://countrycode.org/usa" target="_blank"> https://countrycode.org</a>.
 <br>
 <br>
 The PowerShell script to create the named location and conditional access policy for the block: </p>
