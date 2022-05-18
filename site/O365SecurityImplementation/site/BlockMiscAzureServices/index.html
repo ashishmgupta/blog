@@ -13,7 +13,7 @@
     
     
       
-        <title>Disable SMTP Auth - Microsoft O365 Security Implementation</title>
+        <title>Block Misc Azure Services for non-admin users - Microsoft O365 Security Implementation</title>
       
     
     
@@ -59,11 +59,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#tests" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Disable SMTP Auth
+              Block Misc Azure Services for non-admin users
             
           </span>
         </div>
@@ -297,11 +292,19 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../BlockMiscAzureServices/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Block Misc Azure Services for non-admin users
       </a>
+      
     </li>
   
 
@@ -327,48 +330,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Disable SMTP Auth
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../DisableSMTPAuth/" class="md-nav__link">
         Disable SMTP Auth
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    Tests
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -380,62 +346,78 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    Tests
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
 
-  <h1>Disable SMTP Auth</h1>
+  <h1>Block Misc Azure Services for non-admin users</h1>
 
-<h3 id="tests">Tests</h3>
-<p>Below code tries to use Basic Auth over SMTP Auth protocol and fails becuase SMTP Auth is disabled<br></p>
-<p>$creds = get-credential</p>
-<p>Send-MailMessage –From donaldblake@redteamsimulation.com –To ashishxxx@xxx.com –Subject "Test Email" –Body "Test SMTP Service from Powershell" -SmtpServer smtp.office365.com -Credential $creds -UseSsl -Port 587</p>
-<p>Error Message :
-Send-MailMessage : The SMTP server requires a secure connection or the client was not authenticated. The server
-response was: 5.7.57 Client not authenticated to send mail. Error: 535 5.7.139 Authentication unsuccessful,
-SmtpClientAuthentication is disabled for the Tenant. Visit https://aka.ms/smtp_auth_disabled for more information.
-[BN0PR10CA0026.namprd10.prod.outlook.com]
-At line:1 char:1
-+ Send-MailMessage –From donaldblake@redteamsimulation.com –To ashishmg ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (System.Net.Mail.SmtpClient:SmtpClient) [Send-MailMessage], SmtpExcept
-   ion
-    + FullyQualifiedErrorId : SmtpException,Microsoft.PowerShell.Commands.SendMailMessage</p>
+<p>We would want to restrict access to various Azure services to non-admin users becuase they dont need that access.
+One of those applications is "Microsoft Azure management" which includes below services :</p>
+<li>
+    <ol>Azure portal</ol>
+    <ol>Azure Resource Manager provider</ol>
+    <ol>Classic deployment model APIs</ol>
+    <ol>Azure PowerShell</ol>
+    <ol>Azure CLI</ol>
+    <ol>Azure DevOps</ol>
+    <ol>Azure Data Factory portal</ol>
+    <ol>Azure Event Hubs</ol>
+    <ol>Azure Service Bus</ol>
+    <ol>Azure SQL Database</ol>
+    <ol>SQL Managed Instance</ol>
+    <ol>Azure Synapse</ol>
+    <ol>Visual Studio subscriptions administrator portal</ol>
+</li>
+<p>Source : <a href="https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps">https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps</a> <br></p>
+<p>Below is the conditional access policy which would restrict access to above services to all users except admins.</p>
+<pre><code class="language-PowerShell"># Connect to AzureAD and get current logged in user
+$TenantDetails = $NULL
+$CurrentlyLoggedInUser = $NULL
+$OnMicrosoftDomain = $NULL
+$connection = $NULL
+try { 
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+} 
+catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
+    Write-Host &quot;You're not connected to AzureAD. Connect now...&quot;; 
+    Write-Host &quot;You're not connected to AzureAD&quot;; 
+    $connection = Connect-AzureAD
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+}
+
+
+$AdminRolesIds = Get-AzureADMSROleDefinition | Where-Object -FilterScript {$_.DisplayName -like '*Administrator'}| select -ExpandProperty Id
+
+# Create the conditional access policy to block access from all OFAC countries to all apps for all users except the currently logged in user
+
+$conditions = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessConditionSet
+$conditions.Applications = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessApplicationCondition
+$conditions.Applications.IncludeApplications = &quot;797f4846-ba00-4fd7-ba43-dac1f8f63013&quot;
+$conditions.Users = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessUserCondition
+$conditions.Users.IncludeUsers = &quot;all&quot;
+$conditions.Users.ExcludeRoles = $AdminRolesIds
+$controls = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessGrantControls
+$controls._Operator = &quot;OR&quot;
+$controls.BuiltInControls = &quot;block&quot;
+New-AzureADMSConditionalAccessPolicy -DisplayName &quot;Block Misc Azure apps for non-admin users&quot; -State &quot;Enabled&quot; -Conditions $conditions -GrantControls $controls
+</code></pre>
 <p><br>
-<img src="../../../images/o365security/disable-basic-auth-4.png"></img></p>
+We can see the conditional access policy has been created to block ALL users(except those in admin roles) from accessing services included under "Microsoft Azure Management"</p>
+<table>
+    <tr>
+        <td><img src="../../../images/block-misc-azure-services-01.png"></img></td>
+        <td><img src="../../../images/block-misc-azure-services-02.png"></img></td>
+    </tr>
+</table>
 
               
             </article>
@@ -449,7 +431,7 @@ At line:1 char:1
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../EnableSelfServicePasswordReset/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enable Self Service Password Reset" rel="prev">
+        <a href="../RestrictUserSettings/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Restrict User Settings" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -458,11 +440,26 @@ At line:1 char:1
               <span class="md-footer__direction">
                 Previous
               </span>
-              Enable Self Service Password Reset
+              Restrict User Settings
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../EnableSelfServicePasswordReset/" class="md-footer__link md-footer__link--next" aria-label="Next: Enable Self Service Password Reset" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Enable Self Service Password Reset
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
