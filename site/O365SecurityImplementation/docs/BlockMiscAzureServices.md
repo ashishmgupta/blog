@@ -61,6 +61,7 @@ $controls = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessG
 $controls._Operator = "OR"
 $controls.BuiltInControls = "block"
 New-AzureADMSConditionalAccessPolicy -DisplayName "Block Misc Azure apps for non-admin users" -State "Enabled" -Conditions $conditions -GrantControls $controls
+Write-output "Conditional Access Policy created.\r"
 ```
 
 <br>

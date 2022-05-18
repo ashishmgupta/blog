@@ -412,6 +412,7 @@ $controls = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessG
 $controls._Operator = &quot;OR&quot;
 $controls.BuiltInControls = &quot;block&quot;
 New-AzureADMSConditionalAccessPolicy -DisplayName &quot;Block Misc Azure apps for non-admin users&quot; -State &quot;Enabled&quot; -Conditions $conditions -GrantControls $controls
+Write-output &quot;Conditional Access Policy created.\r&quot;
 </code></pre>
 <p><br>
 We can see the conditional access policy has been created to block ALL users(except those in admin roles) from accessing services included under "Microsoft Azure Management"</p>
