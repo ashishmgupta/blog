@@ -6,7 +6,7 @@ The HTTP header would be like the below :<br>
 Authorization: Basic YWRtaW46UEBzc3cwcmQ<br>
 <br>
 
-### Basic, Legacy, protocols, authentication????
+### Basic/Legacy/Protocols/Authentication???? :-$
 Sometimes, It gets very confusing when terms like "basic" and "legacy" are used for both protocols and auth. <br>
 Therefore, It is very important to understand the difference between the messaging protocols vs the authentication mechanism. <br>
 The authentication mechanism is a part of messaging protocol which is also deals with how the messages would be exchanged between client and the server after authentication. <br>
@@ -124,7 +124,7 @@ for line in lines:
 ```
 
 
-#### Enabling the basic auth for all protocols : <br>
+#### Enabling the basic auth for all protocols <br>
 ```Powershell 
 Set-AuthenticationPolicy -Identity 'Block Legacy Auth for all protocols' -AllowBasicAuthAutodiscover -AllowBasicAuthActiveSync -AllowBasicAuthImap -AllowBasicAuthMapi -AllowBasicAuthOfflineAddressBook -AllowBasicAuthOutlookService -AllowBasicAuthPop -AllowBasicAuthPowershell -AllowBasicAuthReportingWebServices -AllowBasicAuthRpc -AllowBasicAuthSmtp -AllowBasicAuthWebServices
 ```
