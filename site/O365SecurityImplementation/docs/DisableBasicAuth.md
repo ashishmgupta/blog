@@ -12,8 +12,8 @@ Therefore, It is very important to understand the difference between the messagi
 The authentication mechanism is a part of messaging protocol which is also deals with how the messages would be exchanged between client and the server after authentication. <br>
 
 Lets look at the IMAP4 protocol. <br>
-https://datatracker.ietf.org/doc/html/rfc3501 <br>
-<img src="../../../images/o365security/disable-basic-auth-9.png"></img><br>
+<a href="https://datatracker.ietf.org/doc/html/rfc3501">https://datatracker.ietf.org/doc/html/rfc3501</a><br>
+<img src="../../../images/o365security/disable-basic-auth-10.png"></img><br>
 
 You see the "Authenticated" step which means how clients would authenticated to the server and also "Selected" step has the The SELECT command selects a mailbox so that messages in the mailbox can be accessed. <br>
 
