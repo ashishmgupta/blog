@@ -339,36 +339,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../EnableSelfServicePasswordReset/" class="md-nav__link">
-        Enable Self Service Password Reset
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DisableSMTPAuth/" class="md-nav__link">
-        Disable SMTP Auth
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -384,7 +354,10 @@
 
   <h1>Implement MFA</h1>
 
-<p>PowerShell to create a conditional Acesss Policy to enforce all MFA on all users excluding an emergency Azure cloud-only Account. </p>
+<p>We will create a conditional access policy to enforce all MFA on all users excluding an emergency Azure cloud-only Account. <br>
+Below is the PowerShell script for the same.
+If the emergency account does not exist, It will create the account before creating the conditional access policy. <br></p>
+<p>The PowerShell script : <br></p>
 <pre><code class="language-powershell">$TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
 $OnMicrosoftDomain = $NULL

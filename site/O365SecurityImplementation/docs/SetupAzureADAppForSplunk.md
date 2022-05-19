@@ -1,5 +1,5 @@
 This section covers setting up an Azure AD app for Splunk Add-on so O365 logs could be ingested in Splunk. <br>
-This is one of the first steps we would do so all changes done after are logged into Splunk for security monitoring by Splunk. <br>
+This is one of the first steps we would do so all changes done after are logged into Splunk for security monitoring by SOC. <br>
 The below script would create the app so It does not need to be created manually.<br>
 When the script below executes successfully, It should create a file with creds for the app.<br>
 Those details should be provided to the Splunk Administrator so they could set up the Azure tenant for the log ingestion. <br>
