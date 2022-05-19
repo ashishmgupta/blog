@@ -192,21 +192,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../DisableSecurityDefaults/" class="md-nav__link">
-        Disable Security Defaults
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -270,6 +255,36 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SetupTenantProperties/" class="md-nav__link">
+        Set Tenant Properties
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DisableSecurityDefaults/" class="md-nav__link">
+        Disable Security Defaults
+      </a>
     </li>
   
 
@@ -477,9 +492,11 @@
   <h1>Setup AzureAD App For Splunk</h1>
 
 <p>This section covers setting up an Azure AD app for Splunk Add-on so O365 logs could be ingested in Splunk. <br>
-Below script would create the app so It does not need to be created manually.<br>
-The admin consent needs to be granted via the Azure portal (instructions below).<br>
-The  details for the newly created app needs to be provided to the Splunk Administrator so they could set up the Azure tenant for the log ingestion. <br></p>
+This is one of the first steps we would do so all changes done after are logged into Splunk for security monitoring by Splunk. <br>
+The below script would create the app so It does not need to be created manually.<br>
+When the script below executes successfully, It should create a file with creds for the app.<br>
+Those details should be provided to the Splunk Administrator so they could set up the Azure tenant for the log ingestion. <br>
+The admin consent needs to be granted via the Azure portal (instructions below).<br></p>
 <h3 id="step-0-install-azure-ad-powershell">Step 0 - Install Azure AD Powershell</h3>
 <p>Please execute the below in PowerShell to install the Azure AD module for Powershell</p>
 <pre><code>Install-Module AzureAD
@@ -496,7 +513,7 @@ Copy the script by clicking on the copy icon in script below.
 Paste the script on the Powershell window and hit enter.
 <img src="../../../images/o365security/splunk-app-for-o365_0_1.png"></img><br></p>
 <pre><code class="language-powershell"># Author - Ashish Gupta
-# This script creates a new Azure AD application and sets the Application and Delegated permissions for specific API (O365)
+# This script creates a new Azure AD application and sets the Application and Delegated permissions for O365
 
 $TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
@@ -666,7 +683,7 @@ After the admin consent grant, It should look like below :<br>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../DisableSecurityDefaults/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Disable Security Defaults" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -675,20 +692,20 @@ After the admin consent grant, It should look like below :<br>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Disable Security Defaults
+              Overview
             </div>
           </div>
         </a>
       
       
         
-        <a href="../CreateEmergencyUser/" class="md-footer__link md-footer__link--next" aria-label="Next: Create Emergency User" rel="next">
+        <a href="../SetupTenantProperties/" class="md-footer__link md-footer__link--next" aria-label="Next: Set Tenant Properties" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Create Emergency User
+              Set Tenant Properties
             </div>
           </div>
           <div class="md-footer__button md-icon">

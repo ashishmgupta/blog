@@ -1,7 +1,9 @@
 This section covers setting up an Azure AD app for Splunk Add-on so O365 logs could be ingested in Splunk. <br>
-Below script would create the app so It does not need to be created manually.<br>
+This is one of the first steps we would do so all changes done after are logged into Splunk for security monitoring by Splunk. <br>
+The below script would create the app so It does not need to be created manually.<br>
+When the script below executes successfully, It should create a file with creds for the app.<br>
+Those details should be provided to the Splunk Administrator so they could set up the Azure tenant for the log ingestion. <br>
 The admin consent needs to be granted via the Azure portal (instructions below).<br>
-The  details for the newly created app needs to be provided to the Splunk Administrator so they could set up the Azure tenant for the log ingestion. <br>
 
 ### Step 0 - Install Azure AD Powershell
 Please execute the below in PowerShell to install the Azure AD module for Powershell
@@ -24,7 +26,7 @@ Paste the script on the Powershell window and hit enter.
 
 ```powershell
 # Author - Ashish Gupta
-# This script creates a new Azure AD application and sets the Application and Delegated permissions for specific API (O365)
+# This script creates a new Azure AD application and sets the Application and Delegated permissions for O365
 
 $TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
