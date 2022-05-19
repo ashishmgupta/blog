@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+# Microsoft O365 Security Implementation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Below are the best practices we can implement to secure Microsoft O365. <br>
+I will regularly update this with the latest security features as they are published. <br>
+Below can be accessed from the left navigation pane. <br>
 
-## Commands
+* Disable Security Defaults
+* Setup AzureAD App For Splunk
+* Create Emergency User
+* Implement MFA
+* Block OFAC Countries
+* Disable basic authentication
+* Restrict External Collaboration
+* Restrict User Settings
+* Block Misc Azure Services for non-admin users
+* Enable Self Service Password Reset
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
