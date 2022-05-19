@@ -2,7 +2,7 @@ We will create a conditional access policy to enforce all MFA on all users exclu
 Below is the PowerShell script for the same.
 If the emergency account does not exist, It will create the account before creating the conditional access policy. <br>
 
-The PowerShell script : <br>
+### The PowerShell script to enforce MFA : <br>
 
 ```powershell
 $TenantDetails = $NULL
@@ -88,3 +88,34 @@ MFA is enforced for all apps.<br>
 MFA is enforced for all users except the emergency global admin user.<br>
 <img src="../../../images/o365security/implement-mfa-02.png"></img><br>
 
+### Number matching
+Just like <a href="https://en.wikipedia.org/wiki/Password_fatigue">password fatigue</a> caused users to re-use passwords and get compromised If we use push notifications for MFA, and if an attacker constantly sends push notifications to users with compromised credentials, users would eventually push and that would lead to the attacker accessing user's cloud resources. <br>
+
+To counter "push fatigue" [ a made-up term :)], Microsoft launched a new feature named "Number matching" (currently in preview). <br>
+<a href="https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match">https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match</a><br>
+
+Login to Azure Portal > Azure Active Directory > Security > Authentication methods and click on the "Microsoft Authenticator" <br>
+<img src="../../../images/o365security/implement-mfa-04.png"></img><br>
+
+Click on the "..." and then configure. <br>
+<img src="../../../images/o365security/implement-mfa-05.png"></img><br>
+
+Make sure "Require number matching" is set to "Enabled". <br>
+Also, make sure the "Show additional context in notification" is also enabled. <br> This provides for which app the login is being performed. <br>
+<img src="../../../images/o365security/implement-mfa-06.png"></img><br>
+
+Now when the user logs in, after the user name and password has been validated, the browser shows a number and a notification is sent to the Microsoft Authenticator. We need to enter the same number in the authenticator to be successfully and fully authenticated via MFA.<br>
+
+<table>
+	<tr>
+		<td>Bworser shows the number during log in process</td>
+		<td>Enter the same number in the Microsoft Authenticator app</td>
+	</tr>
+	<tr>
+		<td><img src="../../../images/o365security/implement-mfa-07.png"></img></td>
+		<td><img src="../../../images/o365security/implement-mfa-08.png"></img></td>
+	</tr>
+</table>
+
+I notice the number is always double-digit (not 5 or 6 digits).<br>
+So, not only It adds to security by having the user enter the number (instead of an ignorant push) but also Its a great user experience because It's just two digits and easy to remember.

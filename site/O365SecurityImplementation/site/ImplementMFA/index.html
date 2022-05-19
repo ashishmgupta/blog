@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#the-powershell-script-to-enforce-mfa" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -256,9 +261,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Implement MFA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Implement MFA
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-powershell-script-to-enforce-mfa" class="md-nav__link">
+    The PowerShell script to enforce MFA : 
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#number-matching" class="md-nav__link">
+    Number matching
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -346,6 +387,44 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-powershell-script-to-enforce-mfa" class="md-nav__link">
+    The PowerShell script to enforce MFA : 
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#number-matching" class="md-nav__link">
+    Number matching
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -357,7 +436,7 @@
 <p>We will create a conditional access policy to enforce all MFA on all users excluding an emergency Azure cloud-only Account. <br>
 Below is the PowerShell script for the same.
 If the emergency account does not exist, It will create the account before creating the conditional access policy. <br></p>
-<p>The PowerShell script : <br></p>
+<h3 id="the-powershell-script-to-enforce-mfa">The PowerShell script to enforce MFA : <br></h3>
 <pre><code class="language-powershell">$TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
 $OnMicrosoftDomain = $NULL
@@ -438,6 +517,31 @@ MFA is enforced for all apps.<br>
 <p><br>
 MFA is enforced for all users except the emergency global admin user.<br>
 <img src="../../../images/o365security/implement-mfa-02.png"></img><br></p>
+<h3 id="number-matching">Number matching</h3>
+<p>Just like <a href="https://en.wikipedia.org/wiki/Password_fatigue">password fatigue</a> caused users to re-use passwords and get compromised If we use push notifications for MFA, and if an attacker constantly sends push notifications to users with compromised credentials, users would eventually push and that would lead to the attacker accessing user's cloud resources. <br></p>
+<p>To counter "push fatigue" [ a made-up term :)], Microsoft launched a new feature named "Number matching" (currently in preview). <br>
+<a href="https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match">https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match</a><br></p>
+<p>Login to Azure Portal &gt; Azure Active Directory &gt; Security &gt; Authentication methods and click on the "Microsoft Authenticator" <br>
+<img src="../../../images/o365security/implement-mfa-04.png"></img><br></p>
+<p>Click on the "..." and then configure. <br>
+<img src="../../../images/o365security/implement-mfa-05.png"></img><br></p>
+<p>Make sure "Require number matching" is set to "Enabled". <br>
+Also, make sure the "Show additional context in notification" is also enabled. <br> This provides for which app the login is being performed. <br>
+<img src="../../../images/o365security/implement-mfa-06.png"></img><br></p>
+<p>Now when the user logs in, after the user name and password has been validated, the browser shows a number and a notification is sent to the Microsoft Authenticator. We need to enter the same number in the authenticator to be successfully and fully authenticated via MFA.<br></p>
+<table>
+    <tr>
+        <td>Bworser shows the number during log in process</td>
+        <td>Enter the same number in the Microsoft Authenticator app</td>
+    </tr>
+    <tr>
+        <td><img src="../../../images/o365security/implement-mfa-07.png"></img></td>
+        <td><img src="../../../images/o365security/implement-mfa-08.png"></img></td>
+    </tr>
+</table>
+
+<p>I notice the number is always double-digit (not 5 or 6 digits).<br>
+So, not only It adds to security by having the user enter the number (instead of an ignorant push) but also Its a great user experience because It's just two digits and easy to remember.</p>
 
               
             </article>
