@@ -7,6 +7,7 @@ markdown_extensions:
   - tables
 nav:
 - Overview: 'index.md'
+- Disable Security Defaults: 'DisableSecurityDefaults.md'
 - Setup AzureAD App For Splunk: 'SetupAzureADAppForSplunk.md'
 - Create Emergency User: 'CreateEmergencyUser.md'
 - Implement MFA: 'ImplementMFA.md'

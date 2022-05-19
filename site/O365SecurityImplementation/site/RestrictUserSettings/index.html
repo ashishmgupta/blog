@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#restrict-registration-of-new-azure-ad-applications" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -189,6 +194,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../DisableSecurityDefaults/" class="md-nav__link">
+        Disable Security Defaults
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../SetupAzureADAppForSplunk/" class="md-nav__link">
         Setup AzureAD App For Splunk
       </a>
@@ -286,9 +306,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Restrict User Settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Restrict User Settings
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#restrict-registration-of-new-azure-ad-applications" class="md-nav__link">
+    Restrict registration of new Azure AD applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restrict-users-ability-to-consent-to-apps" class="md-nav__link">
+    Restrict users' ability to consent to Apps.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -346,6 +402,44 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#restrict-registration-of-new-azure-ad-applications" class="md-nav__link">
+    Restrict registration of new Azure AD applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restrict-users-ability-to-consent-to-apps" class="md-nav__link">
+    Restrict users' ability to consent to Apps.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -354,9 +448,18 @@
 
   <h1>Restrict User Settings</h1>
 
+<h3 id="restrict-registration-of-new-azure-ad-applications">Restrict registration of new Azure AD applications</h3>
 <p>It is important to control registration of Azure AD applications. <br><br>
 Azure Portal &gt; Azure Active Directory &gt; User Settings <br><br>
 <img src="../../../images/o365security/restrict-user-settings-01.png"></img></p>
+<h3 id="restrict-users-ability-to-consent-to-apps">Restrict users' ability to consent to Apps.</h3>
+<p>It is important to restrict users' ability to consent for applications to access organization data
+With the below setting, we allow user consent only for applications that have been published by a verified publisher. </p>
+<pre><code class="language-powershell">Set-AzureADMSAuthorizationPolicy -DefaultUserRolePermissions @{&quot;PermissionGrantPoliciesAssigned&quot; = @(&quot;managePermissionGrantsForSelf.microsoft-user-default-low&quot;) }
+</code></pre>
+<p><br>
+When an application is marked as publisher verified, it means that the publisher has verified their identity using a Microsoft Partner Network account that has completed the verification process and has associated this MPN account with their application registration. <br>
+Source : <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/publisher-verification-overview">Publisher verification overview</a></p>
 
               
             </article>

@@ -15,7 +15,7 @@ Lets look at the IMAP4 protocol. <br>
 <a href="https://datatracker.ietf.org/doc/html/rfc3501">https://datatracker.ietf.org/doc/html/rfc3501</a><br>
 <img src="../../../images/o365security/disable-basic-auth-10.png"></img><br>
 
-You see the "Authenticated" step which means how clients would authenticated to the server and also "Selected" step has the The SELECT command selects a mailbox so that messages in the mailbox can be accessed. <br>
+You see the "Authenticated" step which means how clients would authenticate to the server and also the "Selected" step has the SELECT command selects a mailbox so that messages in the mailbox can be accessed. <br>
 
 That "Authenticated" step may make use of Basic authentication (like we described above).<br>
 However, that option of using basic auth should be disabled so clients (potential attackers) cant make use of the same.<br>
@@ -26,13 +26,13 @@ Since the authentication is possible by simply sending the base64 encoded user n
 It's possible to send the creds over basic auth over HTTP in which case It may be captured by an attacker and decoded back to original plain text credentials.<br>
 
 
-We create an authentication policy which has by default basic auth disabled for all protocols. <br>
-And the set the default authentication policy for the whole organization the newly created authentication policy
+We create an authentication policy that has by default basic auth disabled for all protocols. <br>
+And then set the default authentication policy for the whole organization the newly created authentication policy
 
 ```powershell
 New-AuthenticationPolicy -Name "Block Legacy Auth for all protocols"
 ```
-By defualt, the basic auth is disabled for all protocols. <br>
+By default, the basic auth is disabled for all protocols. <br>
 <img src="../../../images/o365security/disable-basic-auth-5-all-protocols.png"></img>
 
 Setting the newly created policy with basic auth disabled as the default policy for the organization/tenant. <br>
@@ -61,10 +61,10 @@ All the settings except the "Turn on modern authentication for Outlook 2013 for 
 ### Tests
 
 #### The Python Script
-In order to test the basic authentication, we will make use of the below script which tries to authenticate to Exchange Online with a given set of users using Exchange Web Services (EWS).<br>
+To test the basic authentication, we will make use of the below script which tries to authenticate to Exchange Online with a given set of users using Exchange Web Services (EWS).<br>
 EWS uses Autodiscover protocol which in turn could use basic authentication.
 
-The script can be found here as well :<br>
+The script can be found here as well: <br>
 https://github.com/ashishmgupta/pyAbuseLegacyAuthInEXO <br>
 
 ```python
@@ -141,6 +141,7 @@ Could retrieve all the messages from the mailbox.
 ```powershell
 Set-AuthenticationPolicy -Identity 'Block Legacy Auth for all protocols' -AllowBasicAuthAutodiscover:$false -AllowBasicAuthActiveSync:$false -AllowBasicAuthImap:$false -AllowBasicAuthMapi:$false -AllowBasicAuthOfflineAddressBook:$false -AllowBasicAuthOutlookService:$false -AllowBasicAuthPop:$false -AllowBasicAuthPowershell:$false -AllowBasicAuthReportingWebServices:$false -AllowBasicAuthRpc:$false -AllowBasicAuthSmtp:$false -AllowBasicAuthWebServices:$false 
 ```
+<br>
 Basic auth disabled for all protocols.<br>
 <img src="../../../images/o365security/disable-basic-auth-6-all-protocols-disabled.png"></img> <br>
 
