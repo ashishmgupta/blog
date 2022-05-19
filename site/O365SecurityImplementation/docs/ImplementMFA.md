@@ -2,7 +2,7 @@ We will create a conditional access policy to enforce all MFA on all users exclu
 Below is the PowerShell script for the same.
 If the emergency account does not exist, It will create the account before creating the conditional access policy. <br>
 
-### The PowerShell script to enforce MFA : <br>
+### The PowerShell script to enforce MFA <br>
 
 ```powershell
 $TenantDetails = $NULL
