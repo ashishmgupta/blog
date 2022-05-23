@@ -335,6 +335,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable-modern-authentication" class="md-nav__link">
+    Enable Modern Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tests" class="md-nav__link">
     Tests
   </a>
@@ -467,6 +474,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable-modern-authentication" class="md-nav__link">
+    Enable Modern Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tests" class="md-nav__link">
     Tests
   </a>
@@ -516,17 +530,17 @@
   <h1>Disable basic authentication</h1>
 
 <h3 id="what-is-basic-authentication"><h2>What is Basic Authentication?</h2></h3>
-<p>User supplied user name and password are joined separated by a colon and base64 encoded. <br>
-The base64 encoded value is sent as HTTP header named "Authorization".<br>
-For example, if the user enters "admin" as user name and "P@ssw0rd" as password, the base64 encoded value would be "YWRtaW46UEBzc3cwcmQ"<br>
+<p>User-supplied username and password are joined and separated by a colon and base64 encoded. <br>
+The base64 encoded value is sent as an HTTP header named "Authorization".<br>
+For example, if the user enters "admin" as the user name and "P@ssw0rd" as the password, the base64 encoded value would be "YWRtaW46UEBzc3cwcmQ"<br>
 The HTTP header would be like the below :<br>
 Authorization: Basic YWRtaW46UEBzc3cwcmQ<br>
 <br></p>
 <h3 id="basiclegacyprotocolsauthentication-">Basic/Legacy/Protocols/Authentication???? :-$</h3>
 <p>Sometimes, It gets very confusing when terms like "basic" and "legacy" are used for both protocols and auth. <br>
 Therefore, It is very important to understand the difference between the messaging protocols vs the authentication mechanism. <br>
-The authentication mechanism is a part of messaging protocol which is also deals with how the messages would be exchanged between client and the server after authentication. <br></p>
-<p>Lets look at the IMAP4 protocol. <br>
+The authentication mechanism is a part of messaging protocol which also deals with how the messages would be exchanged between the client and the server after authentication. <br></p>
+<p>Let's look at the IMAP4 protocol. <br>
 <a href="https://datatracker.ietf.org/doc/html/rfc3501">https://datatracker.ietf.org/doc/html/rfc3501</a><br>
 <img src="../../../images/o365security/disable-basic-auth-10.png"></img><br></p>
 <p>You see the "Authenticated" step which means how clients would authenticate to the server and also the "Selected" step has the SELECT command selects a mailbox so that messages in the mailbox can be accessed. <br></p>
@@ -555,6 +569,10 @@ Go to <a href="https://admin.microsoft.com/">Microsoft 365 Admin Center</a> <br>
 Settings &gt; Org Settings &gt; Modern Authentication <br>
 All the settings except the "Turn on modern authentication for Outlook 2013 for Windows and later (recommended)" should be unchecked. <br>
 <img src="../../../images/o365security/disable-basic-auth-3.png"></img></p>
+<h3 id="enable-modern-authentication">Enable Modern Authentication</h3>
+<pre><code class="language-powershell">Set-OrganizationConfig -OAuth2ClientProfileEnabled $true
+</code></pre>
+<p><br></p>
 <h3 id="tests">Tests</h3>
 <h4 id="the-python-script">The Python Script</h4>
 <p>To test the basic authentication, we will make use of the below script which tries to authenticate to Exchange Online with a given set of users using Exchange Web Services (EWS).<br>

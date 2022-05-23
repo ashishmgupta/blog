@@ -1,7 +1,7 @@
 ###<h2>What is Basic Authentication?</h2>
-User supplied user name and password are joined separated by a colon and base64 encoded. <br>
-The base64 encoded value is sent as HTTP header named "Authorization".<br>
-For example, if the user enters "admin" as user name and "P@ssw0rd" as password, the base64 encoded value would be "YWRtaW46UEBzc3cwcmQ"<br>
+User-supplied username and password are joined and separated by a colon and base64 encoded. <br>
+The base64 encoded value is sent as an HTTP header named "Authorization".<br>
+For example, if the user enters "admin" as the user name and "P@ssw0rd" as the password, the base64 encoded value would be "YWRtaW46UEBzc3cwcmQ"<br>
 The HTTP header would be like the below :<br>
 Authorization: Basic YWRtaW46UEBzc3cwcmQ<br>
 <br>
@@ -9,9 +9,9 @@ Authorization: Basic YWRtaW46UEBzc3cwcmQ<br>
 ### Basic/Legacy/Protocols/Authentication???? :-$
 Sometimes, It gets very confusing when terms like "basic" and "legacy" are used for both protocols and auth. <br>
 Therefore, It is very important to understand the difference between the messaging protocols vs the authentication mechanism. <br>
-The authentication mechanism is a part of messaging protocol which is also deals with how the messages would be exchanged between client and the server after authentication. <br>
+The authentication mechanism is a part of messaging protocol which also deals with how the messages would be exchanged between the client and the server after authentication. <br>
 
-Lets look at the IMAP4 protocol. <br>
+Let's look at the IMAP4 protocol. <br>
 <a href="https://datatracker.ietf.org/doc/html/rfc3501">https://datatracker.ietf.org/doc/html/rfc3501</a><br>
 <img src="../../../images/o365security/disable-basic-auth-10.png"></img><br>
 
@@ -57,7 +57,12 @@ Settings > Org Settings > Modern Authentication <br>
 All the settings except the "Turn on modern authentication for Outlook 2013 for Windows and later (recommended)" should be unchecked. <br>
 <img src="../../../images/o365security/disable-basic-auth-3.png"></img>
 
+### Enable Modern Authentication
 
+```powershell
+Set-OrganizationConfig -OAuth2ClientProfileEnabled $true
+```
+<br>
 ### Tests
 
 #### The Python Script

@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#blocking-the-graph-explorer-app-and-services-under-the-microsoft-azure-management-app" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -331,9 +336,65 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Block Misc Azure Services for non-admin users
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Block Misc Azure Services for non-admin users
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-the-graph-explorer-app-and-services-under-the-microsoft-azure-management-app" class="md-nav__link">
+    Blocking the "Graph Explorer" app and services under the "Microsoft Azure Management" app.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-explorer-access-denied-to-a-non-admin-user" class="md-nav__link">
+    Graph explorer access denied to a non-admin user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-portal-access-denied-to-a-non-admin-user" class="md-nav__link">
+    Azure portal access denied to a non-admin user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -346,6 +407,64 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-the-graph-explorer-app-and-services-under-the-microsoft-azure-management-app" class="md-nav__link">
+    Blocking the "Graph Explorer" app and services under the "Microsoft Azure Management" app.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-explorer-access-denied-to-a-non-admin-user" class="md-nav__link">
+    Graph explorer access denied to a non-admin user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-portal-access-denied-to-a-non-admin-user" class="md-nav__link">
+    Azure portal access denied to a non-admin user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -354,9 +473,11 @@
 
   <h1>Block Misc Azure Services for non-admin users</h1>
 
-<p>We would want to restrict access to various Azure services to non-admin users becuase they dont need that access. <br>
-Some of those services fall under the umbrella of an in built Azure App named "Microsoft Azure management".<br>
-So, if we block access to this app for non-admin users, the services under them will be unavailable to the non-admin users.<br>
+<h3 id="blocking-the-graph-explorer-app-and-services-under-the-microsoft-azure-management-app">Blocking the "Graph Explorer" app and services under the "Microsoft Azure Management" app.</h3>
+<p>We would want to restrict access to various Azure services to non-admin users because they don't need that access. <br>
+Graph Explorer is one of the apps we want to disable access to unless It's a business requirement not to do so. 
+Some of the other services fall under the umbrella of an in-built Azure App named "Microsoft Azure management".<br>
+So, if we block access to this app for non-admin users, the services under them will be unavailable to non-admin users.<br>
 <br>
 Below are the services under "Microsoft Azure management". <br></p>
 <ul>
@@ -375,7 +496,7 @@ Below are the services under "Microsoft Azure management". <br></p>
     <li>Visual Studio subscriptions administrator portal</li>
 </ul>
 <p>Source : <a href="https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps">https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps</a> <br></p>
-<p>Below is the PowerShell script to create the conditional access policy which would restrict access to above services to all users except admins.</p>
+<p>Below is the PowerShell script to create the conditional access policy which would restrict access to the above services to all users except admins.</p>
 <pre><code class="language-PowerShell"># Connect to AzureAD and get current logged in user
 $TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
@@ -404,7 +525,7 @@ $AdminRolesIds = Get-AzureADMSROleDefinition | Where-Object -FilterScript {$_.Di
 
 $conditions = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessConditionSet
 $conditions.Applications = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessApplicationCondition
-$conditions.Applications.IncludeApplications = &quot;797f4846-ba00-4fd7-ba43-dac1f8f63013&quot;
+$conditions.Applications.IncludeApplications = &quot;797f4846-ba00-4fd7-ba43-dac1f8f63013&quot;, &quot;de8bc8b5-d9f9-48b1-a8ad-b748da725064&quot;
 $conditions.Users = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessUserCondition
 $conditions.Users.IncludeUsers = &quot;all&quot;
 $conditions.Users.ExcludeRoles = $AdminRolesIds
@@ -422,6 +543,15 @@ We can see the conditional access policy has been created to block ALL users(exc
         <td><img src="../../../images/o365security/block-misc-azure-services-02.png"></img></td>
     </tr>
 </table>
+
+<h3 id="tests">Tests</h3>
+<h4 id="graph-explorer-access-denied-to-a-non-admin-user">Graph explorer access denied to a non-admin user</h4>
+<p>Access is denied to the non-admin user.<br>
+<img src="../../../images/o365security/block-misc-azure-services-03.png">
+<br></p>
+<h4 id="azure-portal-access-denied-to-a-non-admin-user">Azure portal access denied to a non-admin user</h4>
+<p>Azure Portal (part of "Microsoft Azure Management" app) Access is denied to the non-admin user.<br>
+<img src="../../../images/o365security/block-misc-azure-services-03.png"></p>
 
               
             </article>

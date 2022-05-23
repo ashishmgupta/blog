@@ -1,7 +1,9 @@
 
-We would want to restrict access to various Azure services to non-admin users becuase they dont need that access. <br>
-Some of those services fall under the umbrella of an in built Azure App named "Microsoft Azure management".<br>
-So, if we block access to this app for non-admin users, the services under them will be unavailable to the non-admin users.<br>
+### Blocking the "Graph Explorer" app and services under the "Microsoft Azure Management" app.
+We would want to restrict access to various Azure services to non-admin users because they don't need that access. <br>
+Graph Explorer is one of the apps we want to disable access to unless It's a business requirement not to do so. 
+Some of the other services fall under the umbrella of an in-built Azure App named "Microsoft Azure management".<br>
+So, if we block access to this app for non-admin users, the services under them will be unavailable to non-admin users.<br>
 <br>
 Below are the services under "Microsoft Azure management". <br>
 
@@ -22,7 +24,7 @@ Below are the services under "Microsoft Azure management". <br>
 </ul>
 Source : <a href="https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps">https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-cloud-apps</a> <br>
 
-Below is the PowerShell script to create the conditional access policy which would restrict access to above services to all users except admins.
+Below is the PowerShell script to create the conditional access policy which would restrict access to the above services to all users except admins.
 
 ```PowerShell
 # Connect to AzureAD and get current logged in user
@@ -53,7 +55,7 @@ $AdminRolesIds = Get-AzureADMSROleDefinition | Where-Object -FilterScript {$_.Di
 
 $conditions = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessConditionSet
 $conditions.Applications = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessApplicationCondition
-$conditions.Applications.IncludeApplications = "797f4846-ba00-4fd7-ba43-dac1f8f63013"
+$conditions.Applications.IncludeApplications = "797f4846-ba00-4fd7-ba43-dac1f8f63013", "de8bc8b5-d9f9-48b1-a8ad-b748da725064"
 $conditions.Users = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessUserCondition
 $conditions.Users.IncludeUsers = "all"
 $conditions.Users.ExcludeRoles = $AdminRolesIds
@@ -72,3 +74,13 @@ We can see the conditional access policy has been created to block ALL users(exc
         <td><img src="../../../images/o365security/block-misc-azure-services-02.png"></img></td>
     </tr>
 </table>
+
+### Tests
+#### Graph explorer access denied to a non-admin user
+Access is denied to the non-admin user.<br>
+<img src="../../../images/o365security/block-misc-azure-services-03.png">
+<br>
+
+#### Azure portal access denied to a non-admin user
+Azure Portal (part of "Microsoft Azure Management" app) Access is denied to the non-admin user.<br>
+<img src="../../../images/o365security/block-misc-azure-services-03.png">
