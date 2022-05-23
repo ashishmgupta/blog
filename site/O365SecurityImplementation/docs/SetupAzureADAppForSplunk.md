@@ -315,3 +315,9 @@ Click on "Grant admin consent for tenant" <br>
 <img src="../../../images/o365security/splunk-app-for-o365_6.png"></img>
 After the admin consent grant, It should look like the below :<br>
 <img src="../../../images/o365security/splunk-app-for-o365_7.png"></img>
+
+
+### Azure AD apps for Splunk add-ons created 
+<img src="../../../images/o365security/splunk-app-for-o365_9.png"></img>
+<br>
+:exclamation: Please coordinate with the Splunk administrator to make sure the Splunk apps have been installed and configured using  the information from the Azure AD apps created above.
