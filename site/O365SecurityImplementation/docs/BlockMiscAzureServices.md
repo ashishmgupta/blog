@@ -82,5 +82,5 @@ Access is denied to the non-admin user.<br>
 <br>
 
 #### Azure portal access denied to a non-admin user
-Azure Portal (part of "Microsoft Azure Management" app) Access is denied to the non-admin user.<br>
-<img src="../../../images/o365security/block-misc-azure-services-03.png">
+Azure Portal (part of the "Microsoft Azure Management" app) Access is denied to the non-admin user.<br>
+<img src="../../../images/o365security/block-misc-azure-services-04.png">
