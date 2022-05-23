@@ -88,8 +88,12 @@ MFA is enforced for all apps.<br>
 MFA is enforced for all users except the emergency global admin user.<br>
 <img src="../../../images/o365security/implement-mfa-02.png"></img><br>
 
-### Number matching
-Just like <a href="https://en.wikipedia.org/wiki/Password_fatigue">password fatigue</a> caused users to re-use passwords and get compromised If we use push notifications for MFA, and if an attacker constantly sends push notifications to users with compromised credentials, users would eventually push and that would lead to the attacker accessing user's cloud resources. <br>
+### Number matching (Currently in preview)
+As of the day of writing this (5/23/2022), this feature is <a href="https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match">in preview and not GA.</a><br>
+However, It will be enabled by default when It goes GA just because of added security and great user experience.<br>
+
+<br>
+Just like <a href="https://en.wikipedia.org/wiki/Password_fatigue">password fatigue</a> caused users to re-use passwords and get compromised If we use push notifications for MFA, and if an attacker constantly sends push notifications to users with compromised credentials, users would eventually push and that would lead to the attacker accessing the user's cloud resources. <br>
 
 To counter "push fatigue" [ a made-up term :)], Microsoft launched a new feature named "Number matching" (currently in preview). <br>
 <a href="https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match">https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match</a><br>
