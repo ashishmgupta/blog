@@ -409,6 +409,13 @@ try{
     write-output(&quot;User details written to the file\r\n&quot;)
 }
 </code></pre>
+<p>When the script is run, It asks the name of the user to be created.<br>
+If we just hit enter, It creates a user named "TempUser_" followed by the current date-time. <br>
+<img src="../../../images/o365mitre/CreateAccount-T1136.png"></img>
+<br>
+Azure AD user is created as seen in the Azure portal. <br>
+<img src="../../../images/o365mitre/CreateAccount-T1136_1.png"></img>
+<br></p>
 <h3 id="splunk-detections">Splunk Detections</h3>
 <h4 id="create-user-event">Create user event</h4>
 <pre><code class="language-powershell">index=azure sourcetype=&quot;azure:aad:audit&quot; activityDisplayName=&quot;Add user&quot; result=&quot;success&quot;
@@ -416,7 +423,10 @@ try{
 | rename targetResources{}.userPrincipalName as UserAdded initiatedBy.user.userPrincipalName as CreatedByUPN  additionalDetails{}.value as UserAgent
 | table _time UserAdded CreatedByUPN  UserAgent
 </code></pre>
-<p>"Swagger-Codegen/1.4.0.0/csharp" is the user agent when Azure AD PowerShell is used to create the user.
+<p><br>
+Newly created user is found in the searach. <br>
+<img src="../../../images/o365mitre/CreateAccount-T1136_2.png"></img></p>
+<p>Note : "Swagger-Codegen/1.4.0.0/csharp" is the user agent when Azure AD PowerShell is used to create the user.
 <br></p>
 <h4 id="the-user-was-created-outside-pim-eg-powershell">The User was created outside PIM (e.g. PowerShell)</h4>
 <pre><code class="language-powershell">index=azure operationType=&quot;RoleElevatedOutsidePimAlert&quot; result=&quot;success&quot; 
