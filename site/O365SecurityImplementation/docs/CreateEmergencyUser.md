@@ -13,6 +13,7 @@ $TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
 $OnMicrosoftDomain = $NULL
 $connection = $NULL
+$CurrentTimestamp = [DateTime]::Now.ToString("yyyyMMdd-HHmmss")
 try { 
 	$AzureADSession = Get-AzureADCurrentSessionInfo
 	$CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id

@@ -46,3 +46,13 @@ Tactics:
             Account Access removal
             Endpoint Denial of Service
             Network Denial of Service
+
+### Account created outside PIM
+index=azure operationType="RoleElevatedOutsidePimAlert" result="success" 
+| rename targetResources{}.displayName as key_5, targetResources{}.userPrincipalName as key_6
+| eval a = mvzip(key_5,key_6)
+| makemv a delim=","
+| eval RoleNameUserAddedto  = mvindex(a,0)
+| eval UserAdded = mvindex(a,3)
+| rename initiatedBy.user.displayName as CreatedByName, initiatedBy.user.userPrincipalName as CreatedByUPN
+| table _time UserAdded RoleNameUserAddedto CreatedByName CreatedByUPN activityDisplayName
