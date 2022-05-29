@@ -67,8 +67,8 @@ try{
     write-output("User details written to the file\r\n")
 }
 ```
-
-### Detection - Create user event
+### Splunk Detections
+#### Create user event
 ```powershell
 index=azure sourcetype="azure:aad:audit" activityDisplayName="Add user" result="success"
 | spath targetResources{}
@@ -76,9 +76,10 @@ index=azure sourcetype="azure:aad:audit" activityDisplayName="Add user" result="
 | table _time UserAdded CreatedByUPN  UserAgent
 ```
 
-<b>Swagger-Codegen/1.4.0.0/csharp</b> is the user agent when Azure AD PowerShell is used to create the user.
+"Swagger-Codegen/1.4.0.0/csharp" is the user agent when Azure AD PowerShell is used to create the user.
+<br>
 
-#### Detection - The User was created outside PIM (e.g. PowerShell)
+#### The User was created outside PIM (e.g. PowerShell)
 ```powershell
 index=azure operationType="RoleElevatedOutsidePimAlert" result="success" 
 | rename targetResources{}.displayName as key_5, targetResources{}.userPrincipalName as key_6
