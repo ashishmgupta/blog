@@ -7,4 +7,4 @@ markdown_extensions:
   - tables
 nav:
   - Overview: 'index.md'
-  - Setup AzureAD App For Splunk: 'CreateAccount-T1136.md'
+  - CreateAccount-T1136: 'CreateAccount-T1136.md'
