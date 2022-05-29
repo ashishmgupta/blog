@@ -1,1 +1,10 @@
-site_name: My Docs
+site_name: Microsoft O365 MITRE ATT&CK Detections using Splunk
+theme:
+  name: material
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - tables
+nav:
+  - Overview: 'index.md'
+  - Setup AzureAD App For Splunk: 'CreateAccount-T1136.md'
