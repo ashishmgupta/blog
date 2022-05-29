@@ -84,7 +84,7 @@ index=azure sourcetype="azure:aad:audit" activityDisplayName="Add user" result="
 | table _time UserAdded CreatedByUPN  UserAgent
 ```
 <br>
-Newly created user is found in the searach. <br>
+Newly created user is found in the search. <br>
 <img src="../../../images/o365mitre/CreateAccount-T1136_2.png"></img>
 
 Note : "Swagger-Codegen/1.4.0.0/csharp" is the user agent when Azure AD PowerShell is used to create the user.
