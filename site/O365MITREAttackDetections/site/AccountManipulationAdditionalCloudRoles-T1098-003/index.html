@@ -13,7 +13,7 @@
     
     
       
-        <title>Account created - T1136 - Microsoft O365 MITRE ATT&CK Detections using Splunk</title>
+        <title>Administrator role assigned [T1098.003] - Microsoft O365 MITRE ATT&CK Detections using Splunk</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-account-cloud-account-subtechnique-t1136003" class="md-skip">
+        <a href="#account-manipulation-additional-cloud-roles" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Account created - T1136
+              Administrator role assigned [T1098.003]
             
           </span>
         </div>
@@ -192,6 +192,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../CreateAccount-T1136/" class="md-nav__link">
+        Account created - T1136
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -204,12 +219,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Account created - T1136
+          Administrator role assigned [T1098.003]
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Account created - T1136
+        Administrator role assigned [T1098.003]
       </a>
       
         
@@ -228,26 +243,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#attack-technique" class="md-nav__link">
-    Attack technique
+  <a href="#about" class="md-nav__link">
+    About
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#splunk-detections" class="md-nav__link">
-    Splunk Detections
-  </a>
-  
-    <nav class="md-nav" aria-label="Splunk Detections">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-user-event" class="md-nav__link">
-    Create user event
+  <a href="#attack-simulation" class="md-nav__link">
+    Attack Simulation
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#splunk-detection" class="md-nav__link">
+    Splunk Detection
+  </a>
+  
+    <nav class="md-nav" aria-label="Splunk Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-added-to-the-administrator-role" class="md-nav__link">
+    User added to the administrator role
+  </a>
+  
+    <nav class="md-nav" aria-label="User added to the administrator role">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#the-user-was-created-outside-pim-eg-powershell" class="md-nav__link">
@@ -260,26 +283,16 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../AccountManipulationAdditionalCloudRoles-T1098-003/" class="md-nav__link">
-        Administrator role assigned [T1098.003]
-      </a>
     </li>
   
 
@@ -311,31 +324,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#attack-technique" class="md-nav__link">
-    Attack technique
+  <a href="#about" class="md-nav__link">
+    About
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#splunk-detections" class="md-nav__link">
-    Splunk Detections
-  </a>
-  
-    <nav class="md-nav" aria-label="Splunk Detections">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-user-event" class="md-nav__link">
-    Create user event
+  <a href="#attack-simulation" class="md-nav__link">
+    Attack Simulation
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#splunk-detection" class="md-nav__link">
+    Splunk Detection
+  </a>
+  
+    <nav class="md-nav" aria-label="Splunk Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-added-to-the-administrator-role" class="md-nav__link">
+    User added to the administrator role
+  </a>
+  
+    <nav class="md-nav" aria-label="User added to the administrator role">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#the-user-was-created-outside-pim-eg-powershell" class="md-nav__link">
     The User was created outside PIM (e.g. PowerShell)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -357,9 +383,12 @@
               
                 
 
-<h1 id="create-account-cloud-account-subtechnique-t1136003">Create Account: Cloud Account (Subtechnique T1136.003)</h1>
-<h3 id="attack-technique">Attack technique</h3>
-<p>The Below script will create a cloud-only account in Azure AD.</p>
+<h1 id="account-manipulation-additional-cloud-roles">Account Manipulation: Additional Cloud Roles</h1>
+<h2 id="about">About</h2>
+<p>An adversary can create an account and then add it to a privileged role such as Global Administrator. <br>
+More details here in <a href="https://attack.mitre.org/techniques/T1098/003/" target="_blank"> MITRE ATT&amp;CK </a> . <br></p>
+<h2 id="attack-simulation">Attack Simulation</h2>
+<p>The below script creates an account and adds the account to the Global administrator role. <br></p>
 <pre><code class="language-powershell">$TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
 $OnMicrosoftDomain = $NULL
@@ -424,26 +453,20 @@ try{
     write-output(&quot;User details written to the file\r\n&quot;)
 }
 </code></pre>
-<p>When the script is run, It asks the name of the user to be created.<br>
-If we just hit enter, It creates a user named "TempUser_" followed by the current date-time. <br>
-<img src="../../../images/o365mitre/CreateAccount-T1136.png"></img>
-<br>
-Azure AD user is created as seen in the Azure portal. <br>
-<img src="../../../images/o365mitre/CreateAccount-T1136_1.png"></img>
+<p>Azure AD user is assigned the Global Admin role as seen in the Azure portal. <br>
+<img src="../../../images/o365mitre/AccountManipulationAdditionalCloudRoles-T1098-003_0.png"></img>
 <br></p>
-<h3 id="splunk-detections">Splunk Detections</h3>
-<h4 id="create-user-event">Create user event</h4>
-<pre><code class="language-powershell">index=azure sourcetype=&quot;azure:aad:audit&quot; activityDisplayName=&quot;Add user&quot; result=&quot;success&quot;
-| spath targetResources{}
-| rename targetResources{}.userPrincipalName as UserAdded initiatedBy.user.userPrincipalName as CreatedByUPN  additionalDetails{}.value as UserAgent
-| table _time UserAdded CreatedByUPN  UserAgent
+<h2 id="splunk-detection">Splunk Detection</h2>
+<h3 id="user-added-to-the-administrator-role">User added to the administrator role</h3>
+<pre><code class="language-powershell">index=azure sourcetype=&quot;azure:aad:audit&quot; activityDisplayName=&quot;Add member to role&quot; result=&quot;success&quot;
+| eval AssignedRoleName = mvindex('targetResources{}.modifiedProperties{}.newValue', mvfind('targetResources{}.modifiedProperties{}.displayName', &quot;Role\.DisplayName&quot;))
+| eval RoleWellKnownObjectName = mvindex('targetResources{}.modifiedProperties{}.newValue', mvfind('targetResources{}.modifiedProperties{}.displayName', &quot;Role\.WellKnownObjectName&quot;))
+| search AssignedRoleName = &quot;*Administrator*&quot;
+| rename targetResources{}.userPrincipalName as UserAddedToRole, initiatedBy.user.ipAddress as src_ip, initiatedBy.user.userPrincipalName as CreatedByUPN
+| table _time UserAddedToRole, AssignedRoleName, src_ip ,CreatedByUPN,  roleWellKnownObjectName
 </code></pre>
-<p><br>
-Newly created user is found in the search. <br>
-<img src="../../../images/o365mitre/CreateAccount-T1136_2.png"></img></p>
-<p>Note : "Swagger-Codegen/1.4.0.0/csharp" is the user agent when Azure AD PowerShell is used to create the user.
-<br></p>
 <h4 id="the-user-was-created-outside-pim-eg-powershell">The User was created outside PIM (e.g. PowerShell)</h4>
+<p>When the user is assigned to an administrator role without using <a href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a>, a corresponding Azure Ad event "RoleElevatedOutsidePimAlert" is generated and we would want to detect such an event. Any privileged role assignment should be done only through PIM. <br></p>
 <pre><code class="language-powershell">index=azure operationType=&quot;RoleElevatedOutsidePimAlert&quot; result=&quot;success&quot; 
 | rename targetResources{}.displayName as key_5, targetResources{}.userPrincipalName as key_6
 | eval a = mvzip(key_5,key_6)
@@ -466,7 +489,7 @@ Newly created user is found in the search. <br>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+        <a href="../CreateAccount-T1136/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Account created - T1136" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -475,26 +498,11 @@ Newly created user is found in the search. <br>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Overview
+              Account created - T1136
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../AccountManipulationAdditionalCloudRoles-T1098-003/" class="md-footer__link md-footer__link--next" aria-label="Next: Administrator role assigned [T1098.003]" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Administrator role assigned [T1098.003]
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

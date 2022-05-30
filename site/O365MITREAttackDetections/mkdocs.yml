@@ -7,4 +7,5 @@ markdown_extensions:
   - tables
 nav:
   - Overview: 'index.md'
-  - CreateAccount-T1136: 'CreateAccount-T1136.md'
+  - Account created - T1136: 'CreateAccount-T1136.md'
+  - Administrator role assigned [T1098.003] : 'AccountManipulationAdditionalCloudRoles-T1098-003.md'

@@ -12,6 +12,6 @@ This documentation is specifically focused on how to write detections using the 
         <a href="https://ashishmgupta.github.io/blog/site/O365MITREAttackDetections/site/CreateAccount-T1136/" target="_blank">CreateAccount-T1136</a>
     </li>
     <li>
-        <a href="https://ashishmgupta.github.io/blog/site/O365MITREAttackDetections/site/CreateAccount-T1136/" target="_blank">CreateAccount-T1136</a>
+        <a href="https://ashishmgupta.github.io/blog/site/O365MITREAttackDetections/site/AccountManipulationAdditionalCloudRoles-T1098-003/" target="_blank">Additional Role Assigned (T1098-003)</a>
     </li>
 </ul>
