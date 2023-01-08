@@ -1,0 +1,2 @@
+# Conclusion
+<p class="MyNormalStyle">Per Santa, the golden rings were stolen by the Smilegol and buried deep in the tunnel. By possession of those rings, Smilegol spellbound as a Grinchum. But we were able to recover all the rings by solving all the challenges and return them back to Santa. That freed Smilegol from the spell and he was restored back to his original self and the holiday season was saved!</p>
