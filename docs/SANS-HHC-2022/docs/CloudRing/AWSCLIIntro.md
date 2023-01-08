@@ -57,6 +57,7 @@
  <tr>
   <td width=783 valign=top style='width:587.45pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MyNormalStyle>Configure AWS credentials : </p>
   ```python
   aws configure
   ```
@@ -72,7 +73,7 @@
  <tr>
   <td width=783 valign=top style='width:587.45pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MyNormalStyle>Get caller Identity</p>
+  <p class=MyNormalStyle>Get caller Identity : </p>
   ```python
   aws sts get-caller-identity
   ```
