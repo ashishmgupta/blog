@@ -1,6 +1,6 @@
 # Buy a hat
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
- width=786 style='width:589.5pt;
+ width=800 
   margin-xxxleftxxx:6.75pt;  margin-xxxleftyyy:6.75pt'>
  <tr>
   <td width=786 colspan=2 valign=top style='width:589.5pt;border:solid windowtext 1.0pt;
@@ -8,9 +8,13 @@
   <p class=MyNormalStyle><img border=0 width=19 height=20 id="Picture 482"
   src="../../images/blog_images/image219.png"><a
   name="_Hlk123468789">Buy a hat
-  </a><img border=0 width=27 height=25 id="Picture 70"
+  </a>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border=0 width=27 height=25 id="Picture 70"
   src="../../images/blog_images/image039.png">Burning
-  Ring of fire <img border=0
+  Ring of fire 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border=0
   width=25 height=24 id="Picture 474"
   src="../../images/blog_images/image220.png"
   alt="A picture containing clipart&#10;&#10;Description automatically generated">Wombley
@@ -52,8 +56,7 @@
   </td>
  </tr>
 </table>
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=792
- style='width:8.25in; margin-xxxleft:-63.25pt;'>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=800>
  <tr>
   <td width=792 colspan=4 valign=top style='width:8.25in;border:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
@@ -90,8 +93,7 @@
   <td width=157 valign=top style='width:118.05pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img
-  border=0 width=78 height=121 id="Picture 489"
-  src="../../images/blog_images/image223.png"
+  border=0 src="../../images/blog_images/image223.png"
   alt="A picture containing text, several&#10;&#10;Description automatically generated"></p>
   </td>
   <td width=138 colspan=2 valign=top style='width:103.65pt;border-top:none;
@@ -115,21 +117,21 @@
   <td width=792 colspan=4 valign=top style='width:8.25in;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><span
-  class=TableRowBoldChar>We then go to nearby KTM and check our wallet balance
+  class=TableRowBold>We then go to nearby KTM and check our wallet balance
   first.</span><br>
-  <span class=MyNormalStyleChar>Please note our wallet address is :
+  <span class=MyNormalStyle>Please note our wallet address is :
   0xBC94c917D66B2eB6b4209ccEEe58297D63512CE5</span></p>
   </td>
  </tr>
  <tr>
   <td width=161 colspan=2 valign=top style='width:120.45pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><b>KTM</b></p>
+  <p class=TableRowBold style=' margin-xxxbottom:0in;line-height:normal'><b>KTM</b></p>
   </td>
   <td width=631 colspan=2 valign=top style='width:473.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><b>Checking
+  <p class=TableRowBold style=' margin-xxxbottom:0in;line-height:normal'><b>Checking
   the wallet balance. Its 505 KC.</b></p>
   </td>
  </tr>
@@ -153,7 +155,7 @@
  <tr>
   <td width=792 colspan=4 valign=top style='width:8.25in;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><b>We then
+  <p class=TableRowBold style=' margin-xxxbottom:0in;line-height:normal'><b>We then
   pre-approve the transaction with 10 KC (value of our hat) and buy the hat
   with below information</b></p>
   </td>
@@ -161,22 +163,15 @@
  <tr>
   <td width=792 colspan=4 valign=top style='width:8.25in;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'>To Address :</p>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'>0xBC94c917D66B2eB6b4209ccEEe58297D63512CE5<br>
+  <p class=TableRowBold style=' margin-xxxbottom:0in;line-height:normal'>To Address :</p>
+  <p class=TableRowBold style=' margin-xxxbottom:0in;line-height:normal'>0xBC94c917D66B2eB6b4209ccEEe58297D63512CE5<br>
   Amount (KC) :10<br>
   <br>
   </p>
   </td>
  </tr>
- <tr height=0>
-  <td width=157 style='border:none'></td>
-  <td width=3 style='border:none'></td>
-  <td width=135 style='border:none'></td>
-  <td width=496 style='border:none'></td>
- </tr>
 </table>
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
- width=785 style='width:588.6pt;
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left width=800
   margin-xxxleftxxx:6.75pt;  margin-xxxleftyyy:6.75pt'>
  <tr style='height:11.9pt'>
   <td width=785 colspan=2 valign=top style='width:588.6pt;border:solid windowtext 1.0pt;
@@ -225,8 +220,8 @@
  <tr style='height:11.25pt'>
   <td width=785 colspan=2 valign=top style='width:588.6pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt;height:11.25pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><span
-  class=TableRowBoldChar>We supply the below information :</span><br>
+  <p class=MyNormalStyle style=' margin-xxxbottom:0in;line-height:normal'>We supply the below information :</p>
+  <p class=TableRowBold>
   Your wallet address : <br>
   0xBC94c917D66B2eB6b4209ccEEe58297D63512CE5<br>
   Your Key : <br>
@@ -237,7 +232,7 @@
  <tr style='height:11.25pt'>
   <td width=785 colspan=2 valign=top style='width:588.6pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt;height:11.25pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'>Transaction
+  <p class=TableRowBold style=' margin-xxxbottom:0in;line-height:normal'>Transaction
   successful and we have bought a new hat!</p>
   </td>
  </tr>
@@ -281,7 +276,7 @@
  <tr style='height:11.25pt'>
   <td width=785 colspan=2 valign=top style='width:588.6pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt;height:11.25pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><b>With this,
+  <p class=TableRowBold style=' margin-xxxbottom:0in;line-height:normal'><b>With this,
   the objective is now completed.</b></p>
   </td>
  </tr>
