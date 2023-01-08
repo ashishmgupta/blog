@@ -105,18 +105,16 @@
   {$_.'message' -like '*recipe*'} | select TimeCreated
   ```
   </p>
-  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Cambria",serif'>&nbsp;#There
-  were 56 events where &quot;recipe&quot; was mentioned</span></p>
+   <p class=MyNormalStyle># There  were 56 events where &quot;recipe&quot; was mentioned</p>
   <p class=MyCodeStyle>
   ``` powershell
   (Import-Csv powershell_logs.csv | Where-Object {$_.'message'
   -like '*recipe*'} | select TimeCreated).count
   ```
   </p>
-  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Cambria",serif'>&nbsp;
+  <p class=MyNormalStyle>
   Out of 56, there were only 3 events on 12/18/2022 which mentioned recipe and
-  they look innocuous. </span><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>So
-  the attack took place on 12/24/2024</span></p>
+  they look innocuous. So the attack took place on 12/24/2024.</p>
   </td>
  </tr>
 </table>
@@ -139,8 +137,7 @@
  <tr>
   <td width=786 valign=top style='width:589.5pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Cambria",serif'>The
-  attacker got a secret from a file which means they may have used Get-Content.</span></p>
+  <p class=MyNormalStyle>The attacker got a secret from a file which means they may have used Get-Content.</p>
   <p class=MyCodeStyle><span style='font-size:11.0pt;font-family:"Cambria",serif'>So,
   we look for that in the events on 12/24/2022</span><br>
   ``` powershell
@@ -450,11 +447,10 @@ clear=all style='page-break-before:always'>
  <tr>
   <td width=798 valign=top style='width:598.5pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
-  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>From
+  <p class=MyNormalStyle>From
   the answer to the question 9) the ingredient which got replaced in the
-  original recipe file was honey.</span></p>
-  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>So
-  the secret ingredient is honey</span></p>
+  original recipe file was honey.</p>
+  <p class=MyNormalStyle>Therefore, the secret ingredient is honey</p>
   <img border=0 src="../../images/blog_images/image069.png">
   </td>
  </tr>
