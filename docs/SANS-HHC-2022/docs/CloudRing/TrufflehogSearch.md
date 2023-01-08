@@ -10,9 +10,13 @@
   height=20 id="Picture 17"
   src="../../images/blog_images/image188.png"></a><a
   name="_Hlk123467250">Trufflehog Search
-  </a><img border=0 width=27 height=25 id="Picture 485"
+  </a>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border=0 width=27 height=25 id="Picture 485"
   src="../../images/blog_images/image039.png">Cloud
-  Ring <img border=0
+  Ring 
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border=0
   width=25 height=24 id="Picture 45"
   src="../../images/blog_images/image197.png"
   alt="A picture containing clipart&#10;&#10;Description automatically generated">Sulfrod</p>
