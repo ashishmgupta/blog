@@ -97,8 +97,8 @@
  <tr style='height:85.0pt'>
   <td width=786 valign=top style='width:589.5pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt;height:85.0pt'>
-  <p style='margin:0in'><span style='font-size:11.0pt;font-family:"Cambria",serif'>#
-  check for all dates for the events which mentioned the word 'recipe'</span></p>
+    <p class=MyNormalStyle>#
+  check for all dates for the events which mentioned the word 'recipe'</p>
   <p class=MyCodeStyle>
   ``` powershell
   Import-Csv powershell_logs.csv | Where-Object
