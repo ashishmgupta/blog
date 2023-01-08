@@ -7,8 +7,7 @@
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MyNormalStyle><img border=0 width=19 height=20 id="Picture 482"
   src="../../images/blog_images/image219.png"><a
-  name="_Hlk123468789">Buy a
-  hat
+  name="_Hlk123468789">Buy a hat
   </a><img border=0 width=27 height=25 id="Picture 70"
   src="../../images/blog_images/image039.png">Burning
   Ring of fire <img border=0
@@ -29,9 +28,7 @@
   <td width=668 valign=top style='width:500.7pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt;height:53.25pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img
-  border=0 width=412 height=107 id="Picture 477"
-  src="../../images/blog_images/image222.png"
+  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img src="../../images/blog_images/image222.png"
   alt="Text&#10;&#10;Description automatically generated"></p>
   </td>
  </tr>
