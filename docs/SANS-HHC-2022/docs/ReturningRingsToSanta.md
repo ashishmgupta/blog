@@ -10,15 +10,15 @@ He congratulates us and we take customary selfie with him.</p>
  style='margin-xxxleft:-67.75pt;;border:none'>
  <tr style='height:141.6pt'>
   <td >
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img src="../../images/blog_images/image267.png"></p>
+  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img src="../images/blog_images/image267.png"></p>
   </td>
   <td >
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img src="../../images/blog_images/image268.png"></p>
+  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img src="../images/blog_images/image268.png"></p>
   </td>
   </tr>
   <tr>
   <td colspan = 2>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img src="../../images/blog_images/image269.png"></p>
+  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'><img src="../images/blog_images/image269.png"></p>
   </td>
  </tr>
 </table>
