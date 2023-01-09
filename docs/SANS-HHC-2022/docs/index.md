@@ -24,7 +24,7 @@ were derived.</p>
   border-top:none;padding:0in 5.4pt 0in 5.4pt;height:244.2pt'>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><img
   width=428 height=204 id="Picture 164"
-  src="../images/blog_images/image002.png"
+  src="../images/blog_images/image001.png"
   alt="Graphical user interface, text, application&#10;&#10;Description automatically generated"></p>
   </td>
   <td width=346 valign=top style='width:259.45pt;border-top:none;border-left:
