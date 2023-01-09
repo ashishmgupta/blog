@@ -1,4 +1,4 @@
-<img src="/images/banner.png" alt="drawing" width="1000px"/><br>
+<img src="../images/blog_images/banner.png" alt="drawing" width="1000px"/><br>
 # Overview
 <p class=MyNormalStyle>Hi and welcome to my <a href="https://holidayhackchallenge.com/2020/" target=_blank>2022 SANS Holiday Hack Challenge</a> write-up.</p>
 <p class=MyNormalStyle>Its my privilege to attend the Kringlecon for the third time. Since 202Every year I look forward to december and make every attempt to complete </p>
