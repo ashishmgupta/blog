@@ -1,7 +1,7 @@
 # Wandering Around The North Pole
 <p class=MyNormalStyle>Upon entering the north pole, as a first step, we talk to
-Santa who states his 5 golden rings have gone missing and seeks help. Upon
-talking to Santa, several objectives get unlocked.</p>
+Santa who states his 5 golden rings have gone missing and seeks help. 
+<br>Upon talking to Santa, several objectives get unlocked.</p>
 
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
  width=100% margin-leftxxx:6.75pt; margin-leftyyy:6.75pt'>
@@ -107,71 +107,118 @@ Coins (KC) upon solving objectives which may be used to buy hats and NFTs.</p>
     <tr align="center" >
         <td><img src="../images/blog_images/image019.png">
         </td>
-        <td><img src="../images/blog_images/image020.png">
-        <p class=MyNormalStyle>Wireshark Phishing</p>
+        <td>
+        <a href="/TolkienRing/WiresharkPhishing/">
+            <img src="../images/blog_images/image020.png">
+            <p class=MyNormalStyle>Wireshark Phishing</p>
+        </a>
         </td>
-        <td><img src="../images/blog_images/image021.png">
-        <p class=MyNormalStyle>Windows Event Logs</p>
+        <td>
+            <a href="/TolkienRing/WindowsEventLogs/">
+            <img src="../images/blog_images/image021.png">
+            <p class=MyNormalStyle>Windows Event Logs</p>
+            </a>
         </td>
-        <td><img src="../images/blog_images/image022.png">
-        <p class=MyNormalStyle>Suricata Regatta</p>
+        <td>
+            <a href="/TolkienRing/SuricataRegatta/">
+                <img src="../images/blog_images/image022.png">
+                <p class=MyNormalStyle>Suricata Regatta</p>
+            </a>
         </td>
     </tr>
     <!--elfen -->
     <tr align="center">
         <td><img src="../images/blog_images/image023.png">
         </td>
-        <td><img src="../images/blog_images/image024.png">
-        <p class=MyNormalStyle>Clone with a difference</p>
+        <td>
+            <a href="/ElfenRing/CloneWithaDifference/">
+                <img src="../images/blog_images/image024.png">
+                <p class=MyNormalStyle>Clone with a difference</p>
+            </a>
         </td>
-        <td><img src="../images/blog_images/image025.png">
-        <p class=MyNormalStyle>Prison Escape</p>
+        <td>
+            <a href="/ElfenRing/PrisonEscape/">
+            <img src="../images/blog_images/image025.png">
+            <p class=MyNormalStyle>Prison Escape</p>
+            </a>
         </td>
-        <td><img src="../images/blog_images/image026.png">
-        <p class=MyNormalStyle>Jolly CI/CD</p>
+        <td>
+            <a href="/ElfenRing/JollyCICD/">
+                <img src="../images/blog_images/image026.png">
+                <p class=MyNormalStyle>Jolly CI/CD</p>
+            </a>
         </td>
     </tr>
     <!--web -->
     <tr align="center">
         <td><img src="../images/blog_images/image027.png">
         </td>
-        <td><img src="../images/blog_images/image028.png">
-        <p class=MyNormalStyle>Naughty IP, Credential Mining</p>
-        <p class=MyNormalStyle>404 FTW, IMDS/XXE</p>
+        <td>
+        <a href="/WebRing/NaughtyIP/"><img src="../images/blog_images/image028.png"></a>
+        <p class=MyNormalStyle><a href="/WebRing/NaughtyIP/">Naughty IP</a>, <a href="/WebRing/CredentialMining/">Credential Mining</a></p>
+        <p class=MyNormalStyle><a href="/WebRing/404FTW/">404 FTW</a>, <a href="/WebRing/IMDSandXXE/">IMDS/XXE</a></p>
         </td>
-        <td><img src="../images/blog_images/image029.png">
-        <p class=MyNormalStyle>Boria Mine Door</p>
+        <td>
+            <a href="/WebRing/OpenBoriaMineDoor/">
+                <img src="../images/blog_images/image029.png">
+                <p class=MyNormalStyle>Boria Mine Door</p>
+            </a>
         </td>
-        <td><img src="../images/blog_images/image030.png">
-        <p class=MyNormalStyle>Glamtariel's Fountain</p>
+        <td>
+            <a href="/WebRing/GlamtarielsFountain/">
+                <img src="../images/blog_images/image030.png">
+                <p class=MyNormalStyle>Glamtariel's Fountain</p>
+            </a>
         </td>
     </tr>
     <!--cloud -->
     <tr align="center">
         <td><img src="../images/blog_images/image031.png">
         </td>
-        <td><img src="../images/blog_images/image032.png">
-        <p class=MyNormalStyle>AWS CLI Intro</p>
+        <td>
+        <a href="/CloudRing/AWSCLIIntro/">
+            <img src="../images/blog_images/image032.png">
+            <p class=MyNormalStyle>AWS CLI Intro</p>
+        </a>
         </td>
-        <td><img src="../images/blog_images/image032_1.png">
+        <td>
+            <a href="/CloudRing/TrufflehogSearch/">
+            <img src="../images/blog_images/image032_1.png">
+            </a>
         </td>
-        <td><img src="../images/blog_images/image033.png">
-        <p class=MyNormalStyle>Trufflehog Search</p>
-        <p class=MyNormalStyle>Exploitation via AWS CLI</p>
+        <td>
+            <a href="/CloudRing/TrufflehogSearch/">
+            <img src="../images/blog_images/image033.png">
+            </a>
+            <a href="/CloudRing/TrufflehogSearch/">
+            <p class=MyNormalStyle>Trufflehog Search</p>
+            </a>
+            <a href="/CloudRing/ExploitationViaAWSCLI/">
+                <p class=MyNormalStyle>Exploitation via AWS CLI</p>
+            </a>
         </td>
     </tr>
     <!--fire -->
     <tr align="center">
         <td><img src="../images/blog_images/image034.png">
         </td>
-        <td><img src="../images/blog_images/image035.png">
-        <p class=MyNormalStyle>Buy a hat</p>
+        <td>
+            <a href="/BurningRingOfFire/BuyaHat/">
+                <img src="../images/blog_images/image035.png">
+                <p class=MyNormalStyle>Buy a hat</p>
+            </a>
         </td>
-        <td><img src="../images/blog_images/image036.png">
-        <p class=MyNormalStyle>Blockchain Divination</p>
+        <td>
+            <a href="/BurningRingOfFire/BlockchainDivination/">
+                <img src="../images/blog_images/image036.png">
+                <p class=MyNormalStyle>Blockchain Divination</p>
+            </a>
         </td>
-        <td><img src="../images/blog_images/image037.png">
-        <p class=MyNormalStyle>Exploit a Smart Contract</p>
+        <td>
+            <a href="/BurningRingOfFire/ExploitaSmartContract/">
+                <img src="../images/blog_images/image037.png">
+                <p class=MyNormalStyle>Exploit a Smart Contract</p>
+            </a>
         </td>
     </tr>
 </table>

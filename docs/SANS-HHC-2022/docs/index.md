@@ -9,7 +9,7 @@
 <p class=MyNormalStyle>Fortunately I was able to complete all of challenges and recover all the rings.</p>
 
 
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=1000>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
  <tr style='height:11.45pt'>
   <td width=452 valign=top style='width:339.0pt;border:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt;height:11.45pt'>
