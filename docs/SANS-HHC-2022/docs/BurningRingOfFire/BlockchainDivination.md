@@ -42,12 +42,12 @@
   <td width=568 valign=top style='width:425.7pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt;height:35.25pt'>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'>Hints :<br>
+  <p class=MyNormalStyle style=' margin-xxxbottom:0in;line-height:normal'>Hints :<br>
   - Look at the transaction information. There is a From: address and a To:
   address. The To: address lists the address of the KringleCoin smart contract.<br>
   <br>
   </p>
-  <p class=MsoNormal style=' margin-xxxbottom:0in;line-height:normal'>- Find a
+  <p class=MyNormalStyle style=' margin-xxxbottom:0in;line-height:normal'>- Find a
   transaction in the blockchain where someone sent or received KringleCoin! The
   Solidity Source File is listed as KringleCoin.sol. <a
   href="https://youtu.be/r3zj9DPC8VY">Tom's Talk</a> might be helpful!</p>
@@ -63,7 +63,7 @@
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MyNormalStyle>The question is At what address is the KringleCoin
   smart contract deployed.<br>
-  Now If we look at the hint it clearly notes the <b><span style='background:
+  Now If we look at the hint, it clearly notes the <b><span style='background:
   yellow'>To: Address</span></b><span style='background:yellow'> in the
   transaction is where the smart contract is deployed</span>.<br>
   <i>Look at the transaction information. There is a From: address and a To:
@@ -76,7 +76,7 @@
   border-top:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MyNormalStyle style=' margin-xxxbottom:0in;line-height:normal'>Now we look
   at the transaction. There is only one transaction (transaction 0) where the
-  To address is noted.</p>
+  "To address" is noted.</p>
   </td>
  </tr>
  <tr>
