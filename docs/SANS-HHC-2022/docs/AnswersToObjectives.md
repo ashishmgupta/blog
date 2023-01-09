@@ -1,4 +1,9 @@
 # Answer to objectives and High-level approach
+
+<p class=MyNormalStyle>
+Below are the answers to all the objectives and the high level approach to solve those objectives.
+</p>
+
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=1000
  style='border:none'>
  <tr style='height:16.6pt'>
@@ -35,7 +40,7 @@
   </td>
  </tr>
  <tr style='height:45.75pt'>
-  <td width=217 rowspan=6 valign=top style='width:162.9pt;border:solid windowtext 1.0pt;
+  <td width=217 rowspan=7 valign=top style='width:162.9pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt;height:45.75pt'>
   <p class=MyNormalStyle style='margin-left:.5in;text-indent:-.25in'>2.<span
   style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Wireshark
@@ -48,7 +53,7 @@
   PCAP?<br>
   Answer: <b>http</b></p>
   </td>
-  <td width=219 rowspan=6 valign=top style='width:164.5pt;border-top:none;
+  <td width=219 rowspan=7 valign=top style='width:164.5pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt;height:45.75pt'>
   <p class=MyNormalStyle>Open the pcap file using Wireshark.<br>
@@ -83,24 +88,33 @@
   <p class=MyNormalStyle>Answer: <b>192.185.57.242</b></p>
   </td>
  </tr>
+  <tr style='height:12.0pt'>
+  <td width=343 valign=top style='width:257.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.0pt'>
+  <p class=MyNormalStyle>Q5: What file is saved to the infected host?</p>
+  <p class=MyNormalStyle>Answer: <b>Ref_Sept24-2020.zip </b></p>
+  </td>
+ </tr>
  <tr style='height:90.75pt'>
   <td width=343 valign=top style='width:257.6pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt;height:90.75pt'>
-  <p class=MyNormalStyle>Q5: Attackers used bad TLS certificates in this
+  <p class=MyNormalStyle>Q6: Attackers used bad TLS certificates in this
   traffic. Which countries were they registered to? Submit the names of the countries
   in alphabetical order separated by comma (ex, Norway, South Korea)</p>
-  <p class=MyNormalStyle>Answer: <b>Ireland, Israel, South Sudan, United States</b></p>
+  <p class=MyNormalStyle>Answer: <b>Israel, South Sudan</b></p>
   </td>
  </tr>
  <tr style='height:12.0pt'>
   <td width=343 valign=top style='width:257.6pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt;height:12.0pt'>
-  <p class=MyNormalStyle>Q6: Is the host infected?</p>
+  <p class=MyNormalStyle>Q7: Is the host infected?</p>
   <p class=MyNormalStyle>Answer: <b>Yes</b></p>
   </td>
  </tr>
+ 
  <tr style='height:20.25pt'>
   <td width=217 rowspan=10 valign=top style='width:162.9pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0in 5.4pt 0in 5.4pt;height:20.25pt'>

@@ -8,6 +8,12 @@
     --md-primary-bg-color:        #fff;
   }
 
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 1;
+  border-left-width: 4px;
+}
+
 /* Style Definitions */
 p.MsoNormal, li.MsoNormal, div.MsoNormal
 {margin-top:0in;

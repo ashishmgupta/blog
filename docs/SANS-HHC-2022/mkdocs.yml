@@ -3,6 +3,7 @@ theme:
   name: material
   features:
     - content.code.copy
+    - content.tabs.link
   
 extra_css:
   - stylesheets/extra.css
@@ -12,7 +13,11 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
 nav:
 - Overview: 'index.md'
 - Answer to objectives and high level approach: 'AnswersToObjectives.md'
