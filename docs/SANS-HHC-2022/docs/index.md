@@ -2,13 +2,15 @@
 # Overview
 <p class=MyNormalStyle>Hi and welcome to my <a href="https://holidayhackchallenge.com/2020/" target=_blank>2022 SANS Holiday Hack Challenge</a> write-up.</p>
 <p class=MyNormalStyle>SANS Holiday Hack Challenge is a holiday themed and gamified cybersecurity competition.</p> 
-<p class=MyNormalStyle>The hands-on challenges encompass a number of cyber security areas namely network security, application security, cloud Security to name a few.</p>
-<p class=MyNormalStyle>Its my privilege to attend the Kringlecon for the third time. </p>
+<p class=MyNormalStyle>The hands-on challenges encompass a number of cyber security areas namely network security, application security, cloud security to name a few.</p>
+<p class=MyNormalStyle>It's my privilege to attend the Kringlecon for the third time. </p>
 <p class=MyNormalStyle>Since 2020, every year I look forward to December and make every attempt to complete it.</p>
-<p class=MyNormalStyle>This year the challenge is based on "Lord of the Rings" series. You are tasks to to recover 5 golden rings with each ring requiring you to solve a number of challenges and uncover the story.</p>
-<p class=MyNormalStyle>Fortunately I was able to complete all of challenges and recover all the rings.</p>
+<p class=MyNormalStyle>This year the challenge is based on "Lord of the Rings" series. <br>You are tasked to recover 5 golden rings with each ring requiring you to solve several challenges. <br> Completing all the challenges also uncover the whole story.</p>
+<p class=MyNormalStyle>Fortunately, I was able to complete all of challenges and recover all the rings.</p>
 
+<p class="TableRowBold"> Details on each objective can be accessed from left navigation </a>
 
+<br><br>
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
  <tr style='height:11.45pt'>
   <td width=452 valign=top style='width:339.0pt;border:solid windowtext 1.0pt;

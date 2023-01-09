@@ -566,7 +566,8 @@ Below are the answers to all the objectives and the high level approach to solve
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MyNormalStyle style='margin-bottom:0in;line-height:normal'><span
-  style='font-family:"Cambria",serif'>Build our own Merkle tree with our wallet
+  style='font-family:"Cambria",serif'>The client side javascript in the app has the hard coded "root" value.<br> 
+  Build our own Merkle tree with our wallet
   address and pass it on the website replacing the hardcoded "root" value with
   the root value of our own Merkle tree with our wallet/proof.</span></p>
   </td>
