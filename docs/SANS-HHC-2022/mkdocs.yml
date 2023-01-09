@@ -4,6 +4,9 @@ theme:
   features:
     - content.code.copy
     - content.tabs.link
+  palette:
+    accent: red
+    primary: indigo
   
 extra_css:
   - stylesheets/extra.css
@@ -20,7 +23,7 @@ markdown_extensions:
       alternate_style: true 
 nav:
 - Overview: 'index.md'
-- Answer to objectives and high level approach: 'AnswersToObjectives.md'
+- Answers/high level approach: 'AnswersToObjectives.md'
 - Kringlecon Orientation: 'KringleconOrientation.md'
 - Wandering around the north pole: WanderingAroundTheNorthPole.md
 - Tolkien Ring:
@@ -50,6 +53,7 @@ nav:
   - Buy a hat: BurningRingOfFire/BuyaHat.md
   - Blockchain Divination: BurningRingOfFire/BlockchainDivination.md
   - Exploit a smart contract: BurningRingOfFire/ExploitaSmartContract.md
-- Returning The Golden Rings to Santa: ReturningRingsToSanta.md
+- Returning the rings to Santa: ReturningRingsToSanta.md
 - Conclusion: Conclusion.md
 - CyberSecurity Learnings: CyberSecurityLearnings.md
+- Thank you: ThankYou.md

@@ -1,13 +1,24 @@
 .md-grid {
     max-width: 2500px; 
   }
-:root {
-    --md-primary-fg-color:        #2e303e;
+/* :root {
+    --md-primary-fg-color:        #EE0F0F;
     --md-primary-fg-color--light: #ECB7B7;
     --md-primary-fg-color--dark:  #90030C;
-    --md-primary-bg-color:        #fff;
+  }*/
+:root {
+    --md-primary-fg-color:        #ffffff;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #90030C;
+    --md-primary-bg-color:        #2e303e;
   }
 
+ body {
+    /*background: #2e303e;
+    color: #ffffff;*/
+    /* or, using CSS variables 
+    --md-default-bg-color: red;*/
+  }
 .md-typeset .admonition,
 .md-typeset details {
   border-width: 1;

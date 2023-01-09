@@ -1,4 +1,4 @@
-# Returning Rings to Santa
+# Returning the Golden Rings to Santa
 
 
 <p class=MyNormalStyle>After recovering all the rings, we talk back to Santa,
