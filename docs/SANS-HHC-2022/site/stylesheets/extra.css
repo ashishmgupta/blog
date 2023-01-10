@@ -8,9 +8,12 @@
   }*/
 :root {
     --md-primary-fg-color:        #ffffff;
+    --md-text-font: "Roboto";
     --md-primary-fg-color--light: #ECB7B7;
     --md-primary-fg-color--dark:  #90030C;
     --md-primary-bg-color:        #2e303e;
+    --md-text-font: "Roboto";
+    --md-code-font: "Roboto Mono";
   }
 
  body {
@@ -30,18 +33,19 @@ p.MyNormalStyle, li.MyNormalStyle, div.MyNormalStyle
 margin:0in;
 font-size:14.0pt;
 /*font-family:"Cambria",serif;*/
-font-family:"Lucida Sans";
+/*font-family:"Lucida Sans",sans-serif !important;*/
 }
 p.MyCodeStyle, li.MyCodeStyle, div.MyCodeStyle
 {
 margin:0in;
 font-size:9.0pt;
-font-family:"Lucida Console";}
+/*font-family:"Lucida Console";*/
+}
 p.TableRowBold, li.TableRowBold, div.TableRowBold
 {
 margin:0in;
 font-size:14.0pt;
-font-family:"Lucida Sans";
+/*font-family:"Lucida Sans,sans-serif !important;";*/
 font-weight:bold;
 }
 
