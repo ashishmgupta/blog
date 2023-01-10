@@ -248,8 +248,7 @@ of questions.</p>
  </tr>
  <tr>
   <td>
-  <p class=MyNormalStyle>Answer : <b>Ireland, Israel, South Sudan, United
-  States</b></p>
+  <p class=MyNormalStyle>Answer : <b>Israel, South Sudan</b></p>
   </td>
  </tr>
  <tr style='height:63.1pt'>
@@ -262,10 +261,8 @@ of questions.</p>
   <p class=MyNormalStyle>For the selected packet we can look the certificate
   section and get the country code of the issuer.</p>
   <p class=MyNormalStyle>Looking at all the available packets, we get the
-  following country codes : IE, IL, US , SS<br>
-  Get the names for the code and arranging them alphabetically: Ireland,
-  Israel, South Sudan, United States</p>
-  <p class=MyNormalStyle>&nbsp;</p>
+  following country codes : IL,SS where the certificates are not valid<br>
+  Get the names for the code and arranging them alphabetically: Israel, South Sudan</p>
   </td>
  </tr>
  <tr>
