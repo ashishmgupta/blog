@@ -1,5 +1,5 @@
 # Wireshark Phishing
-<!--table width=100% border=1>
+<table  class=MsoTableGrid width=100% border=1>
  <tr>
   <td>
   <img border=0 id="Picture 97" src="../../images/blog_images/image038.png">Wireshark Phishing 
@@ -11,8 +11,323 @@
   <img border=0 id="Picture 96" src="../../images/blog_images/image040.png">Sparkle Redberry
   </td>
   </tr>
- </table-->
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=804 >
+ </table>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100% >
+    <!--tr class=MyNormalStyle>
+        <td colspan=2 >
+                <p class="MyNormalStyle">
+                <img border=0 id="Picture 97" src="../../images/blog_images/image038.png">Wireshark Phishing
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img border=0 id="Picture 10" src="../../images/blog_images/image039.png">Tolkien Ring
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img border=0 id="Picture 96" src="../../images/blog_images/image040.png">Sparkle Redberry
+                </p>
+        </td>
+    </tr-->
+  <tr>
+  <td  colspan=2 >
+  <p class=MyNormalStyle><b>Objective</b> : Use the Wireshark Phishing terminal in the
+  Tolkien Ring to solve the mysteries around the suspicious PCAP. Get hints for
+  this challenge by typing hint in the upper panel of the terminal.</p>
+  </td>
+ </tr>
+ <tr >
+  <td rowspan=2 >
+  <p class=MyNormalStyle><img border=0 id="Picture 278"
+  src="../../images/blog_images/image041.png"
+  alt="A picture containing graphical user interface&#10;&#10;Description automatically generated"></p>
+  </td>
+  <td>
+  <p class=MyNormalStyle><u><img border=0 id="Picture 279"
+  src="../../images/blog_images/image042.png"
+  alt="Graphical user interface, text&#10;&#10;Description automatically generated"></u></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle><u>PCAP file : <br>
+  </u><a
+  href="https://storage.googleapis.com/hhc22_player_assets/suspicious.pcap">https://storage.googleapis.com/hhc22_player_assets/suspicious.pcap</a></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MyNormalStyle>We type "yes" on the terminal and that prompts a series
+of questions.</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
+ <tr style='height:34.65pt'>
+  <td>
+  <p class=MyNormalStyle><img border=0 
+  src="../../images/blog_images/image043.png"
+  alt="Text&#10;&#10;Description automatically generated"></p>
+  </td>
+  <td width=384 valign=top >
+  <p class=MyNormalStyle><img border=0 
+  src="../../images/blog_images/image044.png"
+  alt="Text&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+</table>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
+ <tr>
+  <td  colspan=2>
+  <p class=MyNormalStyle><b>Question 1 : </b>There are objects in the PCAP file
+  that can be exported by Wireshark and/or tshark. What kind of objects can be
+  exported from this PCAP</p>
+  </td>
+ </tr>
+ </tr>
+
+ <tr>
+  <td colspan=2 valign=top>
+  <p class=MyNormalStyle><b>Answer</b> : <b>http</b></p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td colspan=2>
+  <p class=MyNormalStyle>Open the <b>suspicious.pcap</b> in Wireshark and go to
+  File &gt; Export Object. We choose every option there and see exportable
+  items in the list only when we select HTTP</p>
+  </td>
+ </tr>
+ <tr >
+  <td >
+  <p class=MyNormalStyle><img border=0 
+  src="../../images/blog_images/image045.png"
+  alt="Graphical user interface, application&#10;&#10;Description automatically generated"></p>
+  </td>
+  <td >
+  <p class=MyNormalStyle><img border=0
+  src="../../images/blog_images/image046.png"
+  alt="Graphical user interface, text, application&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+</table>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
+ width=100%>
+ <tr>
+  <td >
+  <p class=MyNormalStyle><b>Question 2 : </b>What is the file name of the
+  largest file we can export?</p>
+  </td>
+ </tr>
+ <tr>
+  <td >
+  <p class=MyNormalStyle><b>Answer : app.php</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td >
+  <p class=MyNormalStyle>Open the exportable objects by clicking on File &gt;
+  Export Objects &gt; HTTP.</p>
+  <p class=MyNormalStyle>Sort the objects by clicking the Size column in
+  descending order. app.php is of largest file (808 KB)</p>
+  </td>
+ </tr>
+ <tr>
+  <td >
+  <p class=MyNormalStyle><b><img border=0 width=566 height=113 id="Picture 287"
+  src="../../images/blog_images/image047.png"
+  alt="Graphical user interface, text, application&#10;&#10;Description automatically generated"></b></p>
+  </td>
+ </tr>
+</table>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
+ width=100% >
+ <tr>
+  <td >
+  <p class=MyNormalStyle><b>Question 3: What packet number starts that app.php
+  file?</b></p>
+  </td>
+ </tr>
+ <tr style='height:13.0pt'>
+  <td>
+  <p class=MyNormalStyle><b>Answer: 687</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle>In the Wireshark exportable objects under HTTP,
+  app.php shows to start from packet number 687 </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle><img border=0 width=302 height=132 id="Picture 288"
+  src="../../images/blog_images/image048.jpg"
+  alt="Graphical user interface, text, application&#10;&#10;Description automatically generated"></p>
+  </td>
+ </tr>
+</table>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
+ <tr>
+  <td >
+  <p class=MyNormalStyle><b>Question 4</b>: What is the IP address of the
+  Apache server?</p>
+  </td>
+ </tr>
+ <tr>
+  <td >
+  <p class=MyNormalStyle><b>Answer: 192.185.57.242</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td >
+  <p class=MyNormalStyle><span style='font-family:"Calibri",sans-serif'>Added a
+  new column named with &quot;http.server&quot; to show the server name and put
+  the below filter <span style='background:yellow'>http &amp;&amp;
+  http.server==&quot;Apache&quot;</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>  <p class=MyNormalStyle><img border=0 src="../../images/blog_images/image049.jpg"
+  alt="Graphical user interface, text, application&#10;&#10;Description automatically generated"></p>
+  <p class=MyNormalStyle><span style='font-family:"Calibri",sans-serif'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle><span style='font-family:"Calibri",sans-serif'><img
+  border=0 src="../../images/blog_images/image050.png"
+  alt="Text&#10;&#10;Description automatically generated with low confidence"></span></p>
+  </td>
+ </tr>
+</table>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
+ width=100%>
+ <tr>
+  <td colspan=2>
+  <p class=MyNormalStyle><b>Question 5</b>: What file is saved to the infected
+  host?</p>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+  <p class=MyNormalStyle>Answer : <b>Ref_Sept24-2020.zip</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2 >
+  <p class=MyNormalStyle>Save the app.php from the exportable HTTP objects. <br>
+  Examine the file in a text editor and around line number 68, <b>Ref_Sept24-2020.zip
+  </b>is being<b> </b>saved to local host.</p>
+  </td>
+ </tr>
+ <tr>
+  <td >
+  <p class=MyNormalStyle><img border=0 width=284 height=173 id="Picture 292"
+  src="../../images/blog_images/image051.png"
+  alt="Save the app.php from the exportable HTTP objects. "></p>
+  </td>
+  <td>
+  <p class=MyNormalStyle><img border=0 width=490 height=168 id="Picture 293"
+  src="../../images/blog_images/image052.png"
+  alt="file in a text editor and around line number 68, Ref_Sept24-2020.zip is being saved to local host."></p>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+  <p class=MyNormalStyle>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
+ width=100%>
+ <tr>
+  <td>
+  <p class=MyNormalStyle><b>Question 6:</b> Attackers used bad TLS certificates
+  in this traffic. Which countries were they registered to? Submit the names of
+  the countries in alphabetical order separated by a comma (Ex: Norway, South
+  Korea).</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle>Answer : <b>Ireland, Israel, South Sudan, United
+  States</b></p>
+  </td>
+ </tr>
+ <tr style='height:63.1pt'>
+  <td>
+  <p class=MyNormalStyle>The challenge provides a <a
+  href="https://subscription.packtpub.com/book/networking-and-servers/9781785887819/4/ch04lvl1sec27/the-ssl-tls-handshake">URL</a>
+  as a hint. This has the filters for TLS traffic in the Wireshark pcap file.</p>
+  <p class=MyNormalStyle>Filtering with ssl.handshake.type == 11, below would
+  get us the certificates sent.</p>
+  <p class=MyNormalStyle>For the selected packet we can look the certificate
+  section and get the country code of the issuer.</p>
+  <p class=MyNormalStyle>Looking at all the available packets, we get the
+  following country codes : IE, IL, US , SS<br>
+  Get the names for the code and arranging them alphabetically: Ireland,
+  Israel, South Sudan, United States</p>
+  <p class=MyNormalStyle>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle><img border=0 width=791 height=92 id="Picture 295"
+  src="../../images/blog_images/image053.png"></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle><img border=0 width=791 height=92 id="Picture 295"
+  src="../../images/blog_images/cert1.png">
+  <img border=0 width=791 height=92 id="Picture 295"
+  src="../../images/blog_images/cert2.png"></p>
+  </td>
+ </tr>
+</table>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
+ <tr>
+  <td>
+  <p class=MyNormalStyle><img border=0 src="../../images/blog_images/image054.png"
+  alt="For the selected packet we can look the certificate section and get the country code of the issuer."></p>
+  </td>
+ </tr>
+</table>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
+ <tr>
+  <td>
+  <p class=MyNormalStyle><b>Question 7 : is the host infected (Yes/No)?</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle>Answer : <b>Yes</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle>The app.php access was successful (200 OK) and that
+  file downloads the Ref_Sept24-2020.zip. So, yes, the host is infected.</p>
+  </td>
+ </tr>
+</table>
+
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
+ <tr>
+  <td>
+  <p class=MyNormalStyle style='margin-xxxbottom:0in;line-height:normal'><span
+  style='font-family:"Cambria",serif'>The objective is now completed, and we
+  get 5 coins as well.<br>
+  <img border=0 src="../../images/blog_images/image055.png">
+  <img border=0 src="../../images/blog_images/image056.png"></span></p>
+  </td>
+ </tr>
+</table>
+
+
+
+
+<!--table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=804 >
     <tr class=MyNormalStyle>
         <td colspan=2 >
                 <p class="MyNormalStyle">
@@ -383,4 +698,4 @@ style='width:603.0pt; margin-xxxleft:-67.75pt;border-collapse:collapse;border:No
   src="../../images/blog_images/image056.png"></span></p>
   </td>
  </tr>
-</table>
+</table-->
