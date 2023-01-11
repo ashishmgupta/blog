@@ -9,8 +9,22 @@ This year the challenge is based on "Lord of the Rings" series. <br>You are task
 
 <p class="TableRowBold"> Details on each objective can be accessed from left navigation </a>
 
-<br><br>
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
+<h1>Objectives completed </h1>
+ <img src="images/blog_images/image002.png"
+  alt="Graphical user interface, text, application&#10;&#10;Description automatically generated">
+<br>
+<h1>The Story</h1>
+<p class=MyNormalStyle>Five Rings for the Christmas king immersed in cold.</p>
+  <p class=MyNormalStyle>Each Ring now missing from its zone.</p>
+  <p class=MyNormalStyle>The first with bread kindly given, not sold.</p>
+  <p class=MyNormalStyle>Another to find 'ere pipelines get owned.</p>
+  <p class=MyNormalStyle>One beneath a fountain where water flowed.</p>
+  <p class=MyNormalStyle>Into clouds Grinchum had the fourth thrown.</p>
+  <p class=MyNormalStyle>The fifth on blockchains where shadows be bold.</p>
+  <p class=MyNormalStyle>One hunt to seek them all, five quests to find them.</p>
+  <p class=MyNormalStyle>One player to bring them all, and Santa Claus to bind
+  them.</p>
+<!--table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=100%>
  <tr style='height:11.45pt'>
   <td valign=top>
   <p class=TableRowBold style='margin-bottom:0in;line-height:normal'><b>Objectives
@@ -38,7 +52,7 @@ This year the challenge is based on "Lord of the Rings" series. <br>You are task
   them.</p>
   </td>
  </tr>
-</table>
+</table-->
 
 
 
