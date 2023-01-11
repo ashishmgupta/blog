@@ -11,27 +11,27 @@ Santa who states his 5 golden rings have gone missing and seeks help.
   <p class=MyHeadingStyle><span style='font-size:11.0pt;color:windowtext;
   font-weight:normal'><img 
   src="../images/blog_images/image009.png"
-  alt="Graphical user interface, text, application, chat or text message&#10;&#10;Description automatically generated"></span></p>
+  alt="Graphical user interface, text, application, chat or text message&#10;&#10;Description automatically generated"></p>
   </td>
   <td width=179 valign=top style='width:134.35pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MyHeadingStyle><span style='font-size:11.0pt;color:windowtext;
   font-weight:normal'><img 
   src="../images/blog_images/image010.png"
-  alt="Graphical user interface, text, application, chat or text message&#10;&#10;Description automatically generated"></span></p>
+  alt="Graphical user interface, text, application, chat or text message&#10;&#10;Description automatically generated"></p>
   </td>
   <td width=200 valign=top style='width:150.3pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MyHeadingStyle><span style='font-size:11.0pt;color:windowtext;
   font-weight:normal'><img 
   src="../images/blog_images/image011.png"
-  alt="Graphical user interface, text&#10;&#10;Description automatically generated"></span></p>
+  alt="Graphical user interface, text&#10;&#10;Description automatically generated"></p>
   </td>
   <td width=248 valign=top >
   <p class=MyHeadingStyle><span style='font-size:11.0pt;color:windowtext;
   font-weight:normal'><img 
   src="../images/blog_images/image012.png"
-  alt="Graphical user interface&#10;&#10;Description automatically generated"></span></p>
+  alt="Graphical user interface&#10;&#10;Description automatically generated"></p>
   </td>
  </tr>
 </table>
@@ -47,21 +47,18 @@ Santa who states his 5 golden rings have gone missing and seeks help.
   alt="Graphical user interface, text&#10;&#10;Description automatically generated"></td>
 </tr>
 </table>
-<p class=MyNormalStyle><span style='font-family:"Cambria",serif'>In the north pole,
-we meet with Chimney Scissorsticks.</span></p>
+<p class=MyNormalStyle>In the north pole,
+we meet with Chimney Scissorsticks.</p>
 
 
 <table width=100% border=1>
     <tr>
-        <td> <p class=MyNormalStyle style='margin-bottom:0in;line-height:normal'><span
-  style='font-family:"Cambria",serif'>Chimney Scissorsticks notes that there
-  are elves burrowed under the snow.</span></p></td>
-        <td><p class=MyNormalStyle style='margin-bottom:0in;line-height:normal'><span
-  style='font-family:"Cambria",serif'>There are three tunnels in the area but
-  looks like there is only one of them we can get into.</span></p></td>
-        <td> <p class=MyNormalStyle style='margin-bottom:8.0pt;line-height:107%'><span
-  style='font-family:"Cambria",serif'>Upon entering, we can see there is a
-  ladder which lets us get down the tunnel.</span></p></td>
+        <td> <p class=MyNormalStyle style='margin-bottom:0in;line-height:normal'>Chimney Scissorsticks notes that there
+  are elves burrowed under the snow.</p></td>
+        <td><p class=MyNormalStyle style='margin-bottom:0in;line-height:normal'>There are three tunnels in the area but
+  looks like there is only one of them we can get into.</p></td>
+        <td> <p class=MyNormalStyle style='margin-bottom:8.0pt;line-height:107%'>Upon entering, we can see there is a
+  ladder which lets us get down the tunnel.</p></td>
     </tr>
     <tr>
         <td><img
@@ -96,6 +93,11 @@ Coins (KC) upon solving objectives which may be used to buy hats and NFTs.</p>
     </tr>
     <!--talks -->
     <tr>
+        <td colspan=4>
+        <p class=TableRowBold>Hall of Talks</p>
+        </td>
+    </tr>
+    <tr>
         <td>
         <img src="../images/blog_images/image017.png">
         </td>
@@ -104,6 +106,11 @@ Coins (KC) upon solving objectives which may be used to buy hats and NFTs.</p>
         </td>
     </tr>
     <!--tolkien -->
+    <tr>
+        <td colspan=4>
+        <p class=TableRowBold>Tolkien Ring</p>
+        </td>
+    </tr>
     <tr align="center" >
         <td><img src="../images/blog_images/image019.png">
         </td>
@@ -124,6 +131,11 @@ Coins (KC) upon solving objectives which may be used to buy hats and NFTs.</p>
                 <img src="../images/blog_images/image022.png">
                 <p class=MyNormalStyle>Suricata Regatta</p>
             </a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan=4>
+        <p class=TableRowBold>Elfen Ring</p>
         </td>
     </tr>
     <!--elfen -->
@@ -150,6 +162,11 @@ Coins (KC) upon solving objectives which may be used to buy hats and NFTs.</p>
         </td>
     </tr>
     <!--web -->
+    <tr>
+        <td colspan=4>
+        <p class=TableRowBold>Web Ring</p>
+        </td>
+    </tr>
     <tr align="center">
         <td><img src="../images/blog_images/image027.png">
         </td>
@@ -172,6 +189,11 @@ Coins (KC) upon solving objectives which may be used to buy hats and NFTs.</p>
         </td>
     </tr>
     <!--cloud -->
+    <tr>
+        <td colspan=4>
+        <p class=TableRowBold>Cloud Ring</p>
+        </td>
+    </tr>
     <tr align="center">
         <td><img src="../images/blog_images/image031.png">
         </td>
@@ -199,6 +221,11 @@ Coins (KC) upon solving objectives which may be used to buy hats and NFTs.</p>
         </td>
     </tr>
     <!--fire -->
+    <tr>
+        <td colspan=4>
+        <p class=TableRowBold>Burning Ring of Fire</p>
+        </td>
+    </tr>
     <tr align="center">
         <td><img src="../images/blog_images/image034.png">
         </td>

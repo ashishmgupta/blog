@@ -1,4 +1,4 @@
-# KringleconOrientation
+# Kringlecon Orientation
 <p class=MyNormalStyle>Upon login on <a href="https://2022.kringlecon.com" target=_blank><span
 style='color:windowtext;text-decoration:none'>https://2022.kringlecon.com</span></a>,
 we are greeted by Jingle Ringford guarding the entry.</p>
