@@ -115,7 +115,7 @@ Coins (KC) upon solving objectives which may be used to buy hats and NFTs.</p>
         <td><img src="../images/blog_images/image019.png">
         </td>
         <td>
-        <a href="/TolkienRing/WiresharkPhishing/">
+        <a href="TolkienRing/WiresharkPhishing/">
             <img src="../images/blog_images/image020.png">
             <p class=MyNormalStyle>Wireshark Phishing</p>
         </a>
