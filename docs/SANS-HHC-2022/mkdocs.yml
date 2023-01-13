@@ -1,4 +1,4 @@
-site_name: SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings
+site_name: Ashish Gupta - SANS Holiday Hack Challenge 2022 Kringlecon V Golden Rings write-up
 theme:
   name: material
   features:
@@ -12,6 +12,7 @@ extra_css:
   - stylesheets/extra.css
 markdown_extensions:
   - tables
+  - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
