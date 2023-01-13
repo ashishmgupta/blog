@@ -302,8 +302,57 @@ of questions.</p>
  </tr>
  <tr>
   <td>
-  <p class=MyNormalStyle>The app.php access was successful (200 OK) and that
-  file downloads the Ref_Sept24-2020.zip. So, yes, the host is infected.</p>
+  <p class=MyNormalStyle>
+  We know the file Ref_Sept24-2020.zip is being saved via app.php.
+  So first we take a look at the zip file.<br>
+  We rename the app.php to app.html because its all javascript and simply open it in a browser and that downloads the Ref_Sept24-2020.zip.
+  </p>
+  </td>
+ </tr>
+  <tr>
+  <td>
+    <img border=0 src="../../images/blog_images/wireshark_0.png">
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle>
+  We unzip the file and see a file named "Ref_Sept24-2020.scr" in it.
+  </p>
+  </td>
+ </tr>
+<tr>
+  <td>
+    <img border=0 src="../../images/blog_images/wireshark_1.png">
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle>
+  Calculate the MD5 hash of the file..
+  </p>
+  </td>
+ </tr>
+  <tr>
+  <td>
+    <img border=0 src="../../images/blog_images/wireshark_2.png">
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p class=MyNormalStyle>
+  Submitting that MD5 hash to the Virustotal shows 45 security vendors and 4 sandboxes flagged this file as malicious.
+  <br>Therefore, based on this, the host was indeed infected.
+  </p>
+  </td>
+ </tr>
+  <tr>
+  <td>
+    <img border=0 src="../../images/blog_images/wireshark_3.png">
+  </p>
   </td>
  </tr>
 </table>
