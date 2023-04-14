@@ -9,22 +9,24 @@
       
       
       
+        <link rel="prev" href="../ImplementMFA/">
       
-        <link rel="next" href="SetupAzureADAppForSplunk/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+        <link rel="next" href="../DisableBasicAuth/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
     
     
       
-        <title>Microsoft O365 Security Implementation</title>
+        <title>Block OFAC Countries - Microsoft O365 Security Implementation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.f79797b0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f79797b0.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -40,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,11 +68,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#microsoft-o365-security-implementation" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +78,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Microsoft O365 Security Implementation" class="md-header__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
+    <a href=".." title="Microsoft O365 Security Implementation" class="md-header__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -100,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Block OFAC Countries
             
           </span>
         </div>
@@ -167,7 +164,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Microsoft O365 Security Implementation" class="md-nav__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
+    <a href=".." title="Microsoft O365 Security Implementation" class="md-nav__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -184,21 +181,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         Overview
       </a>
-      
     </li>
   
 
@@ -211,7 +198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SetupAzureADAppForSplunk/" class="md-nav__link">
+      <a href="../SetupAzureADAppForSplunk/" class="md-nav__link">
         Setup AzureAD App For Splunk
       </a>
     </li>
@@ -226,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SetupTenantProperties/" class="md-nav__link">
+      <a href="../SetupTenantProperties/" class="md-nav__link">
         Set Tenant Properties
       </a>
     </li>
@@ -241,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="DisableSecurityDefaults/" class="md-nav__link">
+      <a href="../DisableSecurityDefaults/" class="md-nav__link">
         Disable Security Defaults
       </a>
     </li>
@@ -256,7 +243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="CreateEmergencyUser/" class="md-nav__link">
+      <a href="../CreateEmergencyUser/" class="md-nav__link">
         Create Emergency User
       </a>
     </li>
@@ -271,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ImplementMFA/" class="md-nav__link">
+      <a href="../ImplementMFA/" class="md-nav__link">
         Implement MFA
       </a>
     </li>
@@ -284,11 +271,19 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="BlockOFACCountries/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Block OFAC Countries
       </a>
+      
     </li>
   
 
@@ -301,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="DisableBasicAuth/" class="md-nav__link">
+      <a href="../DisableBasicAuth/" class="md-nav__link">
         Disable basic authentication
       </a>
     </li>
@@ -316,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="RestrictExtarnelCollaboration/" class="md-nav__link">
+      <a href="../RestrictExtarnelCollaboration/" class="md-nav__link">
         Restrict External Collaboration
       </a>
     </li>
@@ -331,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="RestrictUserSettings/" class="md-nav__link">
+      <a href="../RestrictUserSettings/" class="md-nav__link">
         Restrict User Settings
       </a>
     </li>
@@ -346,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="BlockMiscAzureServices/" class="md-nav__link">
+      <a href="../BlockMiscAzureServices/" class="md-nav__link">
         Block Misc Azure Services for non-admin users
       </a>
     </li>
@@ -370,8 +365,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -387,27 +380,74 @@
 
 
 
-<h1 id="microsoft-o365-security-implementation">Microsoft O365 Security Implementation</h1>
-<p>Below are the best practices we can implement to secure Microsoft O365. <br>
-I will regularly update this with the latest security features as they are published. <br>
-Below can also be accessed from the left navigation pane. <br></p>
-<ul>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/SetupAzureADAppForSplunk/" target="_blank">Setup AzureAD App For Splunk</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/SetupTenantProperties/" target="_blank">Set tenant properties</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/DisableSecurityDefaults/" target="_blank">Disable Security Defaults</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/CreateEmergencyUser/" target="_blank">Create Emergency User</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/ImplementMFA/" target="_blank">Implement MFA</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/BlockOFACCountries/" target="_blank">Block OFAC Countries</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/DisableBasicAuth/" target="_blank">Disable basic authentication</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/RestrictExtarnelCollaboration/" target="_blank">Restrict External Collaboration</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/RestrictUserSettings/" target="_blank">Restrict User Settings</a></li>
-<li>
-<p><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/BlockMiscAzureServices/" target="_blank">Block Misc Azure Services for non-admin users</a></p>
-</li>
-<li>
-<p><a href="https://guptaashish.com/" target="_blank">[ The main blog ] </a></p>
-</li>
-</ul>
+<p>In case we have a requirement to block requests from certain countries , we can use conditional policy to achieve the same.
+As a first step, we create a "named location" which has the list of countries we need to block all requests from. <br>
+Then we create a conditional access policy to use that country list to implement the block.<br>
+ALL users would be blocked from OFAC countries except the currently logged in user.<br></p>
+<p>A useful website to look for ISO codes (among others) for countries is <a href="https://countrycode.org/usa" target="_blank"> https://countrycode.org</a>.
+<br>
+<br>
+The PowerShell script to create the named location and conditional access policy for the block: </p>
+<pre><code class="language-powershell"># Connect to AzureAD and get current logged in user
+$TenantDetails = $NULL
+$CurrentlyLoggedInUser = $NULL
+$OnMicrosoftDomain = $NULL
+$connection = $NULL
+try { 
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+} 
+catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
+    Write-Host &quot;You're not connected to AzureAD. Connect now...&quot;; 
+    Write-Host &quot;You're not connected to AzureAD&quot;; 
+    $connection = Connect-AzureAD
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+}
+
+
+$NamedLocationPolicyName = &quot;OFAC Countries&quot;
+
+$NamedLocationPolicy = Get-AzureADMSNamedLocationPolicy | Where-Object {$_.DisplayName -eq $NamedLocationPolicy}
+if ($NamedLocationPolicy -eq $null)
+{
+    # Create a named location policy which includes all the OFAC Countries.
+    $NamedLocationPolicy = New-AzureADMSNamedLocationPolicy -OdataType &quot;#microsoft.graph.countryNamedLocation&quot; -DisplayName $NamedLocationPolicyName -CountriesAndRegions &quot;BY&quot;,&quot;BI&quot;,&quot;BA&quot;,&quot;CD&quot;,&quot;CF&quot;,&quot;CI&quot;,&quot;CN&quot;,&quot;CU&quot;,&quot;IQ&quot;,&quot;IR&quot;,&quot;KP&quot;,&quot;LR&quot;,&quot;MD&quot;,&quot;ME&quot;,&quot;MK&quot;,&quot;NI&quot;,&quot;RU&quot;,&quot;RS&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;SY&quot;,&quot;UA&quot;,&quot;VE&quot;,&quot;YE&quot;,&quot;ZW&quot;,&quot;AU&quot; -IncludeUnknownCountriesAndRegions $false
+    Write-Host &quot;Named location policy : &quot; + $NamedLocationPolicyName + &quot; has been created.&quot;
+    Write-Host &quot;Countries included : &quot; + $NamedLocationPolicyName.CountriesAndRegions
+}else{
+    Write-Host &quot;Named location policy : &quot; + $NamedLocationPolicyName + &quot; already exists.&quot;
+    Write-Host &quot;Countries included : &quot; + $NamedLocationPolicyName.CountriesAndRegions
+}
+
+# Create the conditional access policy to block access from all OFAC countries to all apps for all users except the currently logged in user
+
+$conditions = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessConditionSet
+$conditions.Applications = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessApplicationCondition
+$conditions.Applications.IncludeApplications = &quot;all&quot;
+$conditions.Users = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessUserCondition
+$conditions.Users.IncludeUsers = &quot;all&quot;
+$conditions.Users.ExcludeUsers = $CurrentUserId
+$conditions.Locations = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessLocationCondition
+$conditions.Locations.IncludeLocations = $NamedLocationPolicy.Id
+$controls = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessGrantControls
+$controls._Operator = &quot;OR&quot;
+$controls.BuiltInControls = &quot;block&quot;
+New-AzureADMSConditionalAccessPolicy -DisplayName &quot;Block OFAC countries&quot; -State &quot;Enabled&quot; -Conditions $conditions -GrantControls $controls
+</code></pre>
+<p><br>
+<br>
+The conditional access policy is created. <br>
+<img src="../../../images/o365security/block-ofac-01.png"></img>
+<br>
+<br>
+The conditional access policy showing block condition for the location noted in the named location "OFAC Countries".
+<img src="../../../images/o365security/block-ofac-02.png"></img>
+<br></p>
 
 
 
@@ -445,10 +485,10 @@ Below can also be accessed from the left navigation pane. <br></p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.5cf534bf.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
     
   </body>

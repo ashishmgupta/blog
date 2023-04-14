@@ -1,0 +1,926 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../SetupTenantProperties/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
+    
+    
+      
+        <title>Setup AzureAD App For Splunk - Microsoft O365 Security Implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f79797b0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pre-requisite-install-azure-ad-powershell" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Microsoft O365 Security Implementation" class="md-header__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Microsoft O365 Security Implementation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setup AzureAD App For Splunk
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Microsoft O365 Security Implementation" class="md-nav__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Microsoft O365 Security Implementation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Setup AzureAD App For Splunk
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Setup AzureAD App For Splunk
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisite-install-azure-ad-powershell" class="md-nav__link">
+    Pre-requisite - Install Azure AD Powershell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-azure-ad-app-for-spunk-add-on-for-microsoft-office-365" class="md-nav__link">
+    Create the Azure AD app for Spunk Add-on for Microsoft Office 365
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the Azure AD app for Spunk Add-on for Microsoft Office 365">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-powershell-script-to-create-the-app" class="md-nav__link">
+    Step 1 - PowerShell script to Create the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-provide-app-details-to-splunk-admin" class="md-nav__link">
+    Step 2 - Provide app details to Splunk Admin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-grant-admin-consent-in-azure-portal" class="md-nav__link">
+    Step 3 - Grant Admin Consent in Azure Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-azure-ad-app-for-spunk-add-on-for-microsoft-azure" class="md-nav__link">
+    Create the Azure AD app for Spunk Add-on for Microsoft Azure
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the Azure AD app for Spunk Add-on for Microsoft Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-powershell-script-to-create-the-app_1" class="md-nav__link">
+    Step 1 - PowerShell script to Create the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-provide-app-details-to-splunk-admin_1" class="md-nav__link">
+    Step 2 - Provide app details to Splunk Admin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-grant-admin-consent-in-azure-portal_1" class="md-nav__link">
+    Step 3 - Grant Admin Consent in Azure Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ad-apps-for-splunk-add-ons-created" class="md-nav__link">
+    Azure AD apps for Splunk add-ons created
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SetupTenantProperties/" class="md-nav__link">
+        Set Tenant Properties
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DisableSecurityDefaults/" class="md-nav__link">
+        Disable Security Defaults
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CreateEmergencyUser/" class="md-nav__link">
+        Create Emergency User
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ImplementMFA/" class="md-nav__link">
+        Implement MFA
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BlockOFACCountries/" class="md-nav__link">
+        Block OFAC Countries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DisableBasicAuth/" class="md-nav__link">
+        Disable basic authentication
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RestrictExtarnelCollaboration/" class="md-nav__link">
+        Restrict External Collaboration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RestrictUserSettings/" class="md-nav__link">
+        Restrict User Settings
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BlockMiscAzureServices/" class="md-nav__link">
+        Block Misc Azure Services for non-admin users
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisite-install-azure-ad-powershell" class="md-nav__link">
+    Pre-requisite - Install Azure AD Powershell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-azure-ad-app-for-spunk-add-on-for-microsoft-office-365" class="md-nav__link">
+    Create the Azure AD app for Spunk Add-on for Microsoft Office 365
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the Azure AD app for Spunk Add-on for Microsoft Office 365">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-powershell-script-to-create-the-app" class="md-nav__link">
+    Step 1 - PowerShell script to Create the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-provide-app-details-to-splunk-admin" class="md-nav__link">
+    Step 2 - Provide app details to Splunk Admin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-grant-admin-consent-in-azure-portal" class="md-nav__link">
+    Step 3 - Grant Admin Consent in Azure Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-azure-ad-app-for-spunk-add-on-for-microsoft-azure" class="md-nav__link">
+    Create the Azure AD app for Spunk Add-on for Microsoft Azure
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the Azure AD app for Spunk Add-on for Microsoft Azure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-powershell-script-to-create-the-app_1" class="md-nav__link">
+    Step 1 - PowerShell script to Create the app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-provide-app-details-to-splunk-admin_1" class="md-nav__link">
+    Step 2 - Provide app details to Splunk Admin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-grant-admin-consent-in-azure-portal_1" class="md-nav__link">
+    Step 3 - Grant Admin Consent in Azure Portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-ad-apps-for-splunk-add-ons-created" class="md-nav__link">
+    Azure AD apps for Splunk add-ons created
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Setup AzureAD App For Splunk</h1>
+
+<p>This section covers setting up Azure AD apps for Splunk Add-ons so Azure and O365 logs could be ingested into Splunk. <br>
+This is one of the first steps we would do so all changes done after are logged into Splunk for security monitoring by SOC. <br></p>
+<p>The below script would create the app so It does not need to be created manually.<br>
+When the script below executes successfully, It should create a file with creds for the app.<br>
+Those details should be provided to the Splunk Administrator so they could set up the Azure tenant for the log ingestion. <br>
+The admin consent needs to be granted via the Azure portal (instructions below).<br></p>
+<p>We will need to create separate Azure AD apps for the below Splunk Add-ons<br>
+<a href="https://splunkbase.splunk.com/app/4055/" target="_blank">Splunk Add-on for Microsoft Office 365</a> <br>
+<a href="https://splunkbase.splunk.com/app/3757/" target="_blank">Microsoft Azure Add-on for Splunk</a></p>
+<h3 id="pre-requisite-install-azure-ad-powershell">Pre-requisite - Install Azure AD Powershell</h3>
+<p>Please execute the below in PowerShell to install the Azure AD module for Powershell</p>
+<pre><code>Install-Module AzureAD
+</code></pre>
+<p>Please ensure you are executing the above in Powershell v5.1 and not 7.x.
+Execute the below to ensure :</p>
+<pre><code>$PSVersionTable
+</code></pre>
+<p><img src="../../../images/o365security/splunk-app-for-o365_0.png"></img><br></p>
+<h3 id="create-the-azure-ad-app-for-spunk-add-on-for-microsoft-office-365">Create the Azure AD app for Spunk Add-on for Microsoft Office 365</h3>
+<h4 id="step-1-powershell-script-to-create-the-app">Step 1 - PowerShell script to Create the app</h4>
+<p>Please ensure you are in the Global Administrator role in the tenant. The script may prompt you to log in.
+Open Powershell as administrator.
+Copy the script by clicking on the copy icon in the script below.
+Paste the script on the Powershell window and hit enter.
+<img src="../../../images/o365security/splunk-app-for-o365_0_1.png"></img><br></p>
+<pre><code class="language-powershell"># Author - Ashish Gupta
+# This script creates a new Azure AD application and sets the Application and Delegated permissions for O365
+
+$TenantDetails = $NULL
+$CurrentlyLoggedInUser = $NULL
+$OnMicrosoftDomain = $NULL
+$connection = $NULL
+try { 
+        $AzureADSession = Get-AzureADCurrentSessionInfo
+        $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+        Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+        $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+    } 
+    catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
+    Write-Host &quot;You're not connected to AzureAD. Connecting now...&quot;; 
+    $connection = Connect-AzureAD
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+    }
+
+$CurrentTimestamp = [DateTime]::Now.ToString(&quot;yyyyMMdd-HHmmss&quot;)
+$ApplicationDisplayName = &quot;Splunk App for Office 365&quot;
+
+$AzureADAppForSplunk = Get-AzureADApplication -Filter &quot;DisplayName eq '$ApplicationDisplayName'&quot;
+
+if($AzureADAppForSplunk -eq $NULL) {
+    write-output(&quot;AzureAD application &quot; + $ApplicationDisplayName + &quot; does not exist. Creating...&quot;)
+
+    #  Get the service principal for O365 and Microsoft Graph
+    $ServicePrincipalO365API        = Get-AzureADServicePrincipal -All $true | ? { $_.DisplayName -eq &quot;Office 365 Management APIs&quot; }
+    $ServicePrincipalMicrosoftGraph = Get-AzureADServicePrincipal -All $true | ? { $_.DisplayName -eq &quot;Microsoft Graph&quot; }
+
+    # Get all application permissions for Microsoft Graph
+    $ServicePrincipalMicrosoftGraphAppRoles = $ServicePrincipalMicrosoftGraph.AppRoles | Where-Object {$_.Value -match &quot;\bDirectory.Read.All\b|\bAuditLog.Read.All\b|\bPolicy.Read.All\b|\bReports.Read.All\b&quot;}
+
+    # Get all delegated permissions for Microsoft Graph
+    $ServicePrincipalMicrosoftGraphDelegatedRoles = $ServicePrincipalMicrosoftGraph.Oauth2Permissions | Where-Object {$_.Value -match &quot;\bDirectory.Read.All\b|\bAuditLog.Read.All\b|\bPolicy.Read.All\b|\bReports.Read.All\b&quot;}
+
+
+    # Get all application permissions for O365 API
+    $ServicePrincipalO365APIAppRoles = $ServicePrincipalO365API.AppRoles | Where-Object {$_.Value -match &quot;\bActivityFeed.Read\b|\bActivityFeed.ReadDlp\b|\bServiceHealth.Read\b&quot;}
+
+
+    # Get all delegated permissions for O365 API
+    $ServicePrincipalO365APIDelegatedRoles = $ServicePrincipalO365API.Oauth2Permissions | Where-Object {$_.Value -match &quot;\bActivityFeed.Read\b|\bActivityFeed.ReadDlp\b|\bServiceHealth.Read\b&quot;}
+
+
+    # Create a Required Resource Access object for Office 365
+    $RequiredResourceAccessO365API = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.RequiredResourceAccess&quot;
+    $RequiredResourceAccessO365API.ResourceAppId = $ServicePrincipalO365API.AppId
+
+
+    # Create a Required Resource Access object for Microsoft Graph
+    $RequiredResourceAccessMicrosoftGraph = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.RequiredResourceAccess&quot;
+    $RequiredResourceAccessMicrosoftGraph.ResourceAppId = $ServicePrincipalMicrosoftGraph.AppId
+
+
+
+    $ServicePrincipalO365APIAppRolesSelectedPermissions = @()
+    $ServicePrincipalSelectedPermissionsMicrosoftGraph = @()
+
+
+    # Get all the Resource Access objects for the Application permissions for Office 365 API
+    Write-output &quot;Get all the Resource Access objects for the Application permissions for Office 365 API&quot;
+    foreach ($ServicePrincipalO365APIAppRole in $ServicePrincipalO365APIAppRoles)
+    {
+        $Permission = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.ResourceAccess&quot; -ArgumentList $ServicePrincipalO365APIAppRole.Id,&quot;Role&quot;
+        $ServicePrincipalO365APIAppRolesSelectedPermissions += $Permission
+    }
+
+    # Get all the Resource Access objects for the Delegated permissions for Office 365 API
+    Write-output &quot;Get all the Resource Access objects for the Delegated permissions for Office 365 API&quot;
+    foreach ($ServicePrincipalO365APIDelegatedRole in $ServicePrincipalO365APIDelegatedRoles) 
+    {
+        $Permission = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.ResourceAccess&quot; -ArgumentList $ServicePrincipalO365APIDelegatedRole.Id,&quot;Scope&quot;
+        $ServicePrincipalO365APIAppRolesSelectedPermissions += $Permission
+
+    }
+
+    # Get all the Resource Access objects for the Application permissions for Microsoft Graph API
+    Write-Output &quot;Get all the Resource Access objects for the Application permissions for Microsoft Graph API&quot;
+    foreach ($ServicePrincipalMicrosoftGraphAppRole in $ServicePrincipalMicrosoftGraphAppRoles)
+    {
+        $Permission = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.ResourceAccess&quot; -ArgumentList $ServicePrincipalMicrosoftGraphAppRole.Id,&quot;Role&quot;
+        $ServicePrincipalSelectedPermissionsMicrosoftGraph += $Permission
+    }
+
+    # Get all the Resource Access objects for the Delegated permissions for Microsoft Graph API
+    Write-Output &quot;Get all the Resource Access objects for the Delegated permissions for Microsoft Graph API&quot;
+    foreach ($ServicePrincipalMicrosoftGraphDelegatedRole in $ServicePrincipalMicrosoftGraphDelegatedRoles) 
+    {
+        $Permission = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.ResourceAccess&quot; -ArgumentList $ServicePrincipalMicrosoftGraphDelegatedRole.Id,&quot;Scope&quot;
+        $ServicePrincipalSelectedPermissionsMicrosoftGraph += $Permission
+    }
+
+    # Assign all the permissions to the required Resource access for the O365 API 
+    $RequiredResourceAccessO365API.ResourceAccess  = $ServicePrincipalO365APIAppRolesSelectedPermissions
+    # Assign all the permissions to the required Resource access for the Microsoft Graph 
+    $RequiredResourceAccessMicrosoftGraph.ResourceAccess = $ServicePrincipalSelectedPermissionsMicrosoftGraph
+
+    # Create the Password credential for the new app
+    Add-Type -AssemblyName System.Web
+    $ApplicationPassword =[System.Web.Security.Membership]::GeneratePassword(32,2)
+    $ApplicationPassword = $ApplicationPassword.Replace(&quot;+&quot;,&quot;_&quot;)
+    $ApplicationPassword = $ApplicationPassword.Replace(&quot;-&quot;,&quot;_&quot;)
+    $keyId = (New-Guid).ToString();
+    $fromDate = [System.DateTime]::Now
+    $durationInYears = 5
+    $endDate = $fromDate.AddYears($durationInYears) 
+    $Applicationkey = New-Object Microsoft.Open.AzureAD.Model.PasswordCredential($null, $endDate, $keyId, $fromDate, $ApplicationPassword)
+
+    # Create the new app with the password cred
+    $aadApplication = New-AzureADApplication -DisplayName $ApplicationDisplayName -PasswordCredentials $Applicationkey
+
+    write-output(&quot;Application created&quot;)
+
+    # Set the permissions
+    Set-AzureADApplication -ObjectId $aadApplication.ObjectId -RequiredResourceAccess $RequiredResourceAccessO365API,$RequiredResourceAccessMicrosoftGraph
+    write-output(&quot;Application permissions set&quot;)
+
+    # Saving the details for the app
+    $temp_location = (get-location).Drive.Root+&quot;office365_temp\&quot;
+    $temp_file = $temp_location + $CurrentTimestamp+&quot;.txt&quot;
+    New-Item $temp_location -ItemType Directory -Force | Out-Null
+    New-Item $temp_file -ItemType File -Force | Out-Null
+    Add-Content $temp_file (&quot;Azure AD App display name: &quot; + $aadApplication.DisplayName)
+    Add-Content $temp_file (&quot;Tenant Domain: &quot; + $AzureADSession.TenantDomain)
+    Add-Content $temp_file (&quot;Tenant Id: &quot; + $AzureADSession.TenantId)
+    Add-Content $temp_file (&quot;App ClientId: &quot; + $aadApplication.AppId)
+    Add-Content $temp_file (&quot;App Password: &quot; + $ApplicationPassword)
+    .\notepad.exe $temp_file
+    write-output(&quot;Application details written to the file&quot;)
+
+}else{
+    write-output(&quot;AzureAD application '&quot; + $AzureADAppForSplunk.DisplayName + &quot;' already exists.&quot;)
+}
+</code></pre>
+<p><br>
+The powershell script got executed and we can see the newly created app in the Azure portal: <br>
+<img src="../../../images/o365security/splunk-app-for-o365_1.png"></img><br>
+<img src="../../../images/o365security/splunk-app-for-o365_2.png"></img>
+<br></p>
+<h4 id="step-2-provide-app-details-to-splunk-admin">Step 2 - Provide app details to Splunk Admin</h4>
+<p>The file containing details for the newly created app is opened in the Notepad.<br>
+This should be sent to the Splunk Administrator so they could set up the Splunk Add-on for O365 for this tenant.
+<img src="../../../images/o365security/splunk-app-for-o365_3.png"></img>
+<br></p>
+<h4 id="step-3-grant-admin-consent-in-azure-portal">Step 3 - Grant Admin Consent in Azure Portal</h4>
+<p>Log in to the Azure portal as Global Administrator.<br>
+Navigate to Azure Active Directory &gt; App Registrations &gt; Click on "All Applications" &gt; Go to "Splunk app for Office 365".<br>
+In the app, click on "API Permissions". <br>
+Notice all the permissions have already been assigned via the script.<br>
+Click on "Grant admin consent for tenant" <br>
+<img src="../../../images/o365security/splunk-app-for-o365_4.png"></img>
+After the admin consent grant, It should look like the below :<br>
+<img src="../../../images/o365security/splunk-app-for-o365_5.png"></img></p>
+<h3 id="create-the-azure-ad-app-for-spunk-add-on-for-microsoft-azure">Create the Azure AD app for Spunk Add-on for Microsoft Azure</h3>
+<h4 id="step-1-powershell-script-to-create-the-app_1">Step 1 - PowerShell script to Create the app</h4>
+<p>Please ensure you are in the Global Administrator role in the tenant. The script may prompt you to log in.
+Open Powershell as administrator.
+Copy the script by clicking on the copy icon in the script below.
+Paste the script on the Powershell window and hit enter.</p>
+<pre><code class="language-powershell">$TenantDetails = $NULL
+$CurrentlyLoggedInUser = $NULL
+$OnMicrosoftDomain = $NULL
+$connection = $NULL
+try { 
+        $AzureADSession = Get-AzureADCurrentSessionInfo
+        $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+        Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+        $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+    } 
+    catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
+    Write-Host &quot;You're not connected to AzureAD. Connecting now...&quot;; 
+    $connection = Connect-AzureAD
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+    $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+    }
+
+$CurrentTimestamp = [DateTime]::Now.ToString(&quot;yyyyMMdd-HHmmss&quot;)
+$ApplicationDisplayName = &quot;Splunk App for Azure&quot;
+
+$AzureADAppForSplunk = Get-AzureADApplication -Filter &quot;DisplayName eq '$ApplicationDisplayName'&quot;
+
+if($AzureADAppForSplunk -eq $NULL) {
+    write-output(&quot;AzureAD application &quot; + $ApplicationDisplayName + &quot; does not exist. Creating...&quot;)
+
+    #  Get the service principal for Microsoft Graph
+    $ServicePrincipalMicrosoftGraph = Get-AzureADServicePrincipal -All $true | ? { $_.DisplayName -eq &quot;Microsoft Graph&quot; }
+
+    # Get all application permissions for Microsoft Graph
+    $ServicePrincipalMicrosoftGraphAppRoles = $ServicePrincipalMicrosoftGraph.AppRoles | Where-Object {$_.Value -match &quot;\bDirectory.Read.All\b|\bAuditLog.Read.All\b|\bUser.Read.All\b|\bGroup.Read.All\b|\bDevice.Read.All\b|\bGroupMember.Read.All\b|\bIdentityRiskEvent.Read.All\b&quot;}
+
+    # Create a Required Resource Access object for Microsoft Graph
+    $RequiredResourceAccessMicrosoftGraph = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.RequiredResourceAccess&quot;
+    $RequiredResourceAccessMicrosoftGraph.ResourceAppId = $ServicePrincipalMicrosoftGraph.AppId
+
+    $ServicePrincipalSelectedPermissionsMicrosoftGraph = @()
+
+    # Get all the Resource Access objects for the Application permissions for Microsoft Graph API
+    Write-Output &quot;Get all the Resource Access objects for the Application permissions for Microsoft Graph API&quot;
+    foreach ($ServicePrincipalMicrosoftGraphAppRole in $ServicePrincipalMicrosoftGraphAppRoles)
+    {
+        $Permission = New-Object -TypeName &quot;Microsoft.Open.AzureAD.Model.ResourceAccess&quot; -ArgumentList $ServicePrincipalMicrosoftGraphAppRole.Id,&quot;Role&quot;
+        $ServicePrincipalSelectedPermissionsMicrosoftGraph += $Permission
+    }
+
+    # Assign all the permissions to the required Resource access for the Microsoft Graph 
+    $RequiredResourceAccessMicrosoftGraph.ResourceAccess = $ServicePrincipalSelectedPermissionsMicrosoftGraph
+
+    # Create the Password credential for the new app
+    Add-Type -AssemblyName System.Web
+    $ApplicationPassword =[System.Web.Security.Membership]::GeneratePassword(32,2)
+    $ApplicationPassword = $ApplicationPassword.Replace(&quot;+&quot;,&quot;_&quot;)
+    $ApplicationPassword = $ApplicationPassword.Replace(&quot;-&quot;,&quot;_&quot;)
+    $keyId = (New-Guid).ToString();
+    $fromDate = [System.DateTime]::Now
+    $durationInYears = 5
+    $endDate = $fromDate.AddYears($durationInYears) 
+    $Applicationkey = New-Object Microsoft.Open.AzureAD.Model.PasswordCredential($null, $endDate, $keyId, $fromDate, $ApplicationPassword)
+
+    # Create the new app with the password cred
+    $aadApplication = New-AzureADApplication -DisplayName $ApplicationDisplayName -PasswordCredentials $Applicationkey
+
+    write-output(&quot;Application created&quot;)
+
+    # Set the permissions
+    Set-AzureADApplication -ObjectId $aadApplication.ObjectId -RequiredResourceAccess $RequiredResourceAccessMicrosoftGraph
+    write-output(&quot;Application permissions set&quot;)
+
+    # Saving the details for the app
+    $temp_location = (get-location).Drive.Root+&quot;office365_temp\&quot;
+    $temp_file = $temp_location + $CurrentTimestamp+&quot;.txt&quot;
+    New-Item $temp_location -ItemType Directory -Force | Out-Null
+    New-Item $temp_file -ItemType File -Force | Out-Null
+    Add-Content $temp_file (&quot;Azure AD App display name: &quot; + $aadApplication.DisplayName)
+    Add-Content $temp_file (&quot;Tenant Domain: &quot; + $AzureADSession.TenantDomain)
+    Add-Content $temp_file (&quot;Tenant Id: &quot; + $AzureADSession.TenantId)
+    Add-Content $temp_file (&quot;App ClientId: &quot; + $aadApplication.AppId)
+    Add-Content $temp_file (&quot;App Password: &quot; + $ApplicationPassword)
+    .\notepad.exe $temp_file
+    write-output(&quot;Application details written to the file&quot;)
+
+}else{
+    write-output(&quot;AzureAD application '&quot; + $AzureADAppForSplunk.DisplayName + &quot;' already exists.&quot;)
+}
+</code></pre>
+<p><br>
+The powershell script got executed and we can see the newly created app in the Azure portal: <br>
+<img src="../../../images/o365security/splunk-app-for-o365_8.png"></img><br></p>
+<p><br></p>
+<h4 id="step-2-provide-app-details-to-splunk-admin_1">Step 2 - Provide app details to Splunk Admin</h4>
+<p>The file containing details for the newly created app is opened in the Notepad.<br>
+This should be sent to the Splunk Administrator so they could set up the Splunk Add-on for O365 for this tenant.
+<img src="../../../images/o365security/splunk-app-for-o365_3.png"></img>
+<br></p>
+<h4 id="step-3-grant-admin-consent-in-azure-portal_1">Step 3 - Grant Admin Consent in Azure Portal</h4>
+<p>Log in to the Azure portal as Global Administrator.<br>
+Navigate to Azure Active Directory &gt; App Registrations &gt; Click on "All Applications" &gt; Go to "Splunk app for Office 365".<br>
+In the app, click on "API Permissions". <br>
+Notice all the permissions have already been assigned via the script.<br>
+Click on "Grant admin consent for tenant" <br>
+<img src="../../../images/o365security/splunk-app-for-o365_6.png"></img>
+After the admin consent grant, It should look like the below :<br>
+<img src="../../../images/o365security/splunk-app-for-o365_7.png"></img></p>
+<h3 id="azure-ad-apps-for-splunk-add-ons-created">Azure AD apps for Splunk add-ons created</h3>
+<p><img src="../../../images/o365security/splunk-app-for-o365_9.png"></img>
+<br>
+:exclamation: Please coordinate with the Splunk administrator to make sure the Splunk apps have been installed and configured using  the information from the Azure AD apps created above.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+    
+  </body>
+</html>

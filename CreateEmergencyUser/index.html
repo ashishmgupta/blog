@@ -9,22 +9,24 @@
       
       
       
+        <link rel="prev" href="../DisableSecurityDefaults/">
       
-        <link rel="next" href="SetupAzureADAppForSplunk/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+        <link rel="next" href="../ImplementMFA/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
     
     
       
-        <title>Microsoft O365 Security Implementation</title>
+        <title>Create Emergency User - Microsoft O365 Security Implementation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.f79797b0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f79797b0.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -40,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,11 +68,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#microsoft-o365-security-implementation" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +78,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Microsoft O365 Security Implementation" class="md-header__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
+    <a href=".." title="Microsoft O365 Security Implementation" class="md-header__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -100,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Create Emergency User
             
           </span>
         </div>
@@ -167,7 +164,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Microsoft O365 Security Implementation" class="md-nav__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
+    <a href=".." title="Microsoft O365 Security Implementation" class="md-nav__button md-logo" aria-label="Microsoft O365 Security Implementation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -184,21 +181,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         Overview
       </a>
-      
     </li>
   
 
@@ -211,7 +198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SetupAzureADAppForSplunk/" class="md-nav__link">
+      <a href="../SetupAzureADAppForSplunk/" class="md-nav__link">
         Setup AzureAD App For Splunk
       </a>
     </li>
@@ -226,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="SetupTenantProperties/" class="md-nav__link">
+      <a href="../SetupTenantProperties/" class="md-nav__link">
         Set Tenant Properties
       </a>
     </li>
@@ -241,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="DisableSecurityDefaults/" class="md-nav__link">
+      <a href="../DisableSecurityDefaults/" class="md-nav__link">
         Disable Security Defaults
       </a>
     </li>
@@ -254,11 +241,19 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="CreateEmergencyUser/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Create Emergency User
       </a>
+      
     </li>
   
 
@@ -271,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ImplementMFA/" class="md-nav__link">
+      <a href="../ImplementMFA/" class="md-nav__link">
         Implement MFA
       </a>
     </li>
@@ -286,7 +281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="BlockOFACCountries/" class="md-nav__link">
+      <a href="../BlockOFACCountries/" class="md-nav__link">
         Block OFAC Countries
       </a>
     </li>
@@ -301,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="DisableBasicAuth/" class="md-nav__link">
+      <a href="../DisableBasicAuth/" class="md-nav__link">
         Disable basic authentication
       </a>
     </li>
@@ -316,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="RestrictExtarnelCollaboration/" class="md-nav__link">
+      <a href="../RestrictExtarnelCollaboration/" class="md-nav__link">
         Restrict External Collaboration
       </a>
     </li>
@@ -331,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="RestrictUserSettings/" class="md-nav__link">
+      <a href="../RestrictUserSettings/" class="md-nav__link">
         Restrict User Settings
       </a>
     </li>
@@ -346,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="BlockMiscAzureServices/" class="md-nav__link">
+      <a href="../BlockMiscAzureServices/" class="md-nav__link">
         Block Misc Azure Services for non-admin users
       </a>
     </li>
@@ -370,8 +365,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -387,27 +380,79 @@
 
 
 
-<h1 id="microsoft-o365-security-implementation">Microsoft O365 Security Implementation</h1>
-<p>Below are the best practices we can implement to secure Microsoft O365. <br>
-I will regularly update this with the latest security features as they are published. <br>
-Below can also be accessed from the left navigation pane. <br></p>
-<ul>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/SetupAzureADAppForSplunk/" target="_blank">Setup AzureAD App For Splunk</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/SetupTenantProperties/" target="_blank">Set tenant properties</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/DisableSecurityDefaults/" target="_blank">Disable Security Defaults</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/CreateEmergencyUser/" target="_blank">Create Emergency User</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/ImplementMFA/" target="_blank">Implement MFA</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/BlockOFACCountries/" target="_blank">Block OFAC Countries</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/DisableBasicAuth/" target="_blank">Disable basic authentication</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/RestrictExtarnelCollaboration/" target="_blank">Restrict External Collaboration</a></li>
-<li><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/RestrictUserSettings/" target="_blank">Restrict User Settings</a></li>
-<li>
-<p><a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/BlockMiscAzureServices/" target="_blank">Block Misc Azure Services for non-admin users</a></p>
-</li>
-<li>
-<p><a href="https://guptaashish.com/" target="_blank">[ The main blog ] </a></p>
-</li>
-</ul>
+<p>We protect our users by enforcing Azure MFA. <br>
+However, Azure MFA has gone down before and we dont want administrators to be locked out of tennat to troubleshoot if this happens again. <br>
+<img src="../../../images/o365security/emergency_user_0.png"></img>
+<br>
+Therefore, we create a cloud-only "emergency" account. This account will be assigned a Global Admin role and wont have the MFA enforced on it. This account should be used ONLY when Azure MFA service is down.<br>
+Given high privileges on this account, any attempt of usage this emergency login should generate a high alert for Security Opertion Center to validate the legit use. <br></p>
+<p>The PowerShell script  : <br></p>
+<pre><code class="language-powershell">$TenantDetails = $NULL
+$CurrentlyLoggedInUser = $NULL
+$OnMicrosoftDomain = $NULL
+$connection = $NULL
+$CurrentTimestamp = [DateTime]::Now.ToString(&quot;yyyyMMdd-HHmmss&quot;)
+try { 
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Already connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+
+} 
+catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] { 
+    Write-Host &quot;You're not connected to AzureAD. Connecting now...&quot;; 
+    $connection = Connect-AzureAD
+    $AzureADSession = Get-AzureADCurrentSessionInfo
+    $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
+    Write-Host &quot;Connected to : $AzureADSession.TenantDomain as $CurrentlyLoggedInUser&quot;
+}
+$CurrentlyLoggedInUser
+$CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
+$EmergencyUserUPNPrefix = &quot;EmUser&quot;
+$UserDisplayName = &quot;EmergencyUser&quot;
+$TenantDomain = $Connection.TenantDomain
+$OnMicrosoftDomain = $CurrentlyLoggedInUser.substring($CurrentlyLoggedInUser.IndexOf('@'))
+$OnMicrosoftDomain
+$UserPrincipalName = $EmergencyUserUPNPrefix+$OnMicrosoftDomain
+
+
+$EmUser = $NULL
+
+try{
+    $EmUser = Get-AzureADUser -ObjectId $UserPrincipalName -ErrorAction silentlycontinue
+    write-output(&quot;Emergency user &quot; + $UserPrincipalName + ' already exists.')
+}catch{
+    write-output(&quot;Emergency user &quot; + $UserPrincipalName + ' does not exist. Creating now..')
+    Add-Type -AssemblyName System.Web
+    $UserPassword = [System.Web.Security.Membership]::GeneratePassword(32,2)
+    $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
+    $PasswordProfile.Password = $UserPassword
+    $UserPassword
+    $NewUser = New-AzureADUser -DisplayName $UserDisplayName -PasswordProfile $PasswordProfile -AccountEnabled $true -UserPrincipalName $UserPrincipalName -MailNickName &quot;EmUser&quot;
+
+    # Adding the new user to Global Admin role
+    Write-output &quot;Adding the new user to Global Admin r+ole&quot;
+    $GlobalAdminRole = Get-AzureADDirectoryRole | Where-Object { $_.displayName -eq  &quot;Global Administrator&quot;} 
+    Add-AzureADDirectoryRoleMember -ObjectId $GlobalAdminRole.ObjectId -RefObjectId $NewUser.ObjectId 
+
+    # Saving the details for the app
+    $temp_location = (get-location).Drive.Root+&quot;office365_temp\&quot;
+    $temp_file = $temp_location + $CurrentTimestamp+&quot;.txt&quot;
+    New-Item $temp_location -ItemType Directory -Force | Out-Null
+    New-Item $temp_file -ItemType File -Force | Out-Null
+    Add-Content $temp_file (&quot;Tenant Domain: &quot; + $AzureADSession.TenantDomain)
+    Add-Content $temp_file (&quot;Tenant Id: &quot; + $AzureADSession.TenantId)
+    Add-Content $temp_file (&quot;Username: &quot; + $UserPrincipalName)
+    Add-Content $temp_file (&quot;Password: &quot; + $UserPassword)
+    .\notepad.exe $temp_file
+    write-output(&quot;User details written to the file\r\n&quot;)
+}
+</code></pre>
+<p>The emergency user is created.
+<img src="../../../images/o365security/emergency_user_1.png"></img>
+<br></p>
+<p>The emergency user is assigned the Global Administrator role on permanent basis.
+<img src="../../../images/o365security/emergency_user_2.png"></img>
+<br></p>
 
 
 
@@ -445,10 +490,10 @@ Below can also be accessed from the left navigation pane. <br></p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.5cf534bf.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
     
   </body>
