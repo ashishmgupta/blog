@@ -15,5 +15,9 @@ Below can also be accessed from the left navigation pane. <br>
 * <a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/RestrictUserSettings/" target="_blank">Restrict User Settings</a>
 * <a href="https://ashishmgupta.github.io/blog/site/O365SecurityImplementation/site/BlockMiscAzureServices/" target="_blank">Block Misc Azure Services for non-admin users</a>
 
-* <a href="https://guptaashish.com/" target="_blank"> { The main blog } </a>
+<<<<<<< HEAD
+<a href="https://guptaashish.com/" target="_blank">The main blog</a>
+=======
+<a href="https://guptaashish.com/" target="_blank">The main blog</a>
+>>>>>>> 45e583f10584beed795d9530fcd073fa06af6b98
 
