@@ -22,6 +22,10 @@ $PSVersionTable
 ```
 <img src="../../../images/o365security/splunk-app-for-o365_0.png"></img><br>
 
+### Pre-requisite - Enable Unified Auditing for Office 365
+Please enable this or Splunk app wont be able to get logs from the tenant. <br>
+Instructions are <a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/audit-log-enable-disable?view=o365-worldwide" target="_blank"> straight forward</a>
+
 ### Create the Azure AD app for Spunk Add-on for Microsoft Office 365
 
 #### Step 1 - PowerShell script to Create the app 
