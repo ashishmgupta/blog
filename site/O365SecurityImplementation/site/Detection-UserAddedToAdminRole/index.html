@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../CreateEmergencyUser/">
+        <link rel="prev" href="../BlockMiscAzureServices/">
       
       
-        <link rel="next" href="../BlockOFACCountries/">
+        <link rel="next" href="../Detection-CloudOnlyAccountCreated/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
     
     
       
-        <title>Implement MFA - Microsoft O365 Security Implementation</title>
+        <title>User Added to administrator role - Microsoft O365 Security Implementation</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-powershell-script-to-enforce-mfa" class="md-skip">
+        <a href="#account-manipulation-additional-cloud-roles" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Implement MFA
+              User Added to administrator role
             
           </span>
         </div>
@@ -261,55 +261,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Implement MFA
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ImplementMFA/" class="md-nav__link">
         Implement MFA
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-powershell-script-to-enforce-mfa" class="md-nav__link">
-    The PowerShell script to enforce MFA 
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#number-matching-currently-in-preview" class="md-nav__link">
-    Number matching (Currently in preview)
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -395,12 +351,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
       
       
       
@@ -421,11 +379,92 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Detection-UserAddedToAdminRole/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          User Added to administrator role
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         User Added to administrator role
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    About
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-simulation" class="md-nav__link">
+    Attack Simulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splunk-detection" class="md-nav__link">
+    Splunk Detection
+  </a>
+  
+    <nav class="md-nav" aria-label="Splunk Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-added-to-the-administrator-role" class="md-nav__link">
+    User added to the administrator role
+  </a>
+  
+    <nav class="md-nav" aria-label="User added to the administrator role">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-user-was-created-outside-pim-eg-powershell" class="md-nav__link">
+    The User was created outside PIM (e.g. PowerShell)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -483,6 +522,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -491,16 +532,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-powershell-script-to-enforce-mfa" class="md-nav__link">
-    The PowerShell script to enforce MFA 
+  <a href="#about" class="md-nav__link">
+    About
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#number-matching-currently-in-preview" class="md-nav__link">
-    Number matching (Currently in preview)
+  <a href="#attack-simulation" class="md-nav__link">
+    Attack Simulation
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splunk-detection" class="md-nav__link">
+    Splunk Detection
+  </a>
+  
+    <nav class="md-nav" aria-label="Splunk Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-added-to-the-administrator-role" class="md-nav__link">
+    User added to the administrator role
+  </a>
+  
+    <nav class="md-nav" aria-label="User added to the administrator role">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-user-was-created-outside-pim-eg-powershell" class="md-nav__link">
+    The User was created outside PIM (e.g. PowerShell)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -520,16 +594,17 @@
 
 
 
-  <h1>Implement MFA</h1>
-
-<p>We will create a conditional access policy to enforce all MFA on all users excluding an emergency Azure cloud-only Account. <br>
-Below is the PowerShell script for the same.
-If the emergency account does not exist, It will create the account before creating the conditional access policy. <br></p>
-<h3 id="the-powershell-script-to-enforce-mfa">The PowerShell script to enforce MFA <br></h3>
+<h1 id="account-manipulation-additional-cloud-roles">Account Manipulation: Additional Cloud Roles</h1>
+<h2 id="about">About</h2>
+<p>An adversary can create an account and then add it to a privileged role such as Global Administrator. <br>
+More details here in <a href="https://attack.mitre.org/techniques/T1098/003/" target="_blank"> MITRE ATT&amp;CK </a> . <br></p>
+<h2 id="attack-simulation">Attack Simulation</h2>
+<p>The below script creates an account and adds the account to the Global administrator role. <br></p>
 <pre><code class="language-powershell">$TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
 $OnMicrosoftDomain = $NULL
 $connection = $NULL
+$CurrentTimestamp = [DateTime]::Now.ToString(&quot;yyyyMMdd-HHmmss&quot;)
 try { 
     $AzureADSession = Get-AzureADCurrentSessionInfo
     $CurrentlyLoggedInUser = $AzureADSession.Account | select -ExpandProperty Id
@@ -545,13 +620,17 @@ catch [Microsoft.Open.Azure.AD.CommonLibrary.AadNeedAuthenticationException] {
 }
 $CurrentlyLoggedInUser
 $CurrentUserId = Get-AzureADUser -Filter &quot;UserPrincipalName eq '$CurrentlyLoggedInUser'&quot; | select -ExpandProperty ObjectId
-$EmergencyUserUPNPrefix = &quot;EmUser&quot;
-$UserDisplayName = &quot;EmergencyUser&quot;
+
+$EmergencyUserUPNPrefix = Read-Host(&quot;Enter the name of the user you want to create or hit enter for the script to create one.&quot;)
+if($EmergencyUserUPNPrefix -eq &quot;&quot;)
+{
+    $EmergencyUserUPNPrefix = &quot;TempUser_&quot; + $CurrentTimestamp
+}
+$UserDisplayName = $EmergencyUserUPNPrefix 
 $TenantDomain = $Connection.TenantDomain
 $OnMicrosoftDomain = $CurrentlyLoggedInUser.substring($CurrentlyLoggedInUser.IndexOf('@'))
 $OnMicrosoftDomain
 $UserPrincipalName = $EmergencyUserUPNPrefix+$OnMicrosoftDomain
-
 
 $EmUser = $NULL
 
@@ -584,56 +663,30 @@ try{
     .\notepad.exe $temp_file
     write-output(&quot;User details written to the file\r\n&quot;)
 }
-
-    $conditions = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessConditionSet
-    $conditions.Applications = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessApplicationCondition
-    $conditions.Applications.IncludeApplications = &quot;all&quot;
-    $conditions.Users = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessUserCondition
-    $conditions.Users.IncludeUsers = &quot;all&quot;
-    $conditions.Users.ExcludeUsers = $EmUser.ObjectId
-    $controls = New-Object -TypeName Microsoft.Open.MSGraph.Model.ConditionalAccessGrantControls
-    $controls._Operator = &quot;OR&quot;
-    $controls.BuiltInControls = &quot;mfa&quot;
-    New-AzureADMSConditionalAccessPolicy -DisplayName &quot;Enforce MFA on all users&quot; -State &quot;Enabled&quot; -Conditions $conditions -GrantControls $controls
-    Write-Output &quot;Conditional Access policy created&quot;
 </code></pre>
-<p><br>
-Conditional Access policy is created.<br>
-<img src="../../../images/o365security/implement-mfa-01.png"></img><br></p>
-<p><br>
-MFA is enforced for all apps.<br>
-<img src="../../../images/o365security/implement-mfa-03.png"></img><br></p>
-<p><br>
-MFA is enforced for all users except the emergency global admin user.<br>
-<img src="../../../images/o365security/implement-mfa-02.png"></img><br></p>
-<h3 id="number-matching-currently-in-preview">Number matching (Currently in preview)</h3>
-<p>As of the day of writing this (5/23/2022), this feature is <a href="https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match">in preview and not GA.</a><br>
-However, It will be enabled by default when It goes GA just because of added security and great user experience.<br></p>
-<p><br>
-Just like <a href="https://en.wikipedia.org/wiki/Password_fatigue">password fatigue</a> caused users to re-use passwords and get compromised If we use push notifications for MFA, and if an attacker constantly sends push notifications to users with compromised credentials, users would eventually push and that would lead to the attacker accessing the user's cloud resources. <br></p>
-<p>To counter "push fatigue" [ a made-up term :)], Microsoft launched a new feature named "Number matching" (currently in preview). <br>
-<a href="https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match">https://docs.microsoft.com/en-us/azure/active-directory/authentication/how-to-mfa-number-match</a><br></p>
-<p>Login to Azure Portal &gt; Azure Active Directory &gt; Security &gt; Authentication methods and click on the "Microsoft Authenticator" <br>
-<img src="../../../images/o365security/implement-mfa-04.png"></img><br></p>
-<p>Click on the "..." and then configure. <br>
-<img src="../../../images/o365security/implement-mfa-05.png"></img><br></p>
-<p>Make sure "Require number matching" is set to "Enabled". <br>
-Also, make sure the "Show additional context in notification" is also enabled. <br> This provides for which app the login is being performed. <br>
-<img src="../../../images/o365security/implement-mfa-06.png"></img><br></p>
-<p>Now when the user logs in, after the user name and password has been validated, the browser shows a number and a notification is sent to the Microsoft Authenticator. We need to enter the same number in the authenticator to be successfully and fully authenticated via MFA.<br></p>
-<table>
-    <tr>
-        <td>Bworser shows the number during log in process</td>
-        <td>Enter the same number in the Microsoft Authenticator app</td>
-    </tr>
-    <tr>
-        <td><img src="../../../images/o365security/implement-mfa-07.png"></img></td>
-        <td><img src="../../../images/o365security/implement-mfa-08.png"></img></td>
-    </tr>
-</table>
-
-<p>I notice the number is always double-digit (not 5 or 6 digits).<br>
-So, not only It adds to security by having the user enter the number (instead of an ignorant push) but also Its a great user experience because It's just two digits and easy to remember.</p>
+<p>Azure AD user is assigned the Global Admin role as seen in the Azure portal. <br>
+<img src="../../../images/o365mitre/AccountManipulationAdditionalCloudRoles-T1098-003_0.png"></img>
+<br></p>
+<h2 id="splunk-detection">Splunk Detection</h2>
+<h3 id="user-added-to-the-administrator-role">User added to the administrator role</h3>
+<pre><code class="language-powershell">index=azure sourcetype=&quot;azure:aad:audit&quot; activityDisplayName=&quot;Add member to role&quot; result=&quot;success&quot;
+| eval AssignedRoleName = mvindex('targetResources{}.modifiedProperties{}.newValue', mvfind('targetResources{}.modifiedProperties{}.displayName', &quot;Role\.DisplayName&quot;))
+| eval RoleWellKnownObjectName = mvindex('targetResources{}.modifiedProperties{}.newValue', mvfind('targetResources{}.modifiedProperties{}.displayName', &quot;Role\.WellKnownObjectName&quot;))
+| search AssignedRoleName = &quot;*Administrator*&quot;
+| rename targetResources{}.userPrincipalName as UserAddedToRole, initiatedBy.user.ipAddress as src_ip, initiatedBy.user.userPrincipalName as CreatedByUPN
+| table _time UserAddedToRole, AssignedRoleName, src_ip ,CreatedByUPN,  roleWellKnownObjectName
+</code></pre>
+<h4 id="the-user-was-created-outside-pim-eg-powershell">The User was created outside PIM (e.g. PowerShell)</h4>
+<p>When the user is assigned to an administrator role without using <a href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a>, a corresponding Azure Ad event "RoleElevatedOutsidePimAlert" is generated and we would want to detect such an event. Any privileged role assignment should be done only through PIM. <br></p>
+<pre><code class="language-powershell">index=azure operationType=&quot;RoleElevatedOutsidePimAlert&quot; result=&quot;success&quot; 
+| rename targetResources{}.displayName as key_5, targetResources{}.userPrincipalName as key_6
+| eval a = mvzip(key_5,key_6)
+| makemv a delim=&quot;,&quot;
+| eval RoleNameUserAddedto  = mvindex(a,0)
+| eval UserAdded = mvindex(a,3)
+| rename initiatedBy.user.displayName as CreatedByName, initiatedBy.user.userPrincipalName as CreatedByUPN
+| table _time UserAdded RoleNameUserAddedto CreatedByName CreatedByUPN 
+</code></pre>
 
 
 
