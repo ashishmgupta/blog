@@ -1,6 +1,11 @@
-# Create Account: Cloud Account (Subtechnique T1136.003)
+# Create Cloud Account
+## About
+Adversaries may create a cloud account to maintain access to victim systems. <br>
+<b>Tactic</b>    : Persistence <br>
+<b>Technique</b> : Create Account<br>
+More details here in <a href="https://attack.mitre.org/techniques/T1136/003/" target="_blank"> MITRE ATT&CK </a>. <br>
 
-### Attack technique
+### Attack simulation
 The Below script will create a cloud-only account in Azure AD.
 ``` powershell
 $TenantDetails = $NULL
@@ -75,8 +80,8 @@ Azure AD user is created as seen in the Azure portal. <br>
 <img src="../../../images/o365mitre/CreateAccount-T1136_1.png"></img>
 <br>
 
-### Splunk Detections
-#### Create user event
+## Splunk Detections
+### Create user event
 ```powershell
 index=azure sourcetype="azure:aad:audit" activityDisplayName="Add user" result="success"
 | spath targetResources{}
@@ -90,7 +95,7 @@ Newly created user is found in the search. <br>
 Note : "Swagger-Codegen/1.4.0.0/csharp" is the user agent when Azure AD PowerShell is used to create the user.
 <br>
 
-#### The User was created outside PIM (e.g. PowerShell)
+### The User was created outside PIM (e.g. PowerShell)
 ```powershell
 index=azure operationType="RoleElevatedOutsidePimAlert" result="success" 
 | rename targetResources{}.displayName as key_5, targetResources{}.userPrincipalName as key_6
