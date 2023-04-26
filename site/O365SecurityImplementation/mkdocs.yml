@@ -20,4 +20,6 @@ nav:
 - Detections:
   - User Added to administrator role: Detection-UserAddedToAdminRole.md
   - Cloud only account created: Detection-CloudOnlyAccountCreated.md
+  - Conditional Access Policy Updated: Detection-ConditionalAccessPolicyChanged.md
+  
 - The main blog: "http://guptaashish.com"
