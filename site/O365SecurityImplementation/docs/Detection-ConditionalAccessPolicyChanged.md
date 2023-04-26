@@ -5,10 +5,16 @@ Adversaries may modify authentication mechanisms and processes to access user cr
 <b>Technique</b> : Modify Authentication Process<br>
 More details here in <a href="https://attack.mitre.org/techniques/T1556/" target="_blank"> MITRE ATT&CK </a>. <br>
 
+## Attack Simulation
+Lets take this example of this existing conditional access policy which requires admins to go through MFA.
+Currently there are two users excluded from this policy.
+<img src="../../../images/o365security/update-conditional-access-policy-001.png"></img><br>
+Now, we add another user to this exclusion list to exempt them from MFA.
+<img src="../../../images/o365security/update-conditional-access-policy-002.png"></img><br>
 
+## Splunk Detection
 '''
 index="main"  sourcetype="azure:aad:audit" result="success" activityDisplayName="Update conditional access policy"
-| rename initiatedBy.user.userPrincipalName as policyChangedBy
 | rename targetResources{}.displayName as policyName
 | spath targetResources{}.modifiedProperties{}.newValue output=newvalue
 | spath targetResources{}.modifiedProperties{}.oldValue output=oldvalue
@@ -47,5 +53,5 @@ index="main"  sourcetype="azure:aad:audit" result="success" activityDisplayName=
 | spath input=newvalue grantControls output=newGrantControls
 | spath input=oldvalue grantControls output=oldGrantControls
 | eval grantControlsChanged=if(tostring(oldGrantControls)==tostring(newGrantControls), "Not changed", "Changed")
-| table _time policyName policyChangedby oldGrantControls newGrantControls oldUsers newUsers usersChanged oldPlatforms newPlatforms platformsChanged oldLocations newLocations locationsChanged oldApplications newApplications applicationsChanged oldUserRiskLevels newUserRiskLevels userRiskLevelsChanged oldSignInRiskLevels newSignInRiskLevels signInRiskLevelsChanged oldClientAppTypes newClientAppTypes clientAppTypesChanged oldDevices newDevices devicesChanged oldServicePrincipalRiskLevels newServicePrincipalRiskLevels servicePrincipalRiskLevelsChanged oldGrantControls newGrantControls grantControlsChanged
+| table _time policyName "initiatedBy.user.userPrincipalName" oldGrantControls newGrantControls oldUsers newUsers usersChanged oldPlatforms newPlatforms platformsChanged oldLocations newLocations locationsChanged oldApplications newApplications applicationsChanged oldUserRiskLevels newUserRiskLevels userRiskLevelsChanged oldSignInRiskLevels newSignInRiskLevels signInRiskLevelsChanged oldClientAppTypes newClientAppTypes clientAppTypesChanged oldDevices newDevices devicesChanged oldServicePrincipalRiskLevels newServicePrincipalRiskLevels servicePrincipalRiskLevelsChanged oldGrantControls newGrantControls grantControlsChanged
 '''
