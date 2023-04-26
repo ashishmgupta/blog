@@ -1,8 +1,9 @@
 # Account Manipulation: Additional Cloud Roles
 ## About
 An adversary can create an account and then add it to a privileged role such as Global Administrator. <br>
+<b>Tactic</b>    : Persistence <br>
+<b>Technique</b> : Account Manipulation<br>
 More details here in <a href="https://attack.mitre.org/techniques/T1098/003/" target="_blank"> MITRE ATT&CK </a> . <br>
-
 ## Attack Simulation
 
 The below script creates an account and adds the account to the Global administrator role. <br>
@@ -55,7 +56,7 @@ try{
     $NewUser = New-AzureADUser -DisplayName $UserDisplayName -PasswordProfile $PasswordProfile -AccountEnabled $true -UserPrincipalName $UserPrincipalName -MailNickName "EmUser"
 
     # Adding the new user to Global Admin role
-    Write-output "Adding the new user to Global Admin r+ole"
+    Write-output "Adding the new user to Global Admin role"
     $GlobalAdminRole = Get-AzureADDirectoryRole | Where-Object { $_.displayName -eq  "Global Administrator"} 
     Add-AzureADDirectoryRoleMember -ObjectId $GlobalAdminRole.ObjectId -RefObjectId $NewUser.ObjectId 
 
@@ -89,7 +90,7 @@ index=azure sourcetype="azure:aad:audit" activityDisplayName="Add member to role
 | table _time UserAddedToRole, AssignedRoleName, src_ip ,CreatedByUPN,  roleWellKnownObjectName
 ```
 
-#### The User was created outside PIM (e.g. PowerShell)
+### The User was created outside PIM (e.g. PowerShell)
 When the user is assigned to an administrator role without using <a href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a>, a corresponding Azure Ad event "RoleElevatedOutsidePimAlert" is generated and we would want to detect such an event. Any privileged role assignment should be done only through PIM. <br>
 
 ```powershell
