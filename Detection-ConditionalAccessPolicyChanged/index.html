@@ -567,47 +567,47 @@ Currently there are two users excluded from this policy.<br>
 Now, we add another user to this exclusion list to exempt them from MFA.<br>
 <img src="../../../images/o365security/update-conditional-access-policy-002.png"></img><br></p>
 <h2 id="splunk-detection">Splunk Detection</h2>
-<p>'''
-index="main"  sourcetype="azure:aad:audit" result="success" activityDisplayName="Update conditional access policy"
+<pre><code class="language-bash">index=&quot;main&quot;  sourcetype=&quot;azure:aad:audit&quot; result=&quot;success&quot; activityDisplayName=&quot;Update conditional access policy&quot;
 | rename targetResources{}.displayName as policyName
 | spath targetResources{}.modifiedProperties{}.newValue output=newvalue
-| spath targetResources{}.modifiedProperties{}.oldValue output=oldvalue</p>
-<p>| spath input=newvalue conditions output=newConditions
+| spath targetResources{}.modifiedProperties{}.oldValue output=oldvalue
+
+| spath input=newvalue conditions output=newConditions
 | mvexpand newConditions
 | spath input=oldvalue conditions output=oldConditions
 | mvexpand oldConditions
 | spath input=newConditions users output=newUsers
 | spath input=oldConditions users output=oldUsers
-| eval usersChanged=if(tostring(oldUsers)==tostring(newUsers), "Not changed", "Changed")
+| eval usersChanged=if(tostring(oldUsers)==tostring(newUsers), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newConditions platforms output=newPlatforms
 | spath input=oldConditions platforms output=oldPlatforms
-| eval platformsChanged=if(tostring(oldPlatforms)==tostring(newPlatforms), "Not changed", "Changed")
+| eval platformsChanged=if(tostring(oldPlatforms)==tostring(newPlatforms), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newConditions locations output=newLocations
 | spath input=oldConditions locations output=oldLocations
-| eval locationsChanged=if(tostring(oldLocations)==tostring(newLocations), "Not changed", "Changed")
+| eval locationsChanged=if(tostring(oldLocations)==tostring(newLocations), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newConditions applications output=newApplications
 | spath input=oldConditions applications output=oldApplications
-| eval applicationsChanged=if(tostring(oldApplications)==tostring(newApplications), "Not changed", "Changed")
+| eval applicationsChanged=if(tostring(oldApplications)==tostring(newApplications), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newConditions userRiskLevels output=newUserRiskLevels
 | spath input=oldConditions userRiskLevels output=oldUserRiskLevels
-| eval userRiskLevelsChanged=if(tostring(oldUserRiskLevels)==tostring(newUserRiskLevels), "Not changed", "Changed")
+| eval userRiskLevelsChanged=if(tostring(oldUserRiskLevels)==tostring(newUserRiskLevels), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newConditions signInRiskLevels output=newSignInRiskLevels
 | spath input=oldConditions signInRiskLevels output=oldSignInRiskLevels
-| eval signInRiskLevelsChanged=if(tostring(oldSignInRiskLevels)==tostring(newSignInRiskLevels), "Not changed", "Changed")
+| eval signInRiskLevelsChanged=if(tostring(oldSignInRiskLevels)==tostring(newSignInRiskLevels), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newConditions clientAppTypes output=newClientAppTypes
 | spath input=oldConditions clientAppTypes output=oldClientAppTypes
-| eval clientAppTypesChanged=if(tostring(oldClientAppTypes)==tostring(newClientAppTypes), "Not changed", "Changed")
+| eval clientAppTypesChanged=if(tostring(oldClientAppTypes)==tostring(newClientAppTypes), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newConditions devices output=newDevices
 | spath input=oldConditions devices output=oldDevices
-| eval devicesChanged=if(tostring(oldDevices)==tostring(newDevices), "Not changed", "Changed")
+| eval devicesChanged=if(tostring(oldDevices)==tostring(newDevices), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newConditions servicePrincipalRiskLevels output=newServicePrincipalRiskLevels
 | spath input=oldConditions servicePrincipalRiskLevels output=oldServicePrincipalRiskLevels
-| eval servicePrincipalRiskLevelsChanged=if(tostring(oldServicePrincipalRiskLevels)==tostring(newServicePrincipalRiskLevels), "Not changed", "Changed")
+| eval servicePrincipalRiskLevelsChanged=if(tostring(oldServicePrincipalRiskLevels)==tostring(newServicePrincipalRiskLevels), &quot;Not changed&quot;, &quot;Changed&quot;)
 | spath input=newvalue grantControls output=newGrantControls
 | spath input=oldvalue grantControls output=oldGrantControls
-| eval grantControlsChanged=if(tostring(oldGrantControls)==tostring(newGrantControls), "Not changed", "Changed")
-| table _time policyName "initiatedBy.user.userPrincipalName" oldGrantControls newGrantControls oldUsers newUsers usersChanged oldPlatforms newPlatforms platformsChanged oldLocations newLocations locationsChanged oldApplications newApplications applicationsChanged oldUserRiskLevels newUserRiskLevels userRiskLevelsChanged oldSignInRiskLevels newSignInRiskLevels signInRiskLevelsChanged oldClientAppTypes newClientAppTypes clientAppTypesChanged oldDevices newDevices devicesChanged oldServicePrincipalRiskLevels newServicePrincipalRiskLevels servicePrincipalRiskLevelsChanged oldGrantControls newGrantControls grantControlsChanged
-'''</p>
+| eval grantControlsChanged=if(tostring(oldGrantControls)==tostring(newGrantControls), &quot;Not changed&quot;, &quot;Changed&quot;)
+| table _time policyName &quot;initiatedBy.user.userPrincipalName&quot; oldGrantControls newGrantControls oldUsers newUsers usersChanged oldPlatforms newPlatforms platformsChanged oldLocations newLocations locationsChanged oldApplications newApplications applicationsChanged oldUserRiskLevels newUserRiskLevels userRiskLevelsChanged oldSignInRiskLevels newSignInRiskLevels signInRiskLevelsChanged oldClientAppTypes newClientAppTypes clientAppTypesChanged oldDevices newDevices devicesChanged oldServicePrincipalRiskLevels newServicePrincipalRiskLevels servicePrincipalRiskLevelsChanged oldGrantControls newGrantControls grantControlsChanged
+</code></pre>
 
 
 
