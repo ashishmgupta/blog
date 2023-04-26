@@ -55,7 +55,7 @@ try{
     $NewUser = New-AzureADUser -DisplayName $UserDisplayName -PasswordProfile $PasswordProfile -AccountEnabled $true -UserPrincipalName $UserPrincipalName -MailNickName "EmUser"
 
     # Adding the new user to Global Admin role
-    Write-output "Adding the new user to Global Admin r+ole"
+    Write-output "Adding the new user to Global Admin role"
     $GlobalAdminRole = Get-AzureADDirectoryRole | Where-Object { $_.displayName -eq  "Global Administrator"} 
     Add-AzureADDirectoryRoleMember -ObjectId $GlobalAdminRole.ObjectId -RefObjectId $NewUser.ObjectId 
 
