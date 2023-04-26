@@ -7,9 +7,9 @@ More details here in <a href="https://attack.mitre.org/techniques/T1556/" target
 
 ## Attack Simulation
 Lets take this example of this existing conditional access policy which requires admins to go through MFA.
-Currently there are two users excluded from this policy.
+Currently there are two users excluded from this policy.<br>
 <img src="../../../images/o365security/update-conditional-access-policy-001.png"></img><br>
-Now, we add another user to this exclusion list to exempt them from MFA.
+Now, we add another user to this exclusion list to exempt them from MFA.<br>
 <img src="../../../images/o365security/update-conditional-access-policy-002.png"></img><br>
 
 ## Splunk Detection
