@@ -5,7 +5,7 @@ Adversaries may create a cloud account to maintain access to victim systems. <br
 <b>Technique</b> : Create Account<br>
 More details here in <a href="https://attack.mitre.org/techniques/T1136/003/" target="_blank"> MITRE ATT&CK </a>. <br>
 
-### Attack simulation
+## Attack simulation
 The Below script will create a cloud-only account in Azure AD.
 ``` powershell
 $TenantDetails = $NULL
