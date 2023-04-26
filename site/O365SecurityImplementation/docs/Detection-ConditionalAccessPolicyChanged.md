@@ -14,7 +14,7 @@ Now, we add another user to this exclusion list to exempt them from MFA.<br>
 
 ## Splunk Detection
 
-There are sevaral attributes of a conditional access policy which could be changed.
+There are several attributes of a conditional access policy which could be changed.
 * Users
 * Applications
 * Platforms
@@ -33,6 +33,7 @@ In the below example, users attribute was changed (a user with object id "3618bb
 We can always look up the excluded user name by their id in the Azure portal. <br>
 <img src="../../../images/o365security/update-conditional-access-policy-004.png"></img><br>
 
+## Splunk Search
 ``` bash
 index="main"  sourcetype="azure:aad:audit" result="success" activityDisplayName="Update conditional access policy"
 | rename targetResources{}.displayName as policyName
