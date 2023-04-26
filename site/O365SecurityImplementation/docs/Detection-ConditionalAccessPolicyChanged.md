@@ -39,7 +39,6 @@ index="main"  sourcetype="azure:aad:audit" result="success" activityDisplayName=
 | rename targetResources{}.displayName as policyName
 | spath targetResources{}.modifiedProperties{}.newValue output=newvalue
 | spath targetResources{}.modifiedProperties{}.oldValue output=oldvalue
-
 | spath input=newvalue conditions output=newConditions
 | mvexpand newConditions
 | spath input=oldvalue conditions output=oldConditions
