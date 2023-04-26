@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-account-cloud-account-subtechnique-t1136003" class="md-skip">
+        <a href="#create-cloud-account" class="md-skip">
           Skip to content
         </a>
       
@@ -427,9 +427,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#attack-technique" class="md-nav__link">
-    Attack technique
+  <a href="#about" class="md-nav__link">
+    About
   </a>
+  
+    <nav class="md-nav" aria-label="About">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attack-simulation" class="md-nav__link">
+    Attack simulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -517,9 +530,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#attack-technique" class="md-nav__link">
-    Attack technique
+  <a href="#about" class="md-nav__link">
+    About
   </a>
+  
+    <nav class="md-nav" aria-label="About">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attack-simulation" class="md-nav__link">
+    Attack simulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -566,8 +592,13 @@
 
 
 
-<h1 id="create-account-cloud-account-subtechnique-t1136003">Create Account: Cloud Account (Subtechnique T1136.003)</h1>
-<h3 id="attack-technique">Attack technique</h3>
+<h1 id="create-cloud-account">Create Cloud Account</h1>
+<h2 id="about">About</h2>
+<p>Adversaries may create a cloud account to maintain access to victim systems. <br>
+<b>Tactic</b>    : Persistence <br>
+<b>Technique</b> : Create Account<br>
+More details here in <a href="https://attack.mitre.org/techniques/T1136/003/" target="_blank"> MITRE ATT&amp;CK </a>. <br></p>
+<h3 id="attack-simulation">Attack simulation</h3>
 <p>The Below script will create a cloud-only account in Azure AD.</p>
 <pre><code class="language-powershell">$TenantDetails = $NULL
 $CurrentlyLoggedInUser = $NULL
@@ -640,8 +671,8 @@ If we just hit enter, It creates a user named "TempUser_" followed by the curren
 Azure AD user is created as seen in the Azure portal. <br>
 <img src="../../../images/o365mitre/CreateAccount-T1136_1.png"></img>
 <br></p>
-<h3 id="splunk-detections">Splunk Detections</h3>
-<h4 id="create-user-event">Create user event</h4>
+<h2 id="splunk-detections">Splunk Detections</h2>
+<h3 id="create-user-event">Create user event</h3>
 <pre><code class="language-powershell">index=azure sourcetype=&quot;azure:aad:audit&quot; activityDisplayName=&quot;Add user&quot; result=&quot;success&quot;
 | spath targetResources{}
 | rename targetResources{}.userPrincipalName as UserAdded initiatedBy.user.userPrincipalName as CreatedByUPN  additionalDetails{}.value as UserAgent
@@ -652,7 +683,7 @@ Newly created user is found in the search. <br>
 <img src="../../../images/o365mitre/CreateAccount-T1136_2.png"></img></p>
 <p>Note : "Swagger-Codegen/1.4.0.0/csharp" is the user agent when Azure AD PowerShell is used to create the user.
 <br></p>
-<h4 id="the-user-was-created-outside-pim-eg-powershell">The User was created outside PIM (e.g. PowerShell)</h4>
+<h3 id="the-user-was-created-outside-pim-eg-powershell">The User was created outside PIM (e.g. PowerShell)</h3>
 <pre><code class="language-powershell">index=azure operationType=&quot;RoleElevatedOutsidePimAlert&quot; result=&quot;success&quot; 
 | rename targetResources{}.displayName as key_5, targetResources{}.userPrincipalName as key_6
 | eval a = mvzip(key_5,key_6)
