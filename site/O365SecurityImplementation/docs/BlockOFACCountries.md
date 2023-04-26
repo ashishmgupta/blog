@@ -1,3 +1,4 @@
+# Block OFAC Countries
 In case we have a requirement to block requests from certain countries , we can use conditional policy to achieve the same.
 As a first step, we create a "named location" which has the list of countries we need to block all requests from. <br>
 Then we create a conditional access policy to use that country list to implement the block.<br>

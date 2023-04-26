@@ -1,3 +1,5 @@
+# Create Emergency User
+
 We protect our users by enforcing Azure MFA. <br>
 However, Azure MFA has gone down before and we dont want administrators to be locked out of tennat to troubleshoot if this happens again. <br>
 <img src="../../../images/o365security/emergency_user_0.png"></img>

@@ -1,3 +1,5 @@
+# Set up Azure AD app for Splunk integration
+
 This section covers setting up Azure AD apps for Splunk Add-ons so Azure and O365 logs could be ingested into Splunk. <br>
 This is one of the first steps we would do so all changes done after are logged into Splunk for security monitoring by SOC. <br>
 

@@ -1,3 +1,4 @@
+# Restrict User settings
 
 ### Restrict registration of new Azure AD applications
 It is important to control registration of Azure AD applications. <br><br>

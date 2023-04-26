@@ -1,3 +1,10 @@
+# Change conditional access policy
+## About
+Adversaries may modify authentication mechanisms and processes to access user credentials or enable otherwise unwarranted access to accounts. <br>
+<b>Tactic</b>    : Credential Access, Defense Evasion, Persistence <br>
+<b>Technique</b> : Modify Authentication Process<br>
+More details here in <a href="https://attack.mitre.org/techniques/T1556/" target="_blank"> MITRE ATT&CK </a>. <br>
+
 
 '''
 index="main"  sourcetype="azure:aad:audit" result="success" activityDisplayName="Update conditional access policy"

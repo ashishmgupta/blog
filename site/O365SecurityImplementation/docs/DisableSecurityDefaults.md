@@ -1,3 +1,4 @@
+# Disable Security Defaults
 Security Defaults is a set of basic identity security mechanisms recommended by Microsoft.<br>
 When enabled, these recommendations will be automatically enforced in your organization.<br>
 Source: <br>

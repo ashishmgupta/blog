@@ -1,3 +1,5 @@
+# Disable Basic Authentication
+
 ###<h2>What is Basic Authentication?</h2>
 User-supplied username and password are joined and separated by a colon and base64 encoded. <br>
 The base64 encoded value is sent as an HTTP header named "Authorization".<br>

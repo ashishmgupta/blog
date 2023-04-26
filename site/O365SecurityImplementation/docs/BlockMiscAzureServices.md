@@ -1,4 +1,4 @@
-
+# Block Miscellaneous Services in Azure 
 ### Blocking the "Graph Explorer" app and services under the "Microsoft Azure Management" app.
 We would want to restrict access to various Azure services to non-admin users because they don't need that access. <br>
 Graph Explorer is one of the apps we want to disable access to unless It's a business requirement not to do so. 
