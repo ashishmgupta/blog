@@ -13,7 +13,7 @@ Now, we add another user to this exclusion list to exempt them from MFA.<br>
 <img src="../../../images/o365security/update-conditional-access-policy-002.png"></img><br>
 
 ## Splunk Detection
-'''
+``` bash
 index="main"  sourcetype="azure:aad:audit" result="success" activityDisplayName="Update conditional access policy"
 | rename targetResources{}.displayName as policyName
 | spath targetResources{}.modifiedProperties{}.newValue output=newvalue
@@ -54,4 +54,4 @@ index="main"  sourcetype="azure:aad:audit" result="success" activityDisplayName=
 | spath input=oldvalue grantControls output=oldGrantControls
 | eval grantControlsChanged=if(tostring(oldGrantControls)==tostring(newGrantControls), "Not changed", "Changed")
 | table _time policyName "initiatedBy.user.userPrincipalName" oldGrantControls newGrantControls oldUsers newUsers usersChanged oldPlatforms newPlatforms platformsChanged oldLocations newLocations locationsChanged oldApplications newApplications applicationsChanged oldUserRiskLevels newUserRiskLevels userRiskLevelsChanged oldSignInRiskLevels newSignInRiskLevels signInRiskLevelsChanged oldClientAppTypes newClientAppTypes clientAppTypesChanged oldDevices newDevices devicesChanged oldServicePrincipalRiskLevels newServicePrincipalRiskLevels servicePrincipalRiskLevelsChanged oldGrantControls newGrantControls grantControlsChanged
-'''
+```
