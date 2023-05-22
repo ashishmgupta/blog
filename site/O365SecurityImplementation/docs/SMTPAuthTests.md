@@ -4,8 +4,8 @@
 $MailFrom = "ashish.gupta@lplfinancial.com"
 $MailTo = "ashishmgupta@hotmail.com"
 
-$Username = "infosec.test@lplfinancial.com"
-$Password = "bN1A&Fwf018s8huq%Aff"
+$Username = "infosec.test@test.com"
+$Password = "yhjfuyrggyuthyguyu"
 
 # Server Info
 $SmtpServer = "smtp.office365.com"
